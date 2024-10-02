@@ -13,14 +13,14 @@ public class TestFoodItems {
 
     @BeforeEach
     void runBefore() {
-        food = new FoodItems();
+        food = new FoodItems("Bob", 1000, "Vegatables");
     }
 
     @Test
     void testConstructor() {
         assertEquals("Bob", food.getName());
-        assertEquals("1000", food.getCalories());
-        assertEquals("Vegtables", food.getFoodGroup());
+        assertEquals(1000, food.getCalories());
+        assertEquals("Vegatables", food.getFoodGroup());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class TestFoodItems {
     @Test
     void testEditCalories() {
         food.editCalories(100);
-        assertEquals("100", food.getCalories());
+        assertEquals(100, food.getCalories());
     }
 
     @Test

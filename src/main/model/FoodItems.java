@@ -2,41 +2,49 @@ package model;
 
 public class FoodItems {
 
+    private String name;
+    private int calories;
+    private String foodGroups;
+
+    // REQUIRES: foodGroups must be fruit, vegatable, diary, grains and protein
     // EFFECTS: Constructs Food Items with name, amount of calories and food groups involved
-    public FoodItems() {
-        // TODO
+    public FoodItems(String name, int calories, String foodGroups) {
+        this.name = name;
+        this.calories = calories;
+        this.foodGroups = foodGroups;
     }
 
     // EFFECTS: Returns name of item
     public String getName() {
-        // TODO
+        return this.name;
     }
 
     // EFFECTS: Returns number of calories item has
     public int getCalories() {
-        // TODO
+        return calories;
     }
 
     // EFFECTS: Returns food group the item is in
     public String getFoodGroup() {
-        // TODO
+        return foodGroups;
     }
 
     // MODIFIES: this
     // EFFECTS: Edits name of food item
-    public void editName() {
-        // TODO
+    public void editName(String name) {
+        this.name = name;
     }
 
     // MODIFIES: this
     // EFFECTS: Edits calories of food item
-    public void editCalories() {
-        // TODO
+    public void editCalories(int calories) {
+        this.calories = calories;
     }
 
+    // REQUIRES: foodGroups must be fruit, vegatable, diary, grains and protein
     // MODIFIES: this
     // EFFECTS: Edits food group of food item
-    public void editFoodGroup() {
-        // TODO
+    public void editFoodGroup(String foodGroups) {
+        this.foodGroups = foodGroups;
     }
 }
