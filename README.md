@@ -20,5 +20,4 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
 - As a User, I want to set a daily calorie goal 
 - As a User, I want to view the total amount of calories consumed and burned, and the difference between the two
 - As a User, I want to view the amount of calories required to reach the goal set for the day
-- As a User, I want to see a pie chart of the proportions of food groups I am consuming
 - As a User, I want to be able to delete food items or exercises 
