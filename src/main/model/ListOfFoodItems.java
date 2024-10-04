@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public class ListOfFoodItems {
 
     // EFFECTS : constructs empty list of food items
@@ -34,6 +36,11 @@ public class ListOfFoodItems {
     // EFFECTS: returns total number of calories consumed
     public int totalNumOfCalories() {
         return 0;
+        // TODO
+    }
+
+    // EFFECTS: clears the list
+    public void clearList() {
         // TODO
     }
 }
