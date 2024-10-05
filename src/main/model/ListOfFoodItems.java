@@ -47,4 +47,34 @@ public class ListOfFoodItems {
     public void clearList() {
         listFoodItems.clear();
     }
+
+    // EFFECTS: returns total fruit calories consumed
+    public int totalFruitCalories() {
+        return 0;
+        // TODO
+    }
+
+    // EFFECTS: returns total vegetable calories consumed
+    public int totalVegetableCalories() {
+        return 0;
+        // TODO
+    }
+
+    // EFFECTS: returns total fruit calories consumed
+    public int totalProteinCalories() {
+        return 0;
+        // TODO
+    }
+
+    // EFFECTS: returns total grain calories consumed
+    public int totalGrainCalories() {
+        return 0;
+        // TODO
+    }
+
+    // EFFECTS: returns total diary calories consumed
+    public int totalDiaryCalories() {
+        return 0;
+        // TODO
+    }
 }
