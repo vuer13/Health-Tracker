@@ -1,6 +1,8 @@
 package model;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static model.FoodGroup.FRUIT;
+import static model.FoodGroup.VEGETABLE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -20,8 +22,8 @@ public class TestListOfFoodItems {
     void setUp() {
         lofi = new ListOfFoodItems();
         listFoods = lofi.getListOfFoodItems();
-        food1 = new FoodItems("Banana", 70, "fruit");
-        food2 = new FoodItems("Broccoli", 30, "vegatables");
+        food1 = new FoodItems("Banana", 70, FRUIT);
+        food2 = new FoodItems("Broccoli", 30, VEGETABLE);
     }
 
     @Test

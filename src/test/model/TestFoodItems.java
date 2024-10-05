@@ -1,11 +1,11 @@
 package model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static model.FoodGroup.*;
 
 public class TestFoodItems {
 
@@ -13,14 +13,14 @@ public class TestFoodItems {
 
     @BeforeEach
     void runBefore() {
-        food = new FoodItems("Bob", 1000, "Vegatables");
+        food = new FoodItems("Bob", 1000, VEGETABLE);
     }
 
     @Test
     void testConstructor() {
         assertEquals("Bob", food.getName());
         assertEquals(1000, food.getCalories());
-        assertEquals("Vegatables", food.getFoodGroup());
+        assertEquals(VEGETABLE, food.getFoodGroup());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class TestFoodItems {
 
     @Test
     void testEditFoodGroups() {
-        food.editFoodGroup("Fruit");
-        assertEquals("Fruit", food.getFoodGroup());
+        food.editFoodGroup(FRUIT);
+        assertEquals(FRUIT, food.getFoodGroup());
     }
 }
