@@ -4,12 +4,12 @@ public class FoodItems {
 
     private String name;
     private int calories;
-    private String foodGroups;
+    private FoodGroup foodGroups;
 
     // REQUIRES: foodGroups must be fruit, vegatable, diary, grains and protein
     // EFFECTS: Constructs Food Items with name, amount of calories and food groups
     // involved
-    public FoodItems(String name, int calories, String foodGroups) {
+    public FoodItems(String name, int calories, FoodGroup foodGroups) {
         this.name = name;
         this.calories = calories;
         this.foodGroups = foodGroups;
@@ -26,7 +26,7 @@ public class FoodItems {
     }
 
     // EFFECTS: Returns food group the item is in
-    public String getFoodGroup() {
+    public FoodGroup getFoodGroup() {
         return foodGroups;
     }
 
@@ -45,7 +45,7 @@ public class FoodItems {
     // REQUIRES: foodGroups must be fruit, vegatable, diary, grains and protein
     // MODIFIES: this
     // EFFECTS: Edits food group of food item
-    public void editFoodGroup(String foodGroups) {
+    public void editFoodGroup(FoodGroup foodGroups) {
         this.foodGroups = foodGroups;
     }
 }
