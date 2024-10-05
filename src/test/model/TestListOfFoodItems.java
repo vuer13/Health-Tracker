@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 public class TestListOfFoodItems {
@@ -25,13 +25,13 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testConstructor() {
+    void testConstructor() {
         assertEquals(listFoods.size(), 0);
         assertTrue(listFoods.isEmpty());
     }
 
     @Test
-    private void testAddFoodSingle() {
+    void testAddFoodSingle() {
         listFoods.add(food1);
         assertEquals(listFoods.get(0), food1);
         assertTrue(listFoods.contains(food1));
@@ -40,7 +40,7 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testAddFoodMultiple() {
+    void testAddFoodMultiple() {
         lofi.addFood(food1);
         assertEquals(listFoods.get(0), food1);
         assertTrue(listFoods.contains(food1));
@@ -57,7 +57,7 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testAddFoodMultipleSame() {
+    void testAddFoodMultipleSame() {
         lofi.addFood(food1);
         assertEquals(listFoods.get(0), food1);
         assertTrue(listFoods.contains(food1));
@@ -73,7 +73,7 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testRemoveFoodSingle() {
+    void testRemoveFoodSingle() {
         lofi.addFood(food1);
         assertEquals(listFoods.get(0), food1);
         assertTrue(listFoods.contains(food1));
@@ -86,7 +86,7 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testRemoveFoodMultiple() {
+    void testRemoveFoodMultiple() {
         lofi.addFood(food1);
         lofi.addFood(food2);
         assertEquals(listFoods.get(0), food1);
@@ -105,7 +105,7 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testRemoveFoodsMultiple() {
+    void testRemoveFoodsMultiple() {
         lofi.addFood(food1);
         lofi.addFood(food2);
         assertEquals(listFoods.get(0), food1);
@@ -130,12 +130,12 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testSizeOfListEmpty() {
+    void testSizeOfListEmpty() {
         assertEquals(lofi.sizeOfList(), 0);
     }
 
     @Test
-    private void testSizeOfList() {
+    void testSizeOfList() {
         lofi.addFood(food1);
         lofi.addFood(food2);
 
@@ -143,7 +143,7 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testTotalNumOfCaloriesAddition() {
+    void testTotalNumOfCaloriesAddition() {
         lofi.addFood(food1);
         lofi.addFood(food2);
 
@@ -151,7 +151,7 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testTotalNumOfCaloriesSubtraction() {
+    void testTotalNumOfCaloriesSubtraction() {
         lofi.addFood(food1);
         lofi.addFood(food2);
 
@@ -163,12 +163,12 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    private void testTotalNumOfCaloriesEmpty() {
+    void testTotalNumOfCaloriesEmpty() {
         assertEquals(lofi.totalNumOfCalories(), 0);
     }
 
     @Test
-    private void testClearList() {
+    void testClearList() {
         lofi.addFood(food1);
         lofi.addFood(food2);
         assertEquals(listFoods.get(0), food1);
