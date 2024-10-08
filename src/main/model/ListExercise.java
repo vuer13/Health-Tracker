@@ -6,56 +6,60 @@ import java.time.LocalDate;
 
 public class ListExercise {
     
+    private List<Exercise> exercises;
+    private LocalDate date;
+
     // EFFECTS: constructs list of exercise with today's date associate with it
     public ListExercise() {
-        // TODO
+        exercises = new ArrayList<Exercise>();
+        date = LocalDate.now();
     }
 
     // EFFECTS: returns list of Exercise
     public List<Exercise> getListExercise() {
-        return null;
-        // TODO
+        return exercises;
     }
 
     // EFFECTS: returns total number of calories burnt
     public int getTotalCaloriesBurnt() {
-        return 0;
-        // TODO
+        int calories = 0;
+        for (Exercise e : exercises) {
+            calories += e.getCaloriesBurned();
+        }
+        return calories;
     }
 
     // MODIFIES: this
     // EFFECTS: adds exercise to the list
     public void addExercise(Exercise e) {
-        // TODO
+        exercises.add(e);
     }
 
     // MODIFIES: this
     // EFFECTS: removes exercise to the list
     public void removeExercise(Exercise e) {
-        // TODO
+        exercises.remove(e);
     }
 
     // EFFECTS: returns date of list
     public LocalDate getDate() {
-        return null;
-        // TODO
+        return date;
     }
 
     // MODIFIES: this
     // EFFECTS: sets date of list to today's list
     public void setDate(){
-        // TODO
+        date = LocalDate.now();
     }
 
     // MODIFIES: this
     // EFFECTS: clears list
     public void clearList() {
-        // TODO
+        exercises.clear();
     }
 
     // EFFECTS: returns size of list
     public int sizeList() {
-        return 0;
-        // TODO
+        return exercises.size();
     }
 }
