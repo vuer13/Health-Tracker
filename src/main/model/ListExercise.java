@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class ListExercise {
     
-    // EFFECTS: constructs list of exercise with date associate with it
+    // EFFECTS: constructs list of exercise with today's date associate with it
     public ListExercise() {
         // TODO
     }
