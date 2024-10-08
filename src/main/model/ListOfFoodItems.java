@@ -12,22 +12,59 @@ import java.util.List;
 public class ListOfFoodItems {
 
     private List<FoodItems> listFoodItems;
+    private List<FoodItems> fruitList;
+    private List<FoodItems> vegetableList;
+    private List<FoodItems> proteinList;
+    private List<FoodItems> dairyList;
+    private List<FoodItems> grainList;
 
-    // EFFECTS : constructs empty list of food items
+    // EFFECTS : constructs empty list of food items, fruit list, vegetable list,
+    // protein list, grain list and dairy list
     public ListOfFoodItems() {
         listFoodItems = new ArrayList<FoodItems>();
+        fruitList = new ArrayList<FoodItems>();
+        vegetableList = new ArrayList<FoodItems>();
+        proteinList = new ArrayList<FoodItems>();
+        dairyList = new ArrayList<FoodItems>();
+        grainList = new ArrayList<FoodItems>();
     }
 
     // MODIFIES: this
-    // EFFECTS: adds food to list of food items
+    // EFFECTS: adds food to list of food items and list of the food group it
+    // belongs too
     public void addFood(FoodItems food) {
         listFoodItems.add(food);
+        FoodGroup foodGroup = food.getFoodGroup();
+        if (foodGroup == FRUIT) {
+            fruitList.add(food);
+        } else if (foodGroup == VEGETABLE) {
+            vegetableList.add(food);
+        } else if (foodGroup == GRAIN) {
+            grainList.add(food);
+        } else if (foodGroup == DAIRY) {
+            dairyList.add(food);
+        } else {
+            proteinList.add(food);
+        }
     }
 
     // MODIFIES: this
-    // EFFECTS: removes food from list of food items
+    // EFFECTS: removes food from list of food items and list of food group it
+    // belongs too
     public void removeFood(FoodItems food) {
         listFoodItems.remove(food);
+        FoodGroup foodGroup = food.getFoodGroup();
+        if (foodGroup == FRUIT) {
+            fruitList.remove(food);
+        } else if (foodGroup == VEGETABLE) {
+            vegetableList.remove(food);
+        } else if (foodGroup == GRAIN) {
+            grainList.remove(food);
+        } else if (foodGroup == DAIRY) {
+            dairyList.remove(food);
+        } else {
+            proteinList.remove(food);
+        }
     }
 
     // EFFECTS: returns list of food items
@@ -52,6 +89,11 @@ public class ListOfFoodItems {
     // EFFECTS: clears the list
     public void clearList() {
         listFoodItems.clear();
+        fruitList.clear();
+        vegetableList.clear();
+        grainList.clear();
+        proteinList.clear();
+        dairyList.clear();
     }
 
     // EFFECTS: returns total fruit calories consumed
@@ -110,27 +152,27 @@ public class ListOfFoodItems {
     }
 
     // EFFECTS: returns list of fruits added
-    public void getFruitList() {
-        // TODO
+    public List<FoodItems> getFruitList() {
+        return fruitList;
     }
 
     // EFFECTS: returns list of vegetables added
-    public void getVegatableList() {
-        // TODO
+    public List<FoodItems> getVegetableList() {
+        return vegetableList;
     }
 
     // EFFECTS: returns list of protein added
-    public void getProteinList() {
-        // TODO
+    public List<FoodItems> getProteinList() {
+        return proteinList;
     }
 
     // EFFECTS: returns list of grains added
-    public void getGrainList() {
-        // TODO
+    public List<FoodItems> getGrainList() {
+        return grainList;
     }
 
     // EFFECTS: returns list of dairy added
-    public void getDairyList() {
-        // TODO
+    public List<FoodItems> getDairyList() {
+        return dairyList;
     }
 }
