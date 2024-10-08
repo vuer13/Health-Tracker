@@ -21,13 +21,13 @@ public class Exercise {
 
     // MODIFIES: this
     // EFFECTS: edits number of calories burned
-    public void editCalories() {
+    public void editCalories(int calories) {
         // TODO
     }
 
     // MODIFIES: this
     // EFFECTS: edits exercise name
-    public void editExercise() {
+    public void editExercise(String exercise) {
         // TODO
     }
 
