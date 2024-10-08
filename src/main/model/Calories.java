@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Calories {
 
     // EFFECTS: Constructs object with calorie goal and today's date
-    public Calories() {
+    public Calories(int cal) {
         // TODO
     }
 
