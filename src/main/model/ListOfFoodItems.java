@@ -189,10 +189,4 @@ public class ListOfFoodItems {
     public void setDate() {
         date = LocalDate.now();
     }
-
-    // MODIFIES: this
-    // EFFECTS: sets date to date of chose
-    public void setDate(LocalDate date) {
-        // TODO
-    }
 }
