@@ -23,7 +23,7 @@ public class TestListOfFoodItems {
 
     @BeforeEach
     void setUp() {
-        lofi = new ListOfFoodItems(LocalDate.now());
+        lofi = new ListOfFoodItems();
         listFoods = lofi.getListOfFoodItems();
         food1 = new FoodItems("Banana", 70, FRUIT);
         food2 = new FoodItems("Broccoli", 30, VEGETABLE);
@@ -684,8 +684,8 @@ public class TestListOfFoodItems {
     }
 
     @Test
-    void testSameDay() {
-        assertTrue(lofi.sameDay(LocalDate.now()));
-        assertFalse(lofi.sameDay(LocalDate.of(2021, 12, 25)));
+    void testSetDate() {
+        lofi.setDate();
+        assertEquals(lofi.getDate(), LocalDate.now());
     }
 }

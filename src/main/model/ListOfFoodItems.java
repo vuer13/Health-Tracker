@@ -22,14 +22,14 @@ public class ListOfFoodItems {
 
     // EFFECTS : constructs empty list of food items, fruit list, vegetable list,
     // protein list, grain list and dairy list, and date of list
-    public ListOfFoodItems(LocalDate date) {
+    public ListOfFoodItems() {
         listFoodItems = new ArrayList<FoodItems>();
         fruitList = new ArrayList<FoodItems>();
         vegetableList = new ArrayList<FoodItems>();
         proteinList = new ArrayList<FoodItems>();
         dairyList = new ArrayList<FoodItems>();
         grainList = new ArrayList<FoodItems>();
-        this.date = date;
+        this.date = LocalDate.now();
     }
 
     // MODIFIES: this
@@ -181,19 +181,12 @@ public class ListOfFoodItems {
 
     // EFFECTS: return today's date
     public LocalDate getDate() {
-        return null;
-        // TODO
+        return date;
     }
 
     // MODIFIES: this
     // EFFECTS: sets date to today's date
     public void setDate() {
-        // TODO
-    }
-
-    // EFFECTS: returns true if today's date is the same as the day set
-    public boolean sameDay(LocalDate day) {
-        return false;
-        // TODO
+        date = LocalDate.now();
     }
 }
