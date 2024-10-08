@@ -1,5 +1,5 @@
 package model;
 
 public enum FoodGroup {
-    FRUIT, VEGETABLE, GRAIN, PROTEIN, DIARY
+    FRUIT, VEGETABLE, GRAIN, PROTEIN, DAIRY
 }

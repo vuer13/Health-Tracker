@@ -73,7 +73,7 @@ public class ListOfFoodItems {
     }
 
     // EFFECTS: returns total diary calories consumed
-    public int totalDiaryCalories() {
+    public int totalDairyCalories() {
         return 0;
         // TODO
     }
