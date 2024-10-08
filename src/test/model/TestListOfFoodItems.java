@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,7 @@ public class TestListOfFoodItems {
 
     @BeforeEach
     void setUp() {
-        lofi = new ListOfFoodItems();
+        lofi = new ListOfFoodItems(LocalDate.now());
         listFoods = lofi.getListOfFoodItems();
         food1 = new FoodItems("Banana", 70, FRUIT);
         food2 = new FoodItems("Broccoli", 30, VEGETABLE);
@@ -32,6 +33,7 @@ public class TestListOfFoodItems {
     void testConstructor() {
         assertEquals(listFoods.size(), 0);
         assertTrue(listFoods.isEmpty());
+        assertEquals(LocalDate.now(), lofi.getDate());
     }
 
     @Test
@@ -679,5 +681,11 @@ public class TestListOfFoodItems {
         assertTrue(listFoods.contains(food3));
 
         assertEquals(lofi.totalDairyCalories(), 0);
+    }
+
+    @Test
+    void testSameDay() {
+        assertTrue(lofi.sameDay(LocalDate.now()));
+        assertFalse(lofi.sameDay(LocalDate.of(2021, 12, 25)));
     }
 }
