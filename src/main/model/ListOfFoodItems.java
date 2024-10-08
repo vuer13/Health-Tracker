@@ -192,7 +192,7 @@ public class ListOfFoodItems {
     }
 
     // EFFECTS: returns true if today's date is the same as the day set
-    public boolean sameDay() {
+    public boolean sameDay(LocalDate day) {
         return false;
         // TODO
     }
