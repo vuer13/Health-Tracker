@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 public class TestListOfFoodItems {
-    
+
     private ListOfFoodItems lofi;
     private List<FoodItems> listFoods;
     private FoodItems food1;
@@ -37,15 +37,32 @@ public class TestListOfFoodItems {
 
     @Test
     void testAddFoodSingle() {
-        listFoods.add(food1);
+        lofi.addFood(food1);
         assertEquals(listFoods.get(0), food1);
         assertTrue(listFoods.contains(food1));
         assertEquals(listFoods.size(), 1);
         assertFalse(listFoods.isEmpty());
+
+        assertTrue(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 1);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertEquals(lofi.getVegetableList().size(), 0);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertEquals(lofi.getDairyList().size(), 0);
     }
 
     @Test
     void testAddFoodMultiple() {
+        FoodItems food3 = new FoodItems("Pasta", 30, GRAIN);
+
         lofi.addFood(food1);
         assertEquals(listFoods.get(0), food1);
         assertTrue(listFoods.contains(food1));
@@ -59,6 +76,41 @@ public class TestListOfFoodItems {
         assertTrue(listFoods.contains(food2));
         assertEquals(listFoods.size(), 2);
         assertFalse(listFoods.isEmpty());
+
+        lofi.addFood(food3);
+        assertEquals(listFoods.get(0), food1);
+        assertEquals(listFoods.get(1), food2);
+        assertEquals(listFoods.get(2), food3);
+        assertTrue(listFoods.contains(food1));
+        assertTrue(listFoods.contains(food2));
+        assertTrue(listFoods.contains(food3));
+        assertEquals(listFoods.size(), 3);
+        assertFalse(listFoods.isEmpty());
+
+        assertTrue(lofi.getFruitList().contains(food1));
+        assertFalse(lofi.getFruitList().contains(food2));
+        assertFalse(lofi.getFruitList().contains(food3));
+        assertEquals(lofi.getFruitList().size(), 1);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertTrue(lofi.getVegetableList().contains(food2));
+        assertFalse(lofi.getVegetableList().contains(food3));
+        assertEquals(lofi.getVegetableList().size(), 1);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertFalse(lofi.getProteinList().contains(food2));
+        assertFalse(lofi.getProteinList().contains(food3));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertFalse(lofi.getGrainList().contains(food2));
+        assertTrue(lofi.getGrainList().contains(food3));
+        assertEquals(lofi.getGrainList().size(), 1);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertFalse(lofi.getDairyList().contains(food2));
+        assertFalse(lofi.getDairyList().contains(food3));
+        assertEquals(lofi.getDairyList().size(), 0);
     }
 
     @Test
@@ -75,6 +127,60 @@ public class TestListOfFoodItems {
         assertTrue(listFoods.contains(food1));
         assertEquals(listFoods.size(), 2);
         assertFalse(listFoods.isEmpty());
+
+        assertTrue(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 2);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertEquals(lofi.getVegetableList().size(), 0);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertEquals(lofi.getDairyList().size(), 0);
+    }
+
+    @Test
+    void testFoodGroupsList() {
+        FoodItems food3 = new FoodItems("Beef", 20, PROTEIN);
+        FoodItems food4 = new FoodItems("Orange", 15, DAIRY);
+        FoodItems food5 = new FoodItems("Pasta", 70, GRAIN);
+        FoodItems food6 = new FoodItems("Rice", 30, GRAIN);
+
+        lofi.addFood(food1);
+        lofi.addFood(food2);
+        lofi.addFood(food3);
+        lofi.addFood(food4);
+        lofi.addFood(food5);
+        lofi.addFood(food6);
+        assertTrue(listFoods.contains(food1));
+        assertTrue(listFoods.contains(food2));
+        assertTrue(listFoods.contains(food3));
+        assertTrue(listFoods.contains(food4));
+        assertTrue(listFoods.contains(food5));
+        assertTrue(listFoods.contains(food6));
+
+        assertTrue(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 1);
+
+        assertTrue(lofi.getVegetableList().contains(food2));
+        assertEquals(lofi.getVegetableList().size(), 1);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertFalse(lofi.getProteinList().contains(food2));
+        assertTrue(lofi.getProteinList().contains(food3));
+        assertEquals(lofi.getProteinList().size(), 1);
+
+        assertTrue(lofi.getGrainList().contains(food5));
+        assertTrue(lofi.getGrainList().contains(food6));
+        assertEquals(lofi.getGrainList().size(), 2);
+
+        assertTrue(lofi.getDairyList().contains(food4));
+        assertEquals(lofi.getDairyList().size(), 1);
     }
 
     @Test
@@ -85,9 +191,39 @@ public class TestListOfFoodItems {
         assertEquals(listFoods.size(), 1);
         assertFalse(listFoods.isEmpty());
 
+        assertTrue(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 1);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertEquals(lofi.getVegetableList().size(), 0);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertEquals(lofi.getDairyList().size(), 0);
+
         lofi.removeFood(food1);
         assertEquals(listFoods.size(), 0);
         assertTrue(listFoods.isEmpty());
+
+        assertFalse(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 0);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertEquals(lofi.getVegetableList().size(), 0);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertEquals(lofi.getDairyList().size(), 0);
     }
 
     @Test
@@ -101,12 +237,45 @@ public class TestListOfFoodItems {
         assertEquals(listFoods.size(), 2);
         assertFalse(listFoods.isEmpty());
 
+        assertTrue(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 1);
+
+        assertTrue(lofi.getVegetableList().contains(food2));
+        assertEquals(lofi.getVegetableList().size(), 1);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertFalse(lofi.getProteinList().contains(food2));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertFalse(lofi.getGrainList().contains(food2));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertFalse(lofi.getDairyList().contains(food2));
+        assertEquals(lofi.getDairyList().size(), 0);
+
         lofi.removeFood(food1);
         assertEquals(listFoods.size(), 1);
         assertEquals(listFoods.get(0), food2);
         assertTrue(listFoods.contains(food2));
         assertFalse(listFoods.contains(food1));
         assertFalse(listFoods.isEmpty());
+
+        assertFalse(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 0);
+
+        assertTrue(lofi.getVegetableList().contains(food2));
+        assertEquals(lofi.getVegetableList().size(), 1);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertEquals(lofi.getDairyList().size(), 0);
     }
 
     @Test
@@ -127,11 +296,135 @@ public class TestListOfFoodItems {
         assertFalse(listFoods.contains(food1));
         assertFalse(listFoods.isEmpty());
 
+        assertFalse(lofi.getFruitList().contains(food1));
+        assertFalse(lofi.getFruitList().contains(food2));
+        assertEquals(lofi.getFruitList().size(), 0);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertTrue(lofi.getVegetableList().contains(food2));
+        assertEquals(lofi.getVegetableList().size(), 1);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertFalse(lofi.getProteinList().contains(food2));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertFalse(lofi.getGrainList().contains(food2));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertFalse(lofi.getDairyList().contains(food2));
+        assertEquals(lofi.getDairyList().size(), 0);
+
         lofi.removeFood(food2);
         assertEquals(listFoods.size(), 0);
         assertTrue(listFoods.isEmpty());
         assertFalse(listFoods.contains(food1));
         assertFalse(listFoods.contains(food2));
+
+        assertFalse(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 0);
+
+        assertFalse(lofi.getVegetableList().contains(food2));
+        assertEquals(lofi.getVegetableList().size(), 0);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertEquals(lofi.getDairyList().size(), 0);
+    }
+
+    @Test
+    void removeFoodGroups() {
+        FoodItems food3 = new FoodItems("Pasta", 20, GRAIN);
+        FoodItems food4 = new FoodItems("Beef", 70, PROTEIN);
+        FoodItems food5 = new FoodItems("Milk", 10, DAIRY);
+
+        lofi.addFood(food1);
+        lofi.addFood(food2);
+        lofi.addFood(food3);
+        lofi.addFood(food4);
+        lofi.addFood(food5);
+
+        assertTrue(lofi.getFruitList().contains(food1));
+        assertFalse(lofi.getFruitList().contains(food2));
+        assertFalse(lofi.getFruitList().contains(food3));
+        assertFalse(lofi.getFruitList().contains(food4));
+        assertFalse(lofi.getFruitList().contains(food5));
+        assertEquals(lofi.getFruitList().size(), 1);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertTrue(lofi.getVegetableList().contains(food2));
+        assertFalse(lofi.getVegetableList().contains(food3));
+        assertFalse(lofi.getVegetableList().contains(food4));
+        assertFalse(lofi.getVegetableList().contains(food5));
+        assertEquals(lofi.getVegetableList().size(), 1);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertFalse(lofi.getProteinList().contains(food2));
+        assertFalse(lofi.getProteinList().contains(food3));
+        assertTrue(lofi.getProteinList().contains(food4));
+        assertFalse(lofi.getProteinList().contains(food5));
+        assertEquals(lofi.getProteinList().size(), 1);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertFalse(lofi.getGrainList().contains(food2));
+        assertTrue(lofi.getGrainList().contains(food3));
+        assertFalse(lofi.getGrainList().contains(food4));
+        assertFalse(lofi.getGrainList().contains(food5));
+        assertEquals(lofi.getGrainList().size(), 1);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertFalse(lofi.getDairyList().contains(food2));
+        assertFalse(lofi.getDairyList().contains(food3));
+        assertFalse(lofi.getDairyList().contains(food4));
+        assertTrue(lofi.getDairyList().contains(food5));
+        assertEquals(lofi.getDairyList().size(), 1);
+
+        lofi.removeFood(food1);
+        lofi.removeFood(food2);
+        lofi.removeFood(food3);
+        lofi.removeFood(food4);
+        lofi.removeFood(food5);
+
+        assertFalse(lofi.getFruitList().contains(food1));
+        assertFalse(lofi.getFruitList().contains(food2));
+        assertFalse(lofi.getFruitList().contains(food3));
+        assertFalse(lofi.getFruitList().contains(food4));
+        assertFalse(lofi.getFruitList().contains(food5));
+        assertEquals(lofi.getFruitList().size(), 0);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertFalse(lofi.getVegetableList().contains(food2));
+        assertFalse(lofi.getVegetableList().contains(food3));
+        assertFalse(lofi.getVegetableList().contains(food4));
+        assertFalse(lofi.getVegetableList().contains(food5));
+        assertEquals(lofi.getVegetableList().size(), 0);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertFalse(lofi.getProteinList().contains(food2));
+        assertFalse(lofi.getProteinList().contains(food3));
+        assertFalse(lofi.getProteinList().contains(food4));
+        assertFalse(lofi.getProteinList().contains(food5));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertFalse(lofi.getGrainList().contains(food2));
+        assertFalse(lofi.getGrainList().contains(food3));
+        assertFalse(lofi.getGrainList().contains(food4));
+        assertFalse(lofi.getGrainList().contains(food5));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertFalse(lofi.getDairyList().contains(food2));
+        assertFalse(lofi.getDairyList().contains(food3));
+        assertFalse(lofi.getDairyList().contains(food4));
+        assertFalse(lofi.getDairyList().contains(food5));
+        assertEquals(lofi.getDairyList().size(), 0);
     }
 
     @Test
@@ -184,12 +477,50 @@ public class TestListOfFoodItems {
         assertFalse(listFoods.isEmpty());
         assertEquals(lofi.totalNumOfCalories(), 100);
 
+        assertTrue(lofi.getFruitList().contains(food1));
+        assertEquals(lofi.getFruitList().size(), 1);
+
+        assertTrue(lofi.getVegetableList().contains(food2));
+        assertEquals(lofi.getVegetableList().size(), 1);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertFalse(lofi.getProteinList().contains(food2));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertFalse(lofi.getGrainList().contains(food2));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertFalse(lofi.getDairyList().contains(food2));
+        assertEquals(lofi.getDairyList().size(), 0);
+
         lofi.clearList();
         assertTrue(listFoods.isEmpty());
         assertEquals(lofi.totalNumOfCalories(), 0);
         assertTrue(listFoods.isEmpty());
         assertFalse(listFoods.contains(food1));
         assertFalse(listFoods.contains(food2));
+
+        assertFalse(lofi.getFruitList().contains(food1));
+        assertFalse(lofi.getFruitList().contains(food2));
+        assertEquals(lofi.getFruitList().size(), 0);
+
+        assertFalse(lofi.getVegetableList().contains(food1));
+        assertFalse(lofi.getVegetableList().contains(food2));
+        assertEquals(lofi.getVegetableList().size(), 0);
+
+        assertFalse(lofi.getProteinList().contains(food1));
+        assertFalse(lofi.getProteinList().contains(food2));
+        assertEquals(lofi.getProteinList().size(), 0);
+
+        assertFalse(lofi.getGrainList().contains(food1));
+        assertFalse(lofi.getGrainList().contains(food2));
+        assertEquals(lofi.getGrainList().size(), 0);
+
+        assertFalse(lofi.getDairyList().contains(food1));
+        assertFalse(lofi.getDairyList().contains(food2));
+        assertEquals(lofi.getDairyList().size(), 0);
     }
 
     @Test
@@ -351,4 +682,3 @@ public class TestListOfFoodItems {
         assertEquals(lofi.totalDairyCalories(), 0);
     }
 }
-
