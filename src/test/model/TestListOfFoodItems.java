@@ -1,6 +1,4 @@
 package model;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static model.FoodGroup.DAIRY;
 import static model.FoodGroup.FRUIT;
 import static model.FoodGroup.GRAIN;
@@ -8,6 +6,7 @@ import static model.FoodGroup.PROTEIN;
 import static model.FoodGroup.VEGETABLE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
