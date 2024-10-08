@@ -8,6 +8,7 @@ import static model.FoodGroup.VEGETABLE;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 public class ListOfFoodItems {
 
@@ -17,16 +18,18 @@ public class ListOfFoodItems {
     private List<FoodItems> proteinList;
     private List<FoodItems> dairyList;
     private List<FoodItems> grainList;
+    private LocalDate date;
 
     // EFFECTS : constructs empty list of food items, fruit list, vegetable list,
-    // protein list, grain list and dairy list
-    public ListOfFoodItems() {
+    // protein list, grain list and dairy list, and date of list
+    public ListOfFoodItems(LocalDate date) {
         listFoodItems = new ArrayList<FoodItems>();
         fruitList = new ArrayList<FoodItems>();
         vegetableList = new ArrayList<FoodItems>();
         proteinList = new ArrayList<FoodItems>();
         dairyList = new ArrayList<FoodItems>();
         grainList = new ArrayList<FoodItems>();
+        this.date = date;
     }
 
     // MODIFIES: this
@@ -174,5 +177,23 @@ public class ListOfFoodItems {
     // EFFECTS: returns list of dairy added
     public List<FoodItems> getDairyList() {
         return dairyList;
+    }
+
+    // EFFECTS: return today's date
+    public LocalDate getDate() {
+        return null;
+        // TODO
+    }
+
+    // MODIFIES: this
+    // EFFECTS: sets date to today's date
+    public void setDate() {
+        // TODO
+    }
+
+    // EFFECTS: returns true if today's date is the same as the day set
+    public boolean sameDay() {
+        return false;
+        // TODO
     }
 }
