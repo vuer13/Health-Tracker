@@ -12,7 +12,8 @@ public class ListExercise {
     }
 
     // EFFECTS: returns list of Exercise
-    public void getListExercise() {
+    public List<Exercise> getListExercise() {
+        return null;
         // TODO
     }
 
