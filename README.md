@@ -19,5 +19,6 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
 - As a User, I want to view a list of names and calories burned of the exercies I have added
 - As a User, I want to set a daily calorie goal 
 - As a User, I want to view the total amount of calories consumed and burned, and the difference between the two
+- As a User, I want to view the amount of calories I have eaten in each food group
 - As a User, I want to view the amount of calories required to reach the goal set for the day
 - As a User, I want to be able to delete food items or exercises 
