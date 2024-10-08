@@ -6,7 +6,6 @@ public class FoodItems {
     private int calories;
     private FoodGroup foodGroups;
 
-    // REQUIRES: foodGroups must be fruit, vegatable, diary, grains and protein
     // EFFECTS: Constructs Food Items with name, amount of calories and food groups
     // involved
     public FoodItems(String name, int calories, FoodGroup foodGroups) {
