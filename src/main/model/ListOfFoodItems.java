@@ -108,4 +108,29 @@ public class ListOfFoodItems {
         }
         return dairyCalories;
     }
+
+    // EFFECTS: returns list of fruits added
+    public void getFruitList() {
+        // TODO
+    }
+
+    // EFFECTS: returns list of vegetables added
+    public void getVegatableList() {
+        // TODO
+    }
+
+    // EFFECTS: returns list of protein added
+    public void getProteinList() {
+        // TODO
+    }
+
+    // EFFECTS: returns list of grains added
+    public void getGrainList() {
+        // TODO
+    }
+
+    // EFFECTS: returns list of dairy added
+    public void getDairyList() {
+        // TODO
+    }
 }
