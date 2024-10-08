@@ -41,7 +41,6 @@ public class FoodItems {
         this.calories = calories;
     }
 
-    // REQUIRES: foodGroups must be fruit, vegatable, diary, grains and protein
     // MODIFIES: this
     // EFFECTS: Edits food group of food item
     public void editFoodGroup(FoodGroup foodGroups) {
