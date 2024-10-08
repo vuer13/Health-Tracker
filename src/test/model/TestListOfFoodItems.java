@@ -269,7 +269,7 @@ public class TestListOfFoodItems {
         assertTrue(listFoods.contains(food4));
         assertTrue(listFoods.contains(food5));
 
-        assertEquals(lofi.totalVegetableCalories(), 150);
+        assertEquals(lofi.totalProteinCalories(), 150);
     }
 
     @Test
@@ -283,7 +283,7 @@ public class TestListOfFoodItems {
         assertTrue(listFoods.contains(food2));
         assertTrue(listFoods.contains(food3));
 
-        assertEquals(lofi.totalVegetableCalories(), 0);
+        assertEquals(lofi.totalProteinCalories(), 0);
     }
 
     @Test
@@ -334,7 +334,7 @@ public class TestListOfFoodItems {
         assertTrue(listFoods.contains(food4));
         assertTrue(listFoods.contains(food5));
 
-        assertEquals(lofi.totalGrainCalories(), 70);
+        assertEquals(lofi.totalDairyCalories(), 70);
     }
 
     @Test
@@ -348,7 +348,7 @@ public class TestListOfFoodItems {
         assertTrue(listFoods.contains(food2));
         assertTrue(listFoods.contains(food3));
 
-        assertEquals(lofi.totalGrainCalories(), 0);
+        assertEquals(lofi.totalDairyCalories(), 0);
     }
 }
 
