@@ -28,7 +28,7 @@ public class Calories {
     }
 
     // EFFECTS: returns how much calories are required to reach your goal
-    public int neededAmound() {
+    public int neededAmount() {
         return 0;
         // TODO
     }
