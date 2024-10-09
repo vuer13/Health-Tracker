@@ -1,4 +1,5 @@
 package ui;
+import java.lang.IllegalArgumentException;
 
 import model.Calories;
 import model.Exercise;
@@ -263,7 +264,7 @@ public class Tracker {
     // REQUIRES: must input a food group for value foodGroup
     // MODIFIES: this
     // EFFECTS: creates new food item and adds it to the list
-    public void createFood() {
+    public void createFood() throws IllegalArgumentException {
         createDivider();
         System.out.println("Input Food Name");
         String foodName = this.scanner.nextLine();
@@ -271,13 +272,29 @@ public class Tracker {
         int calories = Integer.parseInt(scanner.nextLine());
         System.out.println("Input the food group:");
         System.out.println("Note: must be fruit, vegetable, grain, protein or dairy only.");
-        FoodGroup foodGroup = FoodGroup.valueOf(scanner.next().toUpperCase());
-        // Maybe put a try, catch exception??
-        this.scanner.nextLine(); // Will need to find better solution later
+
+        FoodGroup foodGroup = checkFoodGroup();
+        this.scanner.nextLine(); // find solution for this
 
         FoodItems food = new FoodItems(foodName, calories, foodGroup);
         lofi.addFood(food);
         System.out.println("The food item has been added");
+    }
+
+    // EFFECTS: determines if it is a food group or not
+    public FoodGroup checkFoodGroup() throws IllegalArgumentException {
+        boolean validInput = false;
+        FoodGroup foodGroup = null;
+        while (!validInput) {
+            System.out.println("Input the food group:");
+            try {
+                foodGroup = FoodGroup.valueOf(scanner.next().toUpperCase());   
+                validInput = true;         
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid input. Please enter a valid Food Group.");  
+            }
+        }
+        return foodGroup;
     }
 
     // MODIFIES: this
