@@ -94,7 +94,7 @@ public class TestCalories {
         fis.addFood(food2);
         exs.addExercise(ex1);
         exs.addExercise(ex2);
-        assertEquals(0, cal.overAmount());
+        assertEquals(0, cal.overAmount(fis, exs));
     }
 
     @Test 
@@ -105,7 +105,7 @@ public class TestCalories {
         fis.addFood(food3);
         exs.addExercise(ex3);
 
-        assertEquals(0, cal.overAmount());
+        assertEquals(0, cal.overAmount(fis, exs));
     }
 
     @Test 
@@ -116,7 +116,7 @@ public class TestCalories {
         fis.addFood(food3);
         exs.addExercise(ex3);
 
-        assertEquals(10, cal.overAmount());
+        assertEquals(10, cal.overAmount(fis, exs));
     }
 
     @Test
