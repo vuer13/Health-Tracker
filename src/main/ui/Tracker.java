@@ -271,6 +271,7 @@ public class Tracker {
         int calories = Integer.parseInt(scanner.nextLine());
         System.out.println("Input the food group:");
         FoodGroup foodGroup = FoodGroup.valueOf(scanner.next().toUpperCase());
+        // Maybe put a try, catch exception??
         this.scanner.nextLine(); // Will need to find better solution later
 
         FoodItems food = new FoodItems(foodName, calories, foodGroup);
