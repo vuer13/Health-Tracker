@@ -7,12 +7,6 @@ import model.FoodItems;
 import model.ListExercise;
 import model.ListOfFoodItems;
 
-import static model.FoodGroup.DAIRY;
-import static model.FoodGroup.FRUIT;
-import static model.FoodGroup.GRAIN;
-import static model.FoodGroup.PROTEIN;
-import static model.FoodGroup.VEGETABLE;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -139,7 +133,7 @@ public class Tracker {
     public void displayFoodMenu() {
         System.out.println("Please select an option:");
         System.out.println("View all foods consumed: a");
-        System.out.println("View different food groups consumed: g")
+        System.out.println("View different food groups consumed: g");
         System.out.println("Return to menu: m");
     }
 
@@ -246,35 +240,12 @@ public class Tracker {
         String foodName = this.scanner.nextLine();
         System.out.println("Input Amount of Calories");
         int calories = Integer.parseInt(scanner.nextLine());
-        System.out.println("Pick the food group:");
-        System.out.println("Fruit: f");
-        System.out.println("Vegetable: v");
-        System.out.println("Protein: p");
-        System.out.println("Dairy: d");
-        System.out.println("Grain: g");
-        String foodLetter = this.scanner.nextLine();
-        FoodGroup foodType = chooseFoodGroup(foodLetter);
+        System.out.println("Input the food group:");
+        FoodGroup foodGroup = FoodGroup.valueOf(scanner.next().toUpperCase());
+        this.scanner.nextLine(); // Will need to find better solution later
 
-        FoodItems food = new FoodItems(foodName, calories, foodType);
+        FoodItems food = new FoodItems(foodName, calories, foodGroup);
         lofi.addFood(food);
-    }
-
-    // EFFECTS: chooses food group
-    public FoodGroup chooseFoodGroup(String foodLetter) {
-        FoodGroup fg = null;
-        switch (foodLetter) {
-            case "f":
-                fg = FRUIT;
-            case "v":
-                fg = VEGETABLE;
-            case "p":
-                fg = PROTEIN;
-            case "d":
-                fg = DAIRY;
-            case "g":
-                fg = GRAIN;
-        }
-        return fg;
     }
 
     // EFFECTS: creates new exercise
