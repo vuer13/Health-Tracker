@@ -21,6 +21,7 @@ public class Tracker {
     private ListExercise ex;
     private Calories cal;
 
+    // REQUIRES: input must be a integer > 0
     // EFFECTS: Initiates UI console base
     public Tracker() {
         isProgramRunning = true;
@@ -133,6 +134,7 @@ public class Tracker {
         }
     }
 
+    // REQUIRES: newCal must be a integer > 0
     // MODIFIES: this
     // EFFECTS: sets new calorie goal
     public void helpSetNewGoal() {
@@ -261,7 +263,7 @@ public class Tracker {
         return ls;
     }
 
-    // REQUIRES: must input a food group for value foodGroup
+    // REQUIRES: calories must be a integer > 0
     // MODIFIES: this
     // EFFECTS: creates new food item and adds it to the list
     public void createFood() throws IllegalArgumentException {
@@ -297,6 +299,7 @@ public class Tracker {
         return foodGroup;
     }
 
+    // REQUIRES: calsBurned must be a integer > 0
     // MODIFIES: this
     // EFFECTS: creates new exercise
     public void createExercise() {
