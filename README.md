@@ -13,12 +13,12 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
 
 ## User Stories
 - As a User, I want to be able to create food items that has the number of calories and the food groups involved 
-- As a User, I want to add food items to a list of food items and a list containing only it's food group it is a part of
-- As a User, I want to be able to create exercies with the number of calories it burns and add them to a list of exercies
+- As a User, I want to add multiple food items to a list of food items and a list containing only it's food group it is a part of
+- As a User, I want to be able to create exercies with the number of calories it burns and add multiple amounts of them to a list of exercies
 - As a User, I want to set a daily calorie goal 
 - As a User, I want to view the total amount of calories consumed and burned, and the difference between the two
 - As a User, I want to view the amount of calories required to reach the goal set for the day
 - As a User, I want to view the amount of items in each Food Group.
-- As a User, I want to view a list of names and calories of the food items I have added
-- As a User, I want to view a list of names and calories burned of the exercies I have added
+- As a User, I want to view a list all of the names and calories of each food item added in my list of food items
+- As a User, I want to view a list all of the names and calories burned of each exercise added in my list of exercises
 - As a User, I want to be able to delete food items or exercises 
