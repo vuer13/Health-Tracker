@@ -48,7 +48,7 @@ public class Tracker {
     // EFFECTS: displays main menu
     public void displayMenu() {
         createDivider();
-        System.out.println("Your calorie goal is :" + cal.getCalorieGoal());
+        System.out.println("Your calorie goal is: " + cal.getCalorieGoal());
         System.out.println("Today's date is: " + cal.getDate());
         createDivider();
         System.out.println("Please select an option");
@@ -157,9 +157,9 @@ public class Tracker {
     // EFFECTS: shows statistics of food items class
     public void viewStatisitics() {
         createDivider();
-        System.out.println("Your calorie goal is :" + cal.getCalorieGoal());
+        System.out.println("Your calorie goal is: " + cal.getCalorieGoal());
         System.out.println("You have netted: " + cal.difference(lofi, ex) + " in calories today.");
-        System.out.println("You need " + cal.neededAmount(lofi, ex) + " to achieve your goal today.");
+        System.out.println("You need " + cal.neededAmount(lofi, ex) + " calories to achieve your goal today.");
         System.out.println("You have gone over your goal by: " + cal.overAmount(lofi, ex));
         createDivider();
         System.out.println("The total amount of food calories eaten today: " + lofi.totalNumOfCalories());
@@ -171,6 +171,7 @@ public class Tracker {
         System.out.println("The total amount of grain items eaten today: " + lofi.getGrainList().size());
         System.out.println("The total amount of dairy items eaten today: " + lofi.getDairyList().size());
         System.out.println("The total amount of protein items eaten today: " + lofi.getProteinList().size());
+        System.out.println("The number of exercises you have down today is: " + ex.sizeList());
     }
 
     // EFFECTS: process input menu for food items
