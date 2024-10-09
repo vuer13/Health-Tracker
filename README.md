@@ -22,4 +22,4 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
 - As a User, I want to view the amount of items in each Food Group.
 - As a User, I want to view a list all of the names and calories for each food item added in my list of food items
 - As a User, I want to view a list all of the names and calories burned for each exercise added in my list of exercises
-- As a User, I want to be able to delete food items or exercises and clear the list 
+- As a User, I want to be able to delete food items or exercises from the lists and clear the list 
