@@ -27,6 +27,7 @@ public class Tracker {
         ex = new ListExercise();
         scanner = new Scanner(System.in);
 
+        createDivider();
         System.out.println("Welcome to the Calorie Tracker");
         System.out.println("Please enter your calorie goal for the day");
         int input = Integer.parseInt(scanner.nextLine());
@@ -46,8 +47,10 @@ public class Tracker {
 
     // EFFECTS: displays main menu
     public void displayMenu() {
+        createDivider();
         System.out.println("Your calorie goal is :" + cal.getCalorieGoal());
         System.out.println("Today's date is: " + cal.getDate());
+        createDivider();
         System.out.println("Please select an option");
         System.out.println("Reset calorie goal: c");
         System.out.println("Add/remove a item: a");
@@ -92,6 +95,7 @@ public class Tracker {
 
     // EFFECTS: displays which item to press
     public void displayAddRemoveItem() {
+        createDivider();
         System.out.println("Please select an option");
         System.out.println("Add food item: f");
         System.out.println("Remove food item: r");
@@ -117,7 +121,7 @@ public class Tracker {
                 removeExercise();
                 break;
             case "c":
-                // TODO
+                handlesClearList();
                 break;
             case "m":
                 System.out.println("Returning to the main menu");
@@ -143,6 +147,7 @@ public class Tracker {
 
     // EFFECTS: displays food menu
     public void displayFoodMenu() {
+        createDivider();
         System.out.println("Please select an option:");
         System.out.println("View all foods consumed: a");
         System.out.println("View different food groups consumed: g");
@@ -151,12 +156,15 @@ public class Tracker {
 
     // EFFECTS: shows statistics of food items class
     public void viewStatisitics() {
+        createDivider();
         System.out.println("Your calorie goal is :" + cal.getCalorieGoal());
         System.out.println("You have netted: " + cal.difference(lofi, ex) + " in calories today.");
         System.out.println("You need " + cal.neededAmount(lofi, ex) + " to achieve your goal today.");
         System.out.println("You have gone over your goal by: " + cal.overAmount(lofi, ex));
+        createDivider();
         System.out.println("The total amount of food calories eaten today: " + lofi.totalNumOfCalories());
         System.out.println("The total amount of calories burned today: " + ex.getTotalCaloriesBurnt());
+        createDivider();
         System.out.println("The total amount of food items eaten today: " + lofi.sizeOfList());
         System.out.println("The total amount of fruit items eaten today: " + lofi.getFruitList().size());
         System.out.println("The total amount of vegetable items eaten today: " + lofi.getVegetableList().size());
@@ -167,6 +175,7 @@ public class Tracker {
 
     // EFFECTS: process input menu for food items
     public void processMenuFood(String input) {
+        createDivider();
         switch (input) {
             case "a":
                 System.out.println(createListFoodCals(lofi.getListOfFoodItems()));
@@ -191,6 +200,7 @@ public class Tracker {
 
     // EFFECTS: displays which item to press
     public void displayFoodGroup() {
+        createDivider();
         System.out.println("Please select an option");
         System.out.println("View all fruits consumed: f");
         System.out.println("View all vegetables consumed: v");
@@ -202,6 +212,7 @@ public class Tracker {
 
     // EFFECTS: process addition of item
     public void processFoodGroup(String input) {
+        createDivider();
         switch (input) {
             case "f":
                 System.out.println(createListFoodCals(lofi.getFruitList()));
@@ -248,6 +259,7 @@ public class Tracker {
 
     // EFFECTS: creates new food item and adds it to the list
     public void createFood() {
+        createDivider();
         System.out.println("Input Food Name");
         String foodName = this.scanner.nextLine();
         System.out.println("Input Amount of Calories");
@@ -258,10 +270,12 @@ public class Tracker {
 
         FoodItems food = new FoodItems(foodName, calories, foodGroup);
         lofi.addFood(food);
+        System.out.println("The food item has been added");
     }
 
     // EFFECTS: creates new exercise
     public void createExercise() {
+        createDivider();
         System.out.println("Input Exercise Name");
         String exName = this.scanner.nextLine();
         System.out.println("Input Amount of Calories");
@@ -269,11 +283,13 @@ public class Tracker {
 
         Exercise exs = new Exercise(exName, calsBurned);
         ex.addExercise(exs);
+        System.out.println("The exercise has been added");
     }
 
     // MODIFIES: this
     // EFFECTS: quits application
     public void quitApp() {
+        createDivider();
         System.out.println("Thanks for using the Calorie Tracker");
         this.isProgramRunning = false;
     }
@@ -281,6 +297,7 @@ public class Tracker {
     // MODIFIES: this
     // EFFECTS: removes food item from list
     public void removeFood() {
+        createDivider();
         System.out.println(createListFoodCals(lofi.getListOfFoodItems()));
         System.out.println("Which item would you like to remove? Please provide position in the list.");
         int input = Integer.parseInt(scanner.nextLine());
@@ -292,6 +309,7 @@ public class Tracker {
     // MODIFIES: this
     // EFFECTS: removes exercise item from list
     public void removeExercise() {
+        createDivider();
         System.out.println(createListExercise(ex.getListExercise()));
         System.out.println("Which item would you like to remove? Please provide position in the list.");
         int input = Integer.parseInt(scanner.nextLine());
@@ -309,6 +327,7 @@ public class Tracker {
 
     // EFFECTS: displays which item to press
     public void displayClearList() {
+        createDivider();
         System.out.println("Please select an option");
         System.out.println("Clear list of food items: f");
         System.out.println("Clear list of exercises: e");
@@ -335,12 +354,29 @@ public class Tracker {
     // MODIFIES: this
     // EFFECTS: clears food items list
     public void clearListFi() {
-        lofi.clearList();
+        createDivider();
+        if (lofi.sizeOfList() == 0) {
+            System.out.println("There is nothing to clear");
+        } else {
+            lofi.clearList();
+            System.out.println("List has been cleared");
+        }
     }
 
     // MODIFIES: this
     // EFFECTS: clears exercise list
     public void clearListEx() {
-        ex.clearList();
+        createDivider();
+        if (ex.sizeList() == 0) {
+            System.out.println("There is nothing to clear");
+        } else {
+            ex.clearList();
+            System.out.println("List has been cleared");
+        }
+    }
+
+    // EFFECTS: creates a divider for aesthetics purposes
+    public void createDivider() {
+        System.out.println("--------------------------------------------------");
     }
 }
