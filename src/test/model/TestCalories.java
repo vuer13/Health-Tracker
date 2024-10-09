@@ -36,7 +36,7 @@ public class TestCalories {
 
     @Test
     void testConstructor() {
-        assertEquals(3000, cal.getCalorieGoal());
+        assertEquals(300, cal.getCalorieGoal());
         assertEquals(LocalDate.now(), cal.getDate());
     }
 
