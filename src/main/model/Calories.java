@@ -17,7 +17,7 @@ public class Calories {
 
     // MODIFIES; this
     // EFFECTS: sets new calorie goal
-    public void setNewGoal() {
+    public void setNewGoal(int calorie) {
         // TODO
     }
 
