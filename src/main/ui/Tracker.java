@@ -1,4 +1,5 @@
 package ui;
+
 import java.lang.IllegalArgumentException;
 
 import model.Calories;
