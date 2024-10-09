@@ -97,7 +97,7 @@ public class Tracker {
         System.out.println("Remove food item: r");
         System.out.println("Add exercise item: e");
         System.out.println("Remove exercise: x");
-        // TODO: add clear list
+        System.out.println("Clear a list: c");
         System.out.println("Return to menu: m");
     }
 
@@ -113,8 +113,11 @@ public class Tracker {
             case "e":
                 createExercise();
                 break;
-            case "c":
+            case "x":
                 removeExercise();
+                break;
+            case "c":
+                // TODO
                 break;
             case "m":
                 System.out.println("Returning to the main menu");
@@ -297,15 +300,47 @@ public class Tracker {
         System.out.println("The item has been removed!");
     }
 
+    // EFFECTS: handles clearing of list
+    public void handlesClearList() {
+        displayClearList();
+        String input = this.scanner.nextLine();
+        processClearList(input);
+    }
+
+    // EFFECTS: displays which item to press
+    public void displayClearList() {
+        System.out.println("Please select an option");
+        System.out.println("Clear list of food items: f");
+        System.out.println("Clear list of exercises: e");
+        System.out.println("Return to the main menu: m");
+    }
+
+    // EFFECTS: process addition of item
+    public void processClearList(String input) {
+        switch (input) {
+            case "f":
+                clearListFi();
+                break;
+            case "e":
+                clearListEx();
+                break;
+            case "m":
+                System.out.println("Returning to the main menu");
+                break;
+            default:
+                System.out.println("That is not a valid option, please reselect.");
+        }
+    }
+
     // MODIFIES: this
     // EFFECTS: clears food items list
-    public void clearListFI() {
-        // TODO
+    public void clearListFi() {
+        lofi.clearList();
     }
 
     // MODIFIES: this
     // EFFECTS: clears exercise list
     public void clearListEx() {
-        // TODO
+        ex.clearList();
     }
 }
