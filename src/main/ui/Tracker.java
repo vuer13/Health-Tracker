@@ -96,7 +96,7 @@ public class Tracker {
         System.out.println("Add food item: f");
         System.out.println("Remove food item: r");
         System.out.println("Add exercise item: e");
-        // TODO: add remove exercise
+        System.out.println("Remove exercise: x");
         // TODO: add clear list
         System.out.println("Return to menu: m");
     }
@@ -113,7 +113,9 @@ public class Tracker {
             case "e":
                 createExercise();
                 break;
-            // TODO: new case for remove exercise
+            case "c":
+                removeExercise();
+                break;
             case "m":
                 System.out.println("Returning to the main menu");
                 break;
@@ -287,7 +289,12 @@ public class Tracker {
     // MODIFIES: this
     // EFFECTS: removes exercise item from list
     public void removeExercise() {
-        // TODO: same as above
+        System.out.println(createListExercise(ex.getListExercise()));
+        System.out.println("Which item would you like to remove? Please provide position in the list.");
+        int input = Integer.parseInt(scanner.nextLine());
+        input -= 1;
+        ex.removeExercise(ex.getListExercise().get(input));
+        System.out.println("The item has been removed!");
     }
 
     // MODIFIES: this
