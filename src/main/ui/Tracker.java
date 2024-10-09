@@ -62,6 +62,7 @@ public class Tracker {
 
     // EFFECTS: processes menu inputs
     public void processMenu(String input) {
+        createDivider();
         switch (input) {
             case "c":
                 helpSetNewGoal();
@@ -131,6 +132,7 @@ public class Tracker {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: sets new calorie goal
     public void helpSetNewGoal() {
         System.out.println("Enter new goal: ");
@@ -258,6 +260,8 @@ public class Tracker {
         return ls;
     }
 
+    // REQUIRES: must input a food group for value foodGroup
+    // MODIFIES: this
     // EFFECTS: creates new food item and adds it to the list
     public void createFood() {
         createDivider();
@@ -274,6 +278,7 @@ public class Tracker {
         System.out.println("The food item has been added");
     }
 
+    // MODIFIES: this
     // EFFECTS: creates new exercise
     public void createExercise() {
         createDivider();
@@ -299,24 +304,32 @@ public class Tracker {
     // EFFECTS: removes food item from list
     public void removeFood() {
         createDivider();
-        System.out.println(createListFoodCals(lofi.getListOfFoodItems()));
-        System.out.println("Which item would you like to remove? Please provide position in the list.");
-        int input = Integer.parseInt(scanner.nextLine());
-        input -= 1;
-        lofi.removeFood(lofi.getListOfFoodItems().get(input));
-        System.out.println("The item has been removed!");
+        if (lofi.sizeOfList() == 0) {
+            System.out.println("There is nothing to remove");
+        } else {
+            System.out.println(createListFoodCals(lofi.getListOfFoodItems()));
+            System.out.println("Which item would you like to remove? Please provide position in the list.");
+            int input = Integer.parseInt(scanner.nextLine());
+            input -= 1;
+            lofi.removeFood(lofi.getListOfFoodItems().get(input));
+            System.out.println("The item has been removed!");
+        }
     }
 
     // MODIFIES: this
     // EFFECTS: removes exercise item from list
     public void removeExercise() {
         createDivider();
-        System.out.println(createListExercise(ex.getListExercise()));
-        System.out.println("Which item would you like to remove? Please provide position in the list.");
-        int input = Integer.parseInt(scanner.nextLine());
-        input -= 1;
-        ex.removeExercise(ex.getListExercise().get(input));
-        System.out.println("The item has been removed!");
+        if (ex.sizeList() == 0) {
+            System.out.println("There is nothing to clear");
+        } else {
+            System.out.println(createListExercise(ex.getListExercise()));
+            System.out.println("Which item would you like to remove? Please provide position in the list.");
+            int input = Integer.parseInt(scanner.nextLine());
+            input -= 1;
+            ex.removeExercise(ex.getListExercise().get(input));
+            System.out.println("The item has been removed!");
+        }
     }
 
     // EFFECTS: handles clearing of list
@@ -337,6 +350,7 @@ public class Tracker {
 
     // EFFECTS: process addition of item
     public void processClearList(String input) {
+        createDivider();
         switch (input) {
             case "f":
                 clearListFi();
