@@ -48,7 +48,7 @@ public class ListExercise {
 
     // MODIFIES: this
     // EFFECTS: sets date of list to today's list
-    public void setDate(){
+    public void setDate() {
         date = LocalDate.now();
     }
 
