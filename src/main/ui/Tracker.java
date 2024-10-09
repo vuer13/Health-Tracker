@@ -248,7 +248,7 @@ public class Tracker {
     public List<String> createListFoodCals(List<FoodItems> listFood) {
         List<String> ls = new ArrayList<String>();
         for (FoodItems fi : listFood) {
-            String s = fi.getName() + " : " + fi.getCalories();
+            String s = fi.getName() + " : " + fi.getCalories() + " calories";
             ls.add(s);
         }
         return ls;
@@ -258,7 +258,7 @@ public class Tracker {
     public List<String> createListExercise(List<Exercise> listEx) {
         List<String> ls = new ArrayList<String>();
         for (Exercise e : listEx) {
-            String s = e.getExercise() + " : " + e.getCaloriesBurned();
+            String s = e.getExercise() + " : " + e.getCaloriesBurned() + " calories";
             ls.add(s);
         }
         return ls;
