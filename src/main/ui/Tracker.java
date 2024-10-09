@@ -50,7 +50,7 @@ public class Tracker {
         System.out.println("Today's date is: " + cal.getDate());
         System.out.println("Please select an option");
         System.out.println("Reset calorie goal: c");
-        System.out.println("Add item: a");
+        System.out.println("Add/remove a item: a");
         System.out.println("View list of foods consumed: f");
         System.out.println("View list of exercises consumed: e");
         System.out.println("View your statistics for the day: s");
@@ -76,7 +76,7 @@ public class Tracker {
                 quitApp();
                 break;
             case "a":
-                handlesAddItem();
+                handlesAddRemoveItem();
                 break;
             default:
                 System.out.println("That is not a valid option, please reselect.");
@@ -84,29 +84,36 @@ public class Tracker {
     }
 
     // EFFECTS: handles addition of item
-    public void handlesAddItem() {
-        displayAddItem();
+    public void handlesAddRemoveItem() {
+        displayAddRemoveItem();
         String input = this.scanner.nextLine();
-        processAddItem(input);
+        processAddRemoveItem(input);
     }
 
     // EFFECTS: displays which item to press
-    public void displayAddItem() {
+    public void displayAddRemoveItem() {
         System.out.println("Please select an option");
         System.out.println("Add food item: f");
+        System.out.println("Remove food item: r");
         System.out.println("Add exercise item: e");
+        // TODO: add remove exercise
+        // TODO: add clear list
         System.out.println("Return to menu: m");
     }
 
     // EFFECTS: process addition of item
-    public void processAddItem(String input) {
+    public void processAddRemoveItem(String input) {
         switch (input) {
             case "f":
                 createFood();
                 break;
+            case "r":
+                removeFood();
+                break;
             case "e":
                 createExercise();
                 break;
+            // TODO: new case for remove exercise
             case "m":
                 System.out.println("Returning to the main menu");
                 break;
@@ -264,5 +271,34 @@ public class Tracker {
     public void quitApp() {
         System.out.println("Thanks for using the Calorie Tracker");
         this.isProgramRunning = false;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: removes food item from list
+    public void removeFood() {
+        System.out.println(createListFoodCals(lofi.getListOfFoodItems()));
+        System.out.println("Which item would you like to remove? Please provide position in the list.");
+        int input = Integer.parseInt(scanner.nextLine());
+        input -= 1;
+        lofi.removeFood(lofi.getListOfFoodItems().get(input));
+        System.out.println("The item has been removed!");
+    }
+
+    // MODIFIES: this
+    // EFFECTS: removes exercise item from list
+    public void removeExercise() {
+        // TODO: same as above
+    }
+
+    // MODIFIES: this
+    // EFFECTS: clears food items list
+    public void clearListFI() {
+        // TODO
+    }
+
+    // MODIFIES: this
+    // EFFECTS: clears exercise list
+    public void clearListEx() {
+        // TODO
     }
 }
