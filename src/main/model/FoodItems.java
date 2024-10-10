@@ -6,6 +6,7 @@ public class FoodItems {
     private int calories;
     private FoodGroup foodGroups;
 
+    // REQUIRES: calories > 0
     // EFFECTS: Constructs Food Items with name, amount of calories and food groups
     // involved
     public FoodItems(String name, int calories, FoodGroup foodGroups) {
@@ -35,6 +36,7 @@ public class FoodItems {
         this.name = name;
     }
 
+    // REQUIRES: calories > 0
     // MODIFIES: this
     // EFFECTS: Edits calories of food item
     public void editCalories(int calories) {

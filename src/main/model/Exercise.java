@@ -5,6 +5,7 @@ public class Exercise {
     private String exercise;
     private int caloriesburnt;
     
+    // REQUIRES: calories > 0
     // EFFECTS: constucts exercise item with name of exercise and number of calories it burns
     public Exercise(String exercise, int calories) {
         this.exercise = exercise;
@@ -21,6 +22,7 @@ public class Exercise {
         return caloriesburnt;
     }
 
+    // REQUIRES: calories > 0
     // MODIFIES: this
     // EFFECTS: edits number of calories burned
     public void editCalories(int calories) {

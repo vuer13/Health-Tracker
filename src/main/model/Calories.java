@@ -8,6 +8,7 @@ public class Calories {
     private int calorieGoal;
     private LocalDate date;
 
+    // REQUIRES: cal > 0
     // EFFECTS: Constructs object with calorie goal and today's date
     public Calories(int cal) {
         calorieGoal = cal;
@@ -19,6 +20,7 @@ public class Calories {
         return calorieGoal;
     }
 
+    // REQUIRES: calorie > 0
     // MODIFIES; this
     // EFFECTS: sets new calorie goal
     public void setNewGoal(int calorie) {
