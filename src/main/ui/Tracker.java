@@ -290,7 +290,7 @@ public class Tracker {
         FoodGroup foodGroup = null;
         while (!validInput) {
             System.out.println("Input the food group:");
-            try {
+            try { 
                 foodGroup = FoodGroup.valueOf(scanner.next().toUpperCase());   
                 validInput = true;         
             } catch (IllegalArgumentException e) {
