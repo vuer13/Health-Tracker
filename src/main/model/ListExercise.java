@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 
+// creates a list of all the exercises added
 public class ListExercise {
     
     private List<Exercise> exercises;

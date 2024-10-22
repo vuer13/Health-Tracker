@@ -1,5 +1,7 @@
 package model;
 
+
+// Represents a Exercise with the amount of calories burnt
 public class Exercise {
 
     private String exercise;

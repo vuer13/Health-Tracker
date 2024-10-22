@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 
+// creates a list of all the food items created along with it's sub food groups
 public class ListOfFoodItems {
 
     private List<FoodItems> listFoodItems;

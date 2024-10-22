@@ -14,6 +14,7 @@ import java.util.List;
 
 import java.util.Scanner;
 
+// UI of the program
 public class Tracker {
 
     private Scanner scanner;

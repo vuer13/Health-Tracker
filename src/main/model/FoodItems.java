@@ -1,5 +1,6 @@
 package model;
 
+// Represents a food item with the number of calories and its food group
 public class FoodItems {
 
     private String name;

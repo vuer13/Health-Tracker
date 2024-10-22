@@ -3,6 +3,7 @@ package model;
 import java.time.LocalDate;
 import java.lang.Math;
 
+// Represents calories of a food item or exercise
 public class Calories {
 
     private int calorieGoal;
