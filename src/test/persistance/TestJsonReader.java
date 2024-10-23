@@ -1,0 +1,104 @@
+// Referenced from the JsonSerialization Demo
+// https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
+
+package persistance;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+import model.Exercise;
+import model.FoodGroup;
+import model.FoodItems;
+import model.ListExercise;
+import model.ListOfFoodItems;
+
+public class TestJsonReader {
+    
+    @Test
+    void testReaderNoFileFoodItems() {
+        JsonReader reader = new JsonReader("./data/fileNotRealFood.json");
+        try {
+            ListOfFoodItems lofi = reader.readFootItems();
+            fail("Exception expected");
+        } catch (IOException e) {
+            // pass
+        }
+    }
+
+    @Test
+    void testReaderNoFileExercise() {
+        JsonReader reader = new JsonReader("./data/fileNotRealEx.json");
+        try {
+            ListExercise lofi = reader.readExercise();
+            fail("Exception expected");
+        } catch (IOException e) {
+            // pass
+        }
+    }
+
+    @Test
+    void testReaderEmptyFoodItems() {
+        JsonReader reader = new JsonReader("./data/testReaderEmptyListFoodItems.json");
+        try {
+            ListOfFoodItems lofi = reader.readFootItems();
+            assertEquals(0, lofi.getListOfFoodItems().size());
+        } catch (IOException e) {
+            fail("Couldn't read from file");
+        }
+    }
+
+    @Test
+    void testReaderEmptyExercises() {
+        JsonReader reader = new JsonReader("./data/testReaderEmptyListExercises.json");
+        try {
+            ListOfFoodItems lofi = reader.readFootItems();
+            assertEquals(0, lofi.getListOfFoodItems().size());
+        } catch (IOException e) {
+            fail("Couldn't read from file");
+        }
+    }
+
+    @Test 
+    void testReaderGeneralListFoodItems() {
+        JsonReader reader = new JsonReader("./data/testReaderGeneralListFoodItems.json");
+        try {
+            ListOfFoodItems lofi = reader.readFootItems();
+            List<FoodItems> fi = lofi.getListOfFoodItems();
+            assertEquals(2, fi.size());
+            checkFoodItem("Beef", 30, FoodGroup.PROTEIN, fi.get(0));
+            checkFoodItem("Apple", 10, FoodGroup.FRUIT, fi.get(1));
+        } catch (IOException e) {
+            fail("Cannot read from file");
+        }
+    }
+
+    void checkFoodItem(String name, int calories, FoodGroup group, FoodItems f) {
+        assertEquals(name, f.getName());
+        assertEquals(calories, f.getCalories());
+        assertEquals(group, f.getFoodGroup());
+    }
+
+    @Test
+    void testReaderGeneralListExercise() {
+        JsonReader reader = new JsonReader("./data/testReaderGeneralListExercise.json");
+
+        try {
+            ListExercise loe = reader.readExercise();
+            List<Exercise> e = loe.getListExercise();
+            assertEquals(2, e.size());
+            checkExercise("Sit Ups", 30, e.get(0));
+            checkExercise("Push Ups", 5, e.get(1));
+        } catch (IOException e) {
+            fail("Cannot read from file");
+        }
+    }
+
+    void checkExercise(String name, int calories, Exercise e) {
+        assertEquals(name, e.getExercise());
+        assertEquals(calories, e.getCaloriesBurned());
+    }
+}
