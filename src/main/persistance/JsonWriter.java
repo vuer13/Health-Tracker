@@ -24,8 +24,14 @@ public class JsonWriter {
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of list of food items and list of exercises to file
-    public void write(ListOfFoodItems lofi, ListExercise loe) {
+    // EFFECTS: writes JSON representation of list of exercises to file
+    public void writeExercise(ListExercise loe) {
+        // TODO
+    }
+
+    // MODIFIES: this
+    // EFFECTS: writes JSON representation of list of food items to file
+    public void writeFoodItem(ListOfFoodItems lofi) {
         // TODO
     }
 
