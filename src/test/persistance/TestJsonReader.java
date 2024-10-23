@@ -42,7 +42,7 @@ public class TestJsonReader {
 
     @Test
     void testReaderEmptyFoodItems() {
-        JsonReader reader = new JsonReader("./data/testReaderEmptyListFoodItems.json");
+        JsonReader reader = new JsonReader("./data/testReaderEmptyListFoodItem.json");
         try {
             ListOfFoodItems lofi = reader.readFootItems();
             assertEquals(0, lofi.getListOfFoodItems().size());
@@ -55,8 +55,8 @@ public class TestJsonReader {
     void testReaderEmptyExercises() {
         JsonReader reader = new JsonReader("./data/testReaderEmptyListExercises.json");
         try {
-            ListOfFoodItems lofi = reader.readFootItems();
-            assertEquals(0, lofi.getListOfFoodItems().size());
+            ListExercise loe = reader.readExercise();
+            assertEquals(0, loe.getListExercise().size());
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
