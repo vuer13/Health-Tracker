@@ -1,4 +1,4 @@
-package model;
+package persistance;
 
 import persistance.JsonWriter;
 
@@ -9,6 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
+
+import model.Exercise;
+import model.FoodItems;
+import model.ListExercise;
+import model.ListOfFoodItems;
+
 import org.junit.jupiter.api.BeforeEach;
 
 public class TestJsonWriter {
