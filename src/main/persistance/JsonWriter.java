@@ -25,7 +25,7 @@ public class JsonWriter {
 
     // MODIFIES: this
     // EFFECTS: writes JSON representation of list of exercises to file
-    public void writeExercise(ListExercise loe) {
+    public void writeExercise(ListExercise loes) {
         // TODO
     }
 
