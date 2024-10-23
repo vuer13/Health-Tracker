@@ -1,0 +1,12 @@
+{
+    "Exercises": [
+        {
+            "name": "Push Ups",
+            "calories": 10
+        },
+        {
+            "name": "Sit Ups",
+            "calories": 20
+        }
+    ]
+}
