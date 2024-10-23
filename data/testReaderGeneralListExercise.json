@@ -1,12 +1,12 @@
 {
     "Exercises": [
         {
-            "name": "Sit Ups",
-            "calories": 30
+            "Name": "Sit Ups",
+            "Calories": 30
         },
         {
-            "name": "Push Ups",
-            "calories": 5
+            "Name": "Push Ups",
+            "Calories": 5
         }
     ]
 }
