@@ -32,16 +32,15 @@ public class JsonWriter {
     // MODIFIES: this
     // EFFECTS: writes JSON representation of list of food items to file
     public void write(ListOfFoodItems lofi) {
-        JSONObject jsone = loe.toJson();
         JSONObject jsonf = lofi.toJson();
-        saveToFile(jsone.toString(TAB));
         saveToFile(jsonf.toString(TAB));
     }
 
     // MODIFIES: this
     // EFFECTS: writes JSON representation of list of exercises to file
     public void writeExercise(ListExercise loe) {
-        // TODO
+        JSONObject jsone = loe.toJson();
+        saveToFile(jsone.toString(TAB));
     }
 
     // MODIFIES: this
