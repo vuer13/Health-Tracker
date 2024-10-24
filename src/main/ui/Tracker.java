@@ -22,6 +22,8 @@ public class Tracker {
     private ListOfFoodItems lofi;
     private ListExercise ex;
     private Calories cal;
+    // create objects for JsonWriter and Reader
+    // create file list name
 
     // REQUIRES: input must be a integer > 0
     // EFFECTS: Initiates UI console base
@@ -30,6 +32,7 @@ public class Tracker {
         lofi = new ListOfFoodItems();
         ex = new ListExercise();
         scanner = new Scanner(System.in);
+        // New JsonWriter and Reader
 
         createDivider();
         System.out.println("Welcome to the Calorie Tracker");
@@ -67,6 +70,7 @@ public class Tracker {
     // EFFECTS: processes menu inputs
     public void processMenu(String input) {
         createDivider();
+        // Make them if else
         switch (input) {
             case "c":
                 helpSetNewGoal();
@@ -113,6 +117,7 @@ public class Tracker {
     // EFFECTS: process addition of item
     public void processAddRemoveItem(String input) {
         switch (input) {
+            // make if else
             case "f":
                 createFood();
                 break;
@@ -417,5 +422,16 @@ public class Tracker {
     // EFFECTS: creates a divider for aesthetics purposes
     public void createDivider() {
         System.out.println("--------------------------------------------------");
+    }
+
+    // EFFECTS: saves both lists to file
+    private void saveLists() {
+        // TODO
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads previous lists from file
+    private void loadLists() {
+        // TODO
     }
 }
