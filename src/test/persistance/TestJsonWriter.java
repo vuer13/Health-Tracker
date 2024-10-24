@@ -7,6 +7,7 @@ import static model.FoodGroup.PROTEIN;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,7 @@ import model.ListOfFoodItems;
 
 import org.junit.jupiter.api.BeforeEach;
 
-public class TestJsonWriter {
+public class TestJsonWriter extends TestJson {
     
     private ListOfFoodItems lofi;
     private ListExercise loe; 
@@ -47,7 +48,9 @@ public class TestJsonWriter {
             writer.write(loe, lofi);
             writer.close();
 
-            // TODO: Requires Reader
+            JsonReader reader = new JsonReader("./data/testWriterEmptyListExercise.json");
+            loe = reader.readExercise();
+            assertEquals(0, loe.getListExercise().size());
         } catch (IOException e) {
             fail("Exception is wrongfully thrown");
         }
@@ -61,7 +64,9 @@ public class TestJsonWriter {
             writer.write(loe, lofi);
             writer.close();
 
-            // TODO: Requires Reader
+            JsonReader reader = new JsonReader("./data/testWriterEmptyListFoodItems.json");
+            lofi = reader.readFootItems();
+            assertEquals(0, lofi.getListOfFoodItems().size());
         } catch (IOException e) {
             fail("Exception is wrongfully thrown");
         }
@@ -79,7 +84,11 @@ public class TestJsonWriter {
             writer.write(loe, lofi);
             writer.close();
 
-            // TODO: Requires Reader
+            JsonReader reader = new JsonReader("./data/testWriterGeneralListExercise.json");
+            loe = reader.readExercise();
+            List<Exercise> exs = loe.getListExercise();
+            checkExercise("Push Ups", 10, exs.get(0));
+            checkExercise("Sit Ups", 20, exs.get(1));
         } catch (IOException e) {
             fail("Exception should not have been thrown");
         }
@@ -97,7 +106,11 @@ public class TestJsonWriter {
             writer.write(loe, lofi);
             writer.close();
 
-            // TODO: Requires Reader
+            JsonReader reader = new JsonReader("./data/testWriterGeneralListFoodItem.json");
+            lofi = reader.readFootItems();
+            List<FoodItems> fis = lofi.getListOfFoodItems();
+            checkFoodItem("Apple", 15, FRUIT, fis.get(0));
+            checkFoodItem("Beef", 30, PROTEIN, fis.get(1));
         } catch (IOException e) {
             fail("Exception should not have been thrown");
         }
