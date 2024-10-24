@@ -45,7 +45,7 @@ public class TestJsonWriter extends TestJson {
         try {
             JsonWriter writer = new JsonWriter("./data/testWriterEmptyListExercise.json");
             writer.open();
-            writer.write(loe, lofi);
+            writer.writeExercise(loe);
             writer.close();
 
             JsonReader reader = new JsonReader("./data/testWriterEmptyListExercise.json");
@@ -61,7 +61,7 @@ public class TestJsonWriter extends TestJson {
         try {
             JsonWriter writer = new JsonWriter("./data/testWriterEmptyListFoodItems.json");
             writer.open();
-            writer.write(loe, lofi);
+            writer.writeFood(lofi);
             writer.close();
 
             JsonReader reader = new JsonReader("./data/testWriterEmptyListFoodItems.json");
@@ -81,7 +81,7 @@ public class TestJsonWriter extends TestJson {
             loe.addExercise(e2);
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralListExercise.json");
             writer.open();
-            writer.write(loe, lofi);
+            writer.writeExercise(loe);
             writer.close();
 
             JsonReader reader = new JsonReader("./data/testWriterGeneralListExercise.json");
@@ -103,7 +103,7 @@ public class TestJsonWriter extends TestJson {
             lofi.addFood(f2);
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralListFoodItem.json");
             writer.open();
-            writer.write(loe, lofi);
+            writer.writeFood(lofi);
             writer.close();
 
             JsonReader reader = new JsonReader("./data/testWriterGeneralListFoodItem.json");
