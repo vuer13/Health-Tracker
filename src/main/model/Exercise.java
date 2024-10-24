@@ -1,14 +1,19 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import persistance.Writeable;
 
 // Represents a Exercise with the amount of calories burnt
-public class Exercise {
+public class Exercise implements Writeable {
 
     private String exercise;
     private int caloriesburnt;
-    
+
     // REQUIRES: calories > 0
-    // EFFECTS: constucts exercise item with name of exercise and number of calories it burns
+    // EFFECTS: constucts exercise item with name of exercise and number of calories
+    // it burns
     public Exercise(String exercise, int calories) {
         this.exercise = exercise;
         caloriesburnt = calories;
@@ -37,5 +42,8 @@ public class Exercise {
         this.exercise = exercise;
     }
 
-
+    // EFFECTS: returns json object
+    public JSONObject toJson() {
+        return null;
+    }
 }
