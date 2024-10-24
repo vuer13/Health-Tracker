@@ -8,10 +8,16 @@ import static model.FoodGroup.VEGETABLE;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import persistance.Writeable;
+
 import java.time.LocalDate;
 
 // creates a list of all the food items created along with it's sub food groups
-public class ListOfFoodItems {
+public class ListOfFoodItems implements Writeable {
 
     private List<FoodItems> listFoodItems;
     private List<FoodItems> fruitList;
@@ -189,5 +195,16 @@ public class ListOfFoodItems {
     // EFFECTS: sets date to today's date
     public void setDate() {
         date = LocalDate.now();
+    }
+
+    // EFFECTS: returns json object
+    @Override
+    public JSONObject toJson() {
+        return null;
+    }
+
+    // EFFECTS: returns food items in list as JSON array
+    private JSONArray foodItemsToJson() {
+        return null;
     }
 }
