@@ -200,11 +200,17 @@ public class ListOfFoodItems implements Writeable {
     // EFFECTS: returns json object
     @Override
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("Food Items", foodItemsToJson());
+        return json;
     }
 
     // EFFECTS: returns food items in list as JSON array
     private JSONArray foodItemsToJson() {
-        return null;
+        JSONArray array = new JSONArray();
+        for(FoodItems f : listFoodItems) {
+            array.put(f.toJson());
+        }
+        return array;
     }
 }
