@@ -70,28 +70,21 @@ public class Tracker {
     // EFFECTS: processes menu inputs
     public void processMenu(String input) {
         createDivider();
-        // Make them if else
-        switch (input) {
-            case "c":
-                helpSetNewGoal();
-                break;
-            case "f":
-                handlesFoodMenu();
-                break;
-            case "e":
-                System.out.println(createListExercise(ex.getListExercise()));
-                break;
-            case "s":
-                viewStatisitics();
-                break;
-            case "q":
-                quitApp();
-                break;
-            case "a":
-                handlesAddRemoveItem();
-                break;
-            default:
-                System.out.println("That is not a valid option, please reselect.");
+        if (input.equals("c")) {
+            helpSetNewGoal();
+        } else if (input.equals("f")) {
+            handlesFoodMenu();
+        } else if (input.equals("e")) {
+            System.out.println(createListExercise(ex.getListExercise()));
+        } else if (input.equals("s")) { 
+            viewStatisitics();
+        } else if (input.equals("q")) {
+            quitApp();
+        } else if (input.equals("a")) {
+            handlesAddRemoveItem();
+        } // add new ones for save/load
+        else {
+            System.out.println("That is not a valid option, please reselect.");
         }
     }
 
@@ -116,28 +109,21 @@ public class Tracker {
 
     // EFFECTS: process addition of item
     public void processAddRemoveItem(String input) {
-        switch (input) {
-            // make if else
-            case "f":
-                createFood();
-                break;
-            case "r":
-                removeFood();
-                break;
-            case "e":
-                createExercise();
-                break;
-            case "x":
-                removeExercise();
-                break;
-            case "c":
-                handlesClearList();
-                break;
-            case "m":
-                System.out.println("Returning to the main menu");
-                break;
-            default:
-                System.out.println("That is not a valid option, please reselect.");
+        if (input.equals("f")) {
+            createFood();
+        } else if (input.equals("r")) {
+            removeFood();
+        } else if (input.equals("e")) {
+            createExercise();
+        } else if (input.equals("x")) {
+            removeExercise();
+        } else if (input.equals("c")) {
+            handlesClearList();
+        } else if (input.equals("m")) {
+            System.out.println("Returning to the main menu");
+        } else {
+            System.out.println("That is not a valid option, please reselect.");
+            handlesAddRemoveItem();
         }
     }
 
