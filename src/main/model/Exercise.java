@@ -44,6 +44,9 @@ public class Exercise implements Writeable {
 
     // EFFECTS: returns json object
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("Name", exercise);
+        json.put("Calories", caloriesburnt);
+        return json;
     }
 }
