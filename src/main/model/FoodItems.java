@@ -1,7 +1,11 @@
 package model;
 
+import org.json.JSONObject;
+
+import persistance.Writeable;
+
 // Represents a food item with the number of calories and its food group
-public class FoodItems {
+public class FoodItems implements Writeable {
 
     private String name;
     private int calories;
@@ -48,5 +52,11 @@ public class FoodItems {
     // EFFECTS: Edits food group of food item
     public void editFoodGroup(FoodGroup foodGroups) {
         this.foodGroups = foodGroups;
+    }
+
+    // EFFECTS: returns json object
+    @Override
+    public JSONObject toJson() {
+        return null;
     }
 }
