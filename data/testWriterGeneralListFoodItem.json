@@ -1,14 +1,12 @@
-{
-    "Food Items": [
-        {
-            "Food": "Apple",
-            "Calories": 15,
-            "Food Group": "FRUIT"
-        },
-        {
-            "Food": "Beef",
-            "Calories": 30,
-            "Food Group": "PROTEIN"
-        }
-    ]
-}
+{"Food Items": [
+    {
+        "Food Group": "FRUIT",
+        "Calories": 15,
+        "Food": "Apple"
+    },
+    {
+        "Food Group": "PROTEIN",
+        "Calories": 30,
+        "Food": "Beef"
+    }
+]}
