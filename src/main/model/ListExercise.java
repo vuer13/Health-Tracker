@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 // creates a list of all the exercises added
 public class ListExercise implements Writeable {
-    
+
     private List<Exercise> exercises;
     private LocalDate date;
 
@@ -73,11 +73,18 @@ public class ListExercise implements Writeable {
     // EFFECTS: returns as a json object
     @Override
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("Exercises", exercisesToJson());
+        return json;
     }
 
     // EFFECTS: returns things in list of exercise as JSON array
     private JSONArray exercisesToJson() {
-        return null;
+        JSONArray array = new JSONArray();
+        for (Exercise e : exercises) {
+            array.put(e.toJson());
+        }
+
+        return array;
     }
 }
