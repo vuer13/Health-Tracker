@@ -2,10 +2,16 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import persistance.Writeable;
+
 import java.time.LocalDate;
 
 // creates a list of all the exercises added
-public class ListExercise {
+public class ListExercise implements Writeable {
     
     private List<Exercise> exercises;
     private LocalDate date;
@@ -62,5 +68,16 @@ public class ListExercise {
     // EFFECTS: returns size of list
     public int sizeList() {
         return exercises.size();
+    }
+
+    // EFFECTS: returns as a json object
+    @Override
+    public JSONObject toJson() {
+        return null;
+    }
+
+    // EFFECTS: returns things in list of exercise as JSON array
+    private JSONArray exercisesToJson() {
+        return null;
     }
 }
