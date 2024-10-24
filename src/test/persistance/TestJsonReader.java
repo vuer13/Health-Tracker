@@ -16,7 +16,7 @@ import model.FoodItems;
 import model.ListExercise;
 import model.ListOfFoodItems;
 
-public class TestJsonReader {
+public class TestJsonReader extends TestJson {
     
     @Test
     void testReaderNoFileFoodItems() {
@@ -76,12 +76,6 @@ public class TestJsonReader {
         }
     }
 
-    void checkFoodItem(String name, int calories, FoodGroup group, FoodItems f) {
-        assertEquals(name, f.getName());
-        assertEquals(calories, f.getCalories());
-        assertEquals(group, f.getFoodGroup());
-    }
-
     @Test
     void testReaderGeneralListExercise() {
         JsonReader reader = new JsonReader("./data/testReaderGeneralListExercise.json");
@@ -95,10 +89,5 @@ public class TestJsonReader {
         } catch (IOException e) {
             fail("Cannot read from file");
         }
-    }
-
-    void checkExercise(String name, int calories, Exercise e) {
-        assertEquals(name, e.getExercise());
-        assertEquals(calories, e.getCaloriesBurned());
     }
 }
