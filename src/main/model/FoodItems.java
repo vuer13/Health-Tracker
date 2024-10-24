@@ -57,6 +57,10 @@ public class FoodItems implements Writeable {
     // EFFECTS: returns json object
     @Override
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("Name", name);
+        json.put("Calories", calories);
+        json.put("Food Group", foodGroups);
+        return json;
     }
 }
