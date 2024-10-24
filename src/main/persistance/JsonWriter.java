@@ -33,9 +33,9 @@ public class JsonWriter {
     // EFFECTS: writes JSON representation of list of exercises and food items to file
     public void write(ListExercise loe, ListOfFoodItems lofi) {
         JSONObject jsone = loe.toJson();
-        // JSONObject jsonf = lofi.toJson();
+        JSONObject jsonf = lofi.toJson();
         saveToFile(jsone.toString(TAB));
-        // saveToFile(jsonf.toString(TAB));
+        saveToFile(jsonf.toString(TAB));
 
     }
 
