@@ -1,5 +1,7 @@
 package ui;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.IllegalArgumentException;
 
 import model.Calories;
@@ -8,11 +10,15 @@ import model.FoodGroup;
 import model.FoodItems;
 import model.ListExercise;
 import model.ListOfFoodItems;
+import persistance.JsonReader;
+import persistance.JsonWriter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import java.util.Scanner;
+
+import org.junit.runner.FilterFactory.FilterNotCreatedException;
 
 // UI of the program
 public class Tracker {
@@ -22,8 +28,12 @@ public class Tracker {
     private ListOfFoodItems lofi;
     private ListExercise ex;
     private Calories cal;
-    // create objects for JsonWriter and Reader
-    // create file list name
+    private JsonWriter writerex;
+    private JsonWriter writerf;
+    private JsonReader readerex;
+    private JsonReader readerf;
+    private static final String JSON_FOOD = "./data/foodItems.json";
+    private static final String JSON_EX = "./data/exercises.json";
 
     // REQUIRES: input must be a integer > 0
     // EFFECTS: Initiates UI console base
@@ -32,7 +42,10 @@ public class Tracker {
         lofi = new ListOfFoodItems();
         ex = new ListExercise();
         scanner = new Scanner(System.in);
-        // New JsonWriter and Reader
+        writerex = new JsonWriter(JSON_EX);
+        writerf = new JsonWriter(JSON_FOOD);
+        readerex = new JsonReader(JSON_EX);
+        readerf = new JsonReader(JSON_FOOD);
 
         createDivider();
         System.out.println("Welcome to the Calorie Tracker");
@@ -64,6 +77,8 @@ public class Tracker {
         System.out.println("View list of foods consumed: f");
         System.out.println("View list of exercises consumed: e");
         System.out.println("View your statistics for the day: s");
+        System.out.println("Save Current Lists: m");
+        System.out.println("Load Previous Lists: n");
         System.out.println("Quit Application: q");
     }
 
@@ -82,7 +97,11 @@ public class Tracker {
             quitApp();
         } else if (input.equals("a")) {
             handlesAddRemoveItem();
-        } // add new ones for save/load
+        } else if (input.equals("m")) {
+            saveLists();
+        } else if (input.equals("n")) {
+            loadLists();
+        }
         else {
             System.out.println("That is not a valid option, please reselect.");
         }
@@ -412,12 +431,28 @@ public class Tracker {
 
     // EFFECTS: saves both lists to file
     private void saveLists() {
-        // TODO
+        try {
+            writerex.open();
+            writerex.writeExercise(ex);
+            writerex.close();
+            writerf.open();
+            writerf.writeFood(lofi);
+            writerf.close();
+            System.out.println("All lists have been saved!");
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to find the file");
+        }
     }
 
     // MODIFIES: this
     // EFFECTS: loads previous lists from file
     private void loadLists() {
-        // TODO
+        try {
+            lofi = readerf.readFootItems();
+            ex = readerex.readExercise();
+            System.out.println("Loaded all lists");
+        } catch (IOException e) {
+            System.out.println("Unable to find file");
+        }
     }
 }
