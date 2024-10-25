@@ -6,6 +6,7 @@ package persistance;
 import java.io.*;
 import org.json.JSONObject;
 
+import model.Calories;
 import model.ListExercise;
 import model.ListOfFoodItems;
 
@@ -41,6 +42,12 @@ public class JsonWriter {
     public void writeExercise(ListExercise loe) {
         JSONObject jsone = loe.toJson();
         saveToFile(jsone.toString(TAB));
+    }
+
+    // MODIFIES: this
+    // EFFECTS: writes JSON representation of calorie goal to file
+    public void writeCalorie(Calories c) {
+        // TODO
     }
 
     // MODIFIES: this
