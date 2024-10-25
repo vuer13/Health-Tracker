@@ -25,8 +25,5 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
 - As a User, I want to view a list all of the names and calories burned for each exercise added in my list of exercises
 - As a User, I want to be able to delete food items or exercises from the lists
 - As a User, I want to be able to clear the lists of food items or list of exercises
-
 - As a User, I want the option to save my food items & exercise lists, as well as my calorie goal and statistics when I quit the application
 - As a User, I want the option to load the data from file when I start the application
-- As a User, I want to be able to be given the option to restart a new list for a different day
-- As a User, I want to be able to each lists and statistic to be associated with a particular day
