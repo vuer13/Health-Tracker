@@ -1,7 +1,5 @@
 package persistance;
 
-import persistance.JsonWriter;
-
 import static model.FoodGroup.FRUIT;
 import static model.FoodGroup.PROTEIN;
 import static org.junit.jupiter.api.Assertions.*;

@@ -23,7 +23,7 @@ public class TestJsonReader extends TestJson {
     void testReaderNoFileFoodItems() {
         JsonReader reader = new JsonReader("./data/fileNotRealFood.json");
         try {
-            ListOfFoodItems lofi = reader.readFootItems();
+            reader.readFootItems();
             fail("Exception expected");
         } catch (IOException e) {
             // pass
@@ -34,7 +34,7 @@ public class TestJsonReader extends TestJson {
     void testReaderNoFileExercise() {
         JsonReader reader = new JsonReader("./data/fileNotRealEx.json");
         try {
-            ListExercise lofi = reader.readExercise();
+            reader.readExercise();
             fail("Exception expected");
         } catch (IOException e) {
             // pass
