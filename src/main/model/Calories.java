@@ -68,6 +68,8 @@ public class Calories implements Writeable {
 
     // EFFECTS: returns json object
     public JSONObject toJson() {
-        // TODO
+        JSONObject json = new JSONObject();
+        json.put("Calories", calorieGoal);
+        return json;
     }
 }
