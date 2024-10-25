@@ -1,1 +1,5 @@
-{"Food Items": []}
+{"Food Items": [{
+    "Food Group": "FRUIT",
+    "Calories": 100,
+    "Food": "apple"
+}]}
