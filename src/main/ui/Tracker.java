@@ -101,8 +101,7 @@ public class Tracker {
             saveLists();
         } else if (input.equals("n")) {
             loadLists();
-        }
-        else {
+        } else {
             System.out.println("That is not a valid option, please reselect.");
         }
     }

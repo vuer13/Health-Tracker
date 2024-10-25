@@ -208,7 +208,7 @@ public class ListOfFoodItems implements Writeable {
     // EFFECTS: returns food items in list as JSON array
     private JSONArray foodItemsToJson() {
         JSONArray array = new JSONArray();
-        for(FoodItems f : listFoodItems) {
+        for (FoodItems f : listFoodItems) {
             array.put(f.toJson());
         }
         return array;
