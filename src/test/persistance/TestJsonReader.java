@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import model.Calories;
 import model.Exercise;
 import model.FoodGroup;
 import model.FoodItems;
@@ -86,6 +87,28 @@ public class TestJsonReader extends TestJson {
             assertEquals(2, e.size());
             checkExercise("Sit Ups", 30, e.get(0));
             checkExercise("Push Ups", 5, e.get(1));
+        } catch (IOException e) {
+            fail("Cannot read from file");
+        }
+    }
+
+    @Test
+    void testReaderEmptyCalories() {
+        JsonReader reader = new JsonReader("./data/testReaderEmptyCalories.json");
+        try {
+            Calories e = reader.readCalories();
+            assertNull(e.getCalorieGoal());
+        } catch (IOException e) {
+            fail("Couldn't read from file");
+        }
+    }
+
+    @Test 
+    void testReaderGeneralCalories() {
+        JsonReader reader = new JsonReader("./data/testReaderGeneralCalories.json");
+        try {
+            Calories c = reader.readCalories();
+            checkCalories(200, c);
         } catch (IOException e) {
             fail("Cannot read from file");
         }
