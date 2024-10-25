@@ -47,7 +47,8 @@ public class JsonWriter {
     // MODIFIES: this
     // EFFECTS: writes JSON representation of calorie goal to file
     public void writeCalorie(Calories c) {
-        // TODO: specification
+        JSONObject jsonc = c.toJson();
+        saveToFile(jsonc.toString(TAB));
     }
 
     // MODIFIES: this
