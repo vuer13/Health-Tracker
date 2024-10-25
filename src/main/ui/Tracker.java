@@ -55,28 +55,43 @@ public class Tracker {
 
         createDivider();
         System.out.println("Welcome to the Calorie Tracker");
-        System.out.println("Please enter your calorie goal for the day");
-        int input = Integer.parseInt(scanner.nextLine());
-        cal = new Calories(input);
-
-        while (this.isProgramRunning) {
-            handleMenu();
-        }
+        handlesStartMenu();
     }
 
     // EFFECTS: displays and processes inputs for start of menu
     public void handlesStartMenu() {
-        // TODO
+        displayStartMenu();
+        String input = this.scanner.nextLine();
+        processStartMenu(input);
     }
 
     // EFFECTS: displays start menu
     public void displayStartMenu() {
-        // TODO
+        System.out.println("Please select an option");
+        System.out.println("Start new program: c");
+        System.out.println("Load previously saved program: l");
     }
 
     // EFFECTS: processes start menu's input
     public void processStartMenu(String input) {
-        // TODO
+        if (input.equals("l")) {
+            loadLists();
+            while (this.isProgramRunning) {
+                handleMenu();
+            }
+        } else if (input.equals("c")) {
+            createDivider();
+            System.out.println("Please enter your calorie goal for the day");
+            int num = Integer.parseInt(scanner.nextLine());
+            cal = new Calories(num);
+    
+            while (this.isProgramRunning) {
+                handleMenu();
+            }
+        } else {
+            System.out.println("That is not a valid option, please reselect.");
+            handlesStartMenu();
+        }
     }
 
     // EFFECTS: displays and processes inputs for main menu
@@ -99,7 +114,6 @@ public class Tracker {
         System.out.println("View list of exercises consumed: e");
         System.out.println("View your statistics for the day: s");
         System.out.println("Save Current Lists & Goal: m");
-        System.out.println("Load Previous Lists & Goal: n");
         System.out.println("Quit Application: q");
     }
 
@@ -120,8 +134,6 @@ public class Tracker {
             handlesAddRemoveItem();
         } else if (input.equals("m")) {
             saveLists();
-        } else if (input.equals("n")) {
-            loadLists();
         } else {
             System.out.println("That is not a valid option, please reselect.");
         }
