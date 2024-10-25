@@ -48,8 +48,9 @@ public class JsonReader {
     // EFFECTS: reads calories goal from file and returns it
     // throws IOException if error occurs reading data
     public Calories readCalories() throws IOException {
-        return null;
-        // TODO
+        String data = readFile(source);
+        JSONObject object = new JSONObject(data);
+        return parseCalories(object);
     }
 
     // EFFECTS: read source file as string and returns it
@@ -117,14 +118,9 @@ public class JsonReader {
     }
 
     // EFFECTS: parses calories from JSON object and returns it
-    private void parseCalories(JSONObject jsonObject) {
-        // TODO
+    private Calories parseCalories(JSONObject jsonObject) {
+        int cals = jsonObject.getInt("Calories");
+        Calories c = new Calories(cals);
+        return c;
     }
-
-    // MODIFIES: c
-    // EFFECTS: parases calories from JSON object and sets it as calorie goal
-    private void addCalories(Calories c, JSONObject jsonObject) {
-        // TODO
-    }
-
 }
