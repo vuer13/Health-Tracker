@@ -1,3 +1,6 @@
+// Referenced from the JsonSerialization Demo
+// https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
+
 package ui;
 
 import java.io.FileNotFoundException;
@@ -94,7 +97,7 @@ public class Tracker {
             handlesFoodMenu();
         } else if (input.equals("e")) {
             System.out.println(createListExercise(ex.getListExercise()));
-        } else if (input.equals("s")) { 
+        } else if (input.equals("s")) {
             viewStatisitics();
         } else if (input.equals("q")) {
             quitApp();
@@ -303,11 +306,11 @@ public class Tracker {
         FoodGroup foodGroup = null;
         while (!validInput) {
             System.out.println("Input the food group:");
-            try { 
-                foodGroup = FoodGroup.valueOf(scanner.next().toUpperCase());   
-                validInput = true;         
+            try {
+                foodGroup = FoodGroup.valueOf(scanner.next().toUpperCase());
+                validInput = true;
             } catch (IllegalArgumentException e) {
-                System.out.println("Invalid input. Please enter a valid Food Group.");  
+                System.out.println("Invalid input. Please enter a valid Food Group.");
             }
         }
         return foodGroup;

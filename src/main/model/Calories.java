@@ -1,3 +1,6 @@
+// Referenced from the JsonSerialization Demo
+// https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
+
 package model;
 
 import java.time.LocalDate;
@@ -40,7 +43,8 @@ public class Calories implements Writeable {
         return foodCals - exCals;
     }
 
-    // EFFECTS: returns how much calories are required to reach your goal, if went over goal, will return 0
+    // EFFECTS: returns how much calories are required to reach your goal, if went
+    // over goal, will return 0
     public int neededAmount(ListOfFoodItems lofi, ListExercise loe) {
         if (calorieGoal - difference(lofi, loe) > 0) {
             return calorieGoal - difference(lofi, loe);
@@ -49,7 +53,8 @@ public class Calories implements Writeable {
         }
     }
 
-    // EFFECTS: returns how many calories you went over, if no calories over, will return 0
+    // EFFECTS: returns how many calories you went over, if no calories over, will
+    // return 0
     public int overAmount(ListOfFoodItems lofi, ListExercise loe) {
         if (calorieGoal - difference(lofi, loe) < 0) {
             return Math.abs(calorieGoal - difference(lofi, loe));
@@ -59,7 +64,7 @@ public class Calories implements Writeable {
     }
 
     public LocalDate getDate() {
-        return date; 
+        return date;
     }
 
     public void setDate() {

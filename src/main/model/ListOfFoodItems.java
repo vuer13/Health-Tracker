@@ -1,3 +1,6 @@
+// Referenced from the JsonSerialization Demo
+// https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
+
 package model;
 
 import static model.FoodGroup.DAIRY;
