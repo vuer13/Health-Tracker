@@ -18,8 +18,6 @@ import java.util.List;
 
 import java.util.Scanner;
 
-import org.junit.runner.FilterFactory.FilterNotCreatedException;
-
 // UI of the program
 public class Tracker {
 
