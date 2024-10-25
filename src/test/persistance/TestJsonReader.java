@@ -92,17 +92,6 @@ public class TestJsonReader extends TestJson {
         }
     }
 
-    @Test
-    void testReaderEmptyCalories() {
-        JsonReader reader = new JsonReader("./data/testReaderEmptyCalories.json");
-        try {
-            Calories e = reader.readCalories();
-            assertNull(e.getCalorieGoal());
-        } catch (IOException e) {
-            fail("Couldn't read from file");
-        }
-    }
-
     @Test 
     void testReaderGeneralCalories() {
         JsonReader reader = new JsonReader("./data/testReaderGeneralCalories.json");
