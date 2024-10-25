@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import model.Calories;
 import model.Exercise;
 import model.FoodItems;
 import model.ListExercise;
@@ -111,6 +112,23 @@ public class TestJsonWriter extends TestJson {
             List<FoodItems> fis = lofi.getListOfFoodItems();
             checkFoodItem("Apple", 15, FRUIT, fis.get(0));
             checkFoodItem("Beef", 30, PROTEIN, fis.get(1));
+        } catch (IOException e) {
+            fail("Exception should not have been thrown");
+        }
+    }
+
+    @Test
+    void testWriterGeneralListCalorie() {
+        try {
+            Calories c = new Calories(1000);
+            JsonWriter writer = new JsonWriter("./data/testWriterGeneralCalorie.json");
+            writer.open();
+            writer.writeCalorie(c);
+            writer.close();
+
+            JsonReader reader = new JsonReader("./data/testWriterGeneralCalorie.json");
+            c = reader.readCalories();
+            checkCalories(1000, c);
         } catch (IOException e) {
             fail("Exception should not have been thrown");
         }
