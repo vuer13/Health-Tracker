@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import model.Calories;
 import model.Exercise;
 import model.FoodGroup;
 import model.FoodItems;
@@ -42,6 +43,13 @@ public class JsonReader {
         String data = readFile(source);
         JSONObject object = new JSONObject(data);
         return parseListExercise(object);
+    }
+
+    // EFFECTS: reads calories goal from file and returns it
+    // throws IOException if error occurs reading data
+    public Calories readCalories() throws IOException {
+        return null;
+        // TODO
     }
 
     // EFFECTS: read source file as string and returns it
@@ -98,7 +106,7 @@ public class JsonReader {
         }
     }
 
-        // MODIFIES: lofi
+    // MODIFIES: lofi
     // EFFECTS: parses food items from JSON object and adds it to list of food items
     private void addFoodItem(ListOfFoodItems lofi, JSONObject jsonObject) {
         String name = jsonObject.getString("Food");
@@ -106,6 +114,17 @@ public class JsonReader {
         FoodGroup group = FoodGroup.valueOf(jsonObject.getString("Food Group"));
         FoodItems fi = new FoodItems(name, calories, group);
         lofi.addFood(fi);
+    }
+
+    // EFFECTS: parses calories from JSON object and returns it
+    private void parseCalories(JSONObject jsonObject) {
+        // TODO
+    }
+
+    // MODIFIES: c
+    // EFFECTS: parases calories from JSON object and sets it as calorie goal
+    private void addCalories(Calories c, JSONObject jsonObject) {
+        // TODO
     }
 
 }
