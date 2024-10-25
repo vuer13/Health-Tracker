@@ -30,10 +30,13 @@ public class Tracker {
     private Calories cal;
     private JsonWriter writerex;
     private JsonWriter writerf;
+    private JsonWriter writerc;
     private JsonReader readerex;
     private JsonReader readerf;
+    private JsonReader readerc;
     private static final String JSON_FOOD = "./data/foodItems.json";
     private static final String JSON_EX = "./data/exercises.json";
+    private static final String JSON_CAL = "./data/cal.json";
 
     // REQUIRES: input must be a integer > 0
     // EFFECTS: Initiates UI console base
@@ -44,8 +47,10 @@ public class Tracker {
         scanner = new Scanner(System.in);
         writerex = new JsonWriter(JSON_EX);
         writerf = new JsonWriter(JSON_FOOD);
+        writerc = new JsonWriter(JSON_CAL);
         readerex = new JsonReader(JSON_EX);
         readerf = new JsonReader(JSON_FOOD);
+        readerc = new JsonReader(JSON_CAL);
 
         createDivider();
         System.out.println("Welcome to the Calorie Tracker");
@@ -77,8 +82,8 @@ public class Tracker {
         System.out.println("View list of foods consumed: f");
         System.out.println("View list of exercises consumed: e");
         System.out.println("View your statistics for the day: s");
-        System.out.println("Save Current Lists: m");
-        System.out.println("Load Previous Lists: n");
+        System.out.println("Save Current Lists & Goal: m");
+        System.out.println("Load Previous Lists & Goal: n");
         System.out.println("Quit Application: q");
     }
 
@@ -437,7 +442,10 @@ public class Tracker {
             writerf.open();
             writerf.writeFood(lofi);
             writerf.close();
-            System.out.println("All lists have been saved!");
+            writerc.open();
+            writerc.writeCalorie(cal);
+            writerc.close();
+            System.out.println("All lists & goals have been saved!");
         } catch (FileNotFoundException e) {
             System.out.println("Unable to find the file");
         }
@@ -449,7 +457,8 @@ public class Tracker {
         try {
             lofi = readerf.readFootItems();
             ex = readerex.readExercise();
-            System.out.println("Loaded all lists");
+            cal = readerc.readCalories();
+            System.out.println("Loaded all lists & previous goal");
         } catch (IOException e) {
             System.out.println("Unable to find file");
         }
