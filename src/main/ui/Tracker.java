@@ -64,6 +64,21 @@ public class Tracker {
         }
     }
 
+    // EFFECTS: displays and processes inputs for start of menu
+    public void handlesStartMenu() {
+        // TODO
+    }
+
+    // EFFECTS: displays start menu
+    public void displayStartMenu() {
+        // TODO
+    }
+
+    // EFFECTS: processes start menu's input
+    public void processStartMenu(String input) {
+        // TODO
+    }
+
     // EFFECTS: displays and processes inputs for main menu
     public void handleMenu() {
         displayMenu();
