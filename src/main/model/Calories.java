@@ -1,10 +1,15 @@
 package model;
 
 import java.time.LocalDate;
+
+import org.json.JSONObject;
+
+import persistance.Writeable;
+
 import java.lang.Math;
 
 // Represents calories of a food item or exercise
-public class Calories {
+public class Calories implements Writeable {
 
     private int calorieGoal;
     private LocalDate date;
@@ -59,5 +64,10 @@ public class Calories {
 
     public void setDate() {
         date = LocalDate.now();
+    }
+
+    // EFFECTS: returns json object
+    public JSONObject toJson() {
+        // TODO
     }
 }
