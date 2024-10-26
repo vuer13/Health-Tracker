@@ -92,8 +92,7 @@ public class Tracker {
             handlesStartMenu();
         }
     }
-
-    // REQUIRES: num must be a integer > 0
+    
     // EFFECTS: deals with start of program
     public void startProgram() {
         createDivider();
@@ -189,7 +188,6 @@ public class Tracker {
         }
     }
 
-    // REQUIRES: newCal must be a integer > 0
     // MODIFIES: this
     // EFFECTS: sets new calorie goal
     public void helpSetNewGoal() {
