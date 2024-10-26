@@ -75,7 +75,7 @@ public class Tracker {
     }
 
     // EFFECTS: processes start menu's input
-    public void processStartMenu(String input) {
+    public void processStartMenu(String input) throws JSONException {
         if (input.equals("l")) {
             try {
                 loadLists();
