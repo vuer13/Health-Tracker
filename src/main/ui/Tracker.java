@@ -21,6 +21,8 @@ import java.util.List;
 
 import java.util.Scanner;
 
+import org.json.JSONException;
+
 // UI of the program
 public class Tracker {
 
@@ -75,16 +77,19 @@ public class Tracker {
     // EFFECTS: processes start menu's input
     public void processStartMenu(String input) {
         if (input.equals("l")) {
-            loadLists();
-            while (this.isProgramRunning) {
-                handleMenu();
+            try {
+                loadLists();
+                while (this.isProgramRunning) {
+                    handleMenu();
+                }
+            } catch (JSONException e) {
+                System.out.println("Unable to load previous lists, restarting program");
             }
         } else if (input.equals("c")) {
             createDivider();
             System.out.println("Please enter your calorie goal for the day");
             int num = Integer.parseInt(scanner.nextLine());
             cal = new Calories(num);
-    
             while (this.isProgramRunning) {
                 handleMenu();
             }
@@ -92,6 +97,11 @@ public class Tracker {
             System.out.println("That is not a valid option, please reselect.");
             handlesStartMenu();
         }
+    }
+
+    // EFFECTS: deals with start of program
+    public void startProgram() {
+        // TODO
     }
 
     // EFFECTS: displays and processes inputs for main menu
