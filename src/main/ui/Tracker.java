@@ -84,15 +84,10 @@ public class Tracker {
                 }
             } catch (JSONException e) {
                 System.out.println("Unable to load previous lists, restarting program");
+                startProgram();
             }
         } else if (input.equals("c")) {
-            createDivider();
-            System.out.println("Please enter your calorie goal for the day");
-            int num = Integer.parseInt(scanner.nextLine());
-            cal = new Calories(num);
-            while (this.isProgramRunning) {
-                handleMenu();
-            }
+            startProgram();
         } else {
             System.out.println("That is not a valid option, please reselect.");
             handlesStartMenu();
@@ -101,7 +96,13 @@ public class Tracker {
 
     // EFFECTS: deals with start of program
     public void startProgram() {
-        // TODO
+        createDivider();
+        System.out.println("Please enter your calorie goal for the day");
+        int num = Integer.parseInt(scanner.nextLine());
+        cal = new Calories(num);
+        while (this.isProgramRunning) {
+            handleMenu();
+        }
     }
 
     // EFFECTS: displays and processes inputs for main menu
