@@ -41,7 +41,6 @@ public class Tracker {
     private static final String JSON_EX = "./data/exercises.json";
     private static final String JSON_CAL = "./data/cal.json";
 
-    // REQUIRES: input must be a integer > 0
     // EFFECTS: Initiates UI console base
     public Tracker() {
         isProgramRunning = true;
@@ -94,6 +93,7 @@ public class Tracker {
         }
     }
 
+    // REQUIRES: num must be a integer > 0
     // EFFECTS: deals with start of program
     public void startProgram() {
         createDivider();
