@@ -1,5 +1,7 @@
 package ui;
 
+import javax.swing.SwingUtilities;
+
 // Opens panel up
 public class Main {
     
@@ -7,5 +9,13 @@ public class Main {
     public static void main(String[] args) throws Exception {
         // No Longer Required:
         // new Tracker(); 
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                TrackerUI main = new TrackerUI();
+                main.startMenu();
+            }
+        });
     }
 }
