@@ -12,7 +12,7 @@ public class TrackerUI extends JFrame {
     }
 
     // EFFECTS: displays starting menu with option to load previous mode
-    private void startMenu() {
+    public void startMenu() {
         // TODO
     }
 
