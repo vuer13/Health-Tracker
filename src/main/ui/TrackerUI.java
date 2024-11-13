@@ -5,16 +5,23 @@ import javax.swing.JFrame;
 // GUI for program
 public class TrackerUI extends JFrame {
 
+    private JFrame window;
 
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
-        // TODO
+        window = new JFrame();
+        window.setTitle("Calorie Tracker");
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        window.setSize(1000, 600);
+        window.setLocationRelativeTo(null);
+
+        showWindow();
     }
 
     // EFFECTS: shows window of GUI
     public void showWindow() {
-        // TODO
+        window.setVisible(true);
     }
 
     // EFFECTS: displays starting menu with option to load previous mode
