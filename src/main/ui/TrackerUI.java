@@ -12,10 +12,10 @@ public class TrackerUI extends JFrame {
     public TrackerUI() {
         window = new JFrame();
         window.setTitle("Calorie Tracker");
-        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         window.setSize(1000, 600);
         window.setLocationRelativeTo(null);
 
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         showWindow();
     }
 
