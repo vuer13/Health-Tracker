@@ -14,7 +14,7 @@ public class Main {
             @Override
             public void run() {
                 TrackerUI main = new TrackerUI();
-                main.startMenu();
+                main.showWindow();
             }
         });
     }
