@@ -5,9 +5,15 @@ import javax.swing.JFrame;
 // GUI for program
 public class TrackerUI extends JFrame {
 
+
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
+        // TODO
+    }
+
+    // EFFECTS: shows window of GUI
+    public void showWindow() {
         // TODO
     }
 
