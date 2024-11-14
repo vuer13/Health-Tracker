@@ -3,6 +3,7 @@ package ui;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.time.LocalDate;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,6 +30,18 @@ public class TrackerUI extends JFrame {
     private final JLabel labelGoal = new JLabel("Enter your calorie goal: ");
 
     // For Main Screen
+    private final JPanel mainScreenPanel = new JPanel();
+    private final JButton addFoodButton = new JButton("Add Food (+)");
+    private final JButton removeFoodButton = new JButton("Remove Food (-)");
+    private final JButton addExerciseButton = new JButton("Add Exercise (+)");
+    private final JButton removeExerciseButton = new JButton("Remove Exercise (-)");
+    private final JButton homeButton = new JButton("Home");
+    private final JButton saveButton = new JButton("Save");
+    private final JButton loadButton = new JButton("Load");
+    private final JButton setGoalButtone = new JButton("Set Calorie Goal");
+    private final LocalDate today = LocalDate.now();
+    private final JLabel title = new JLabel("Please select an option");
+    private final JLabel todayDate = new JLabel("Today's Date: " + today);
 
     // For Adding FoodItems Screen
 
@@ -94,7 +107,24 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: displays main menu 
     private void setMainScreenPanel() {
-        // TODO
+        mainScreenPanel.setLayout(null);
+        homePanel.setBackground(new Color(0, 255, 51));
+
+        title.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+        todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+
+        title.setBounds(300, 150, 500, 200);
+        todayDate.setBounds(300, 0, 500, 200);
+        addFoodButton.setBounds(0, 300, 100, 75);
+        removeFoodButton.setBounds(125, 300, 100, 75);
+        addExerciseButton.setBounds(250, 300, 100, 75);
+        removeExerciseButton.setBounds(375, 300, 100, 75);
+        setGoalButtone.setBounds(125, 450, 100, 75);
+        homeButton.setBounds(0, 450, 100, 75);
+        saveButton.setBounds(250, 450, 100, 75);
+        loadButton.setBounds(375, 450, 100, 75);
+
+        addMainButtons();
     }
 
     // EFFECTS: responsible for performing all the button actions
