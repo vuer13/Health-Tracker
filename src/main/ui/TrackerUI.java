@@ -51,9 +51,11 @@ public class TrackerUI extends JFrame {
         mainPanel.setLayout(cl);
 
         mainPanel.add(homePanel, "1");
+        mainPanel.add(goalPanel, "2");
         cl.show(mainPanel, "1");
 
         setHomePanel();
+        goalMenu();
 
         frame.add(mainPanel);
         frame.setTitle("Calorie Tracker");
@@ -81,7 +83,6 @@ public class TrackerUI extends JFrame {
         homePanel.add(b2);
     }
 
-    // MODIFIES: calories
     // EFFECTS: creates menu allowing user to make calorie goal
     private void goalMenu() {
         goalPanel.setLayout(null);
@@ -90,7 +91,7 @@ public class TrackerUI extends JFrame {
         labelHome.setBounds(300, 0, 500, 200);
 
         calGoal.setBounds(300, 150, 400, 100);
-        calGoal.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+        calGoal.setFont(new Font("Times New Roman", Font.BOLD, 24));
 
         goalPanel.add(labelGoal);
         goalPanel.add(calGoal);
@@ -122,6 +123,12 @@ public class TrackerUI extends JFrame {
     // MODIFIES: this
     // EFFECTS: loads list of food items from previously saved items
     private void loadFoods() {
+        // TODO
+    }
+
+    // MODIFIES: calories
+    // EFFECTS: sets new calorie goal
+    private void setCals() {
         // TODO
     }
 }
