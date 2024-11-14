@@ -76,7 +76,7 @@ public class TrackerUI extends JFrame {
     }
 
     // EFFECTS: adds functionality for b1 when button is clicked
-    private ActionListener b1Listener() {
+    private void b1Listener() {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,11 +85,10 @@ public class TrackerUI extends JFrame {
             }
 
         };
-        return al;
     }
 
     // EFFECTS: adds functionality for b2 when button is clicked
-    private ActionListener b2Listener() {
+    private void b2Listener() {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,7 +98,6 @@ public class TrackerUI extends JFrame {
             }
 
         };
-        return al;
     }
 
     // MODIFIES: calories
