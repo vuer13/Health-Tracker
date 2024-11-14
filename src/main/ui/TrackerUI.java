@@ -24,7 +24,7 @@ public class TrackerUI extends JFrame {
     // For Starting Menu
     private final JFrame frame = new JFrame();
     private final JPanel homePanel = new JPanel();
-    private final JLabel labelHome = new JLabel("The Calorie Tracker");
+    private final JLabel labelHome = new JLabel("Enter your calorie goal: ");
     private final JTextField calGoalStart = new JTextField();
     private Calories cal;
 
@@ -90,7 +90,7 @@ public class TrackerUI extends JFrame {
         calGoalStart.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         labelHome.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
-        labelHome.setBounds(300, 0, 500, 200);
+        labelHome.setBounds(250, 0, 500, 200);
         calGoalStart.setBounds(250, 150, 500, 100);
 
         homePanel.add(labelHome);
