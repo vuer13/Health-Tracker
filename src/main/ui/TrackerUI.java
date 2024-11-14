@@ -46,6 +46,7 @@ public class TrackerUI extends JFrame {
     private final LocalDate today = LocalDate.now();
     private final JLabel title = new JLabel("Please select an option");
     private final JLabel todayDate = new JLabel("Today's Date: " + today);
+    private JLabel goal = new JLabel("");
 
     // For Adding FoodItems Screen
 
@@ -96,9 +97,10 @@ public class TrackerUI extends JFrame {
         calGoalStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int goal = Integer.parseInt(calGoalStart.getText());
-                cal = new Calories(goal);
+                int goals = Integer.parseInt(calGoalStart.getText());
+                cal = new Calories(goals);
                 cl.show(mainPanel, "3");
+                goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal()));
             }
         });
     }
@@ -122,10 +124,12 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.setLayout(null);
         homePanel.setBackground(new Color(0, 255, 51));
 
+        goal.setFont(new Font("Times New Roman", Font.PLAIN, 48));
         title.setFont(new Font("Times New Roman", Font.PLAIN, 48));
         todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
-        title.setBounds(300, 150, 700, 200);
+        title.setBounds(300, 150, 2000, 200);
+        goal.setBounds(300, 75, 700, 200);
         todayDate.setBounds(300, 0, 500, 200);
         addFoodButton.setBounds(0, 300, 100, 75);
         removeFoodButton.setBounds(125, 300, 100, 75);
@@ -151,6 +155,7 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.add(homeButton);
         mainScreenPanel.add(saveButton);
         mainScreenPanel.add(loadButton);
+        mainScreenPanel.add(goal);
     }
 
     // EFFECTS: sets add food panel
