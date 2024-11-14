@@ -75,29 +75,9 @@ public class TrackerUI extends JFrame {
         homePanel.add(b2);
     }
 
-    // EFFECTS: adds functionality for b1 when button is clicked
-    private void b1Listener() {
-        ActionListener al = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                loadExercises();
-                loadFoods();
-            }
-
-        };
-    }
-
-    // EFFECTS: adds functionality for b2 when button is clicked
-    private void b2Listener() {
-        ActionListener al = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                goalMenu();
-                loadNewExercises();
-                loadNewFoods();
-            }
-
-        };
+    // EFFECTS: responsible for performing all the button actions
+    private void actionPerformed() {
+        // TODO
     }
 
     // MODIFIES: calories
