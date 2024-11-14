@@ -1,13 +1,8 @@
 package ui;
 
-import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -55,7 +50,7 @@ public class TrackerUI extends JFrame {
         cl.show(mainPanel, "1");
 
         setHomePanel();
-        goalMenu();
+        setGoalPanel();
 
         frame.add(mainPanel);
         frame.setTitle("Calorie Tracker");
@@ -84,7 +79,7 @@ public class TrackerUI extends JFrame {
     }
 
     // EFFECTS: creates menu allowing user to make calorie goal
-    private void goalMenu() {
+    private void setGoalPanel() {
         goalPanel.setLayout(null);
 
         labelGoal.setFont(new Font("Times New Roman", Font.PLAIN, 48));
@@ -95,6 +90,11 @@ public class TrackerUI extends JFrame {
 
         goalPanel.add(labelGoal);
         goalPanel.add(calGoal);
+    }
+
+    // EFFECTS: displays main menu 
+    private void setMainScreenPanel() {
+        // TODO
     }
 
     // EFFECTS: responsible for performing all the button actions
