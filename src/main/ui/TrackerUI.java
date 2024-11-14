@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 // GUI for program
 public class TrackerUI extends JFrame {
@@ -28,6 +29,9 @@ public class TrackerUI extends JFrame {
     private final JLabel labelHome = new JLabel("The Calorie Tracker");
 
     // For Goal Menu
+    private final JTextField calGoal = new JTextField();
+    private final JPanel goalPanel = new JPanel();
+    private final JLabel labelGoal = new JLabel("Enter your calorie goal: ");
 
     // For Main Screen
 
@@ -80,7 +84,16 @@ public class TrackerUI extends JFrame {
     // MODIFIES: calories
     // EFFECTS: creates menu allowing user to make calorie goal
     private void goalMenu() {
-        // TODO
+        goalPanel.setLayout(null);
+
+        labelGoal.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+        labelHome.setBounds(300, 0, 500, 200);
+
+        calGoal.setBounds(300, 150, 400, 100);
+        calGoal.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+
+        goalPanel.add(labelGoal);
+        goalPanel.add(calGoal);
     }
 
     // EFFECTS: responsible for performing all the button actions
