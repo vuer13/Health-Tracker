@@ -4,29 +4,26 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.border.Border;
 
 // GUI for program
 public class TrackerUI extends JFrame {
 
-    private JFrame startWindow;
-    private JPanel panel1;
-    private JPanel panel2;
+    // For Starting Menu
+    private final JFrame startWindow = new JFrame();;
+    private final JPanel homePanel = new JPanel();
+    private final JButton b1 = new JButton("Load Previously Saved State");
+    private final JButton b2 = new JButton("Create New Tracker");
 
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
-        startWindow = new JFrame();
         startWindow.setTitle("Calorie Tracker");
         startWindow.setSize(1000, 600);
         startWindow.setLocationRelativeTo(null);
@@ -44,14 +41,10 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: displays starting menu with option to load previous mode
     public void startMenu() {
-        panel1 = new JPanel();
-        panel2 = new JPanel();
         JLabel label = new JLabel("The Calorie Tracker");
 
-        panel1.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 2));
+        homePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 2));
 
-        JButton b1 = new JButton("Load Previously Saved State");
-        JButton b2 = new JButton("Create New Tracker");
         b1.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         b2.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         b1.setPreferredSize(new Dimension(400, 75));
@@ -61,12 +54,11 @@ public class TrackerUI extends JFrame {
         b1.addActionListener(b1Listener());
         b2.addActionListener(b2Listener());
 
-        panel1.add(label);
-        panel2.add(b1);
-        panel2.add(b2);
+        homePanel.add(label);
+        homePanel.add(b1);
+        homePanel.add(b2);
 
-        startWindow.add(panel1, BorderLayout.NORTH);
-        startWindow.add(panel2, BorderLayout.CENTER);
+        startWindow.add(homePanel, BorderLayout.CENTER);
     }
 
     // EFFECTS: adds functionality for b1 when button is clicked
