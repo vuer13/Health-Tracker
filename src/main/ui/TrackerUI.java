@@ -23,6 +23,18 @@ public class TrackerUI extends JFrame {
     private final JButton b1 = new JButton("Load Previously Saved State");
     private final JButton b2 = new JButton("Create New Tracker");
 
+    // For Main Screen
+
+    // For Adding FoodItems Screen
+
+    // For Removing FoodItems Screen
+
+    // For Adding Exercises Screen
+
+    // For Removing Exercises Screen
+
+    // For Changing Calorie Goal Screen
+
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
