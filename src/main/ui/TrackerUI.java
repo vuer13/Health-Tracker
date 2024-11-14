@@ -159,6 +159,11 @@ public class TrackerUI extends JFrame {
         // TODO
     }
 
+    // EFFECTS: sets new calorie goal
+    private void setCalsPanel() {
+        // TODO
+    }
+
     // EFFECTS: responsible for performing all the button actions
     private void actionPerformed() {
         // TODO
@@ -185,12 +190,6 @@ public class TrackerUI extends JFrame {
     // MODIFIES: this
     // EFFECTS: loads list of food items from previously saved items
     private void loadFoods() {
-        // TODO
-    }
-
-    // MODIFIES: calories
-    // EFFECTS: sets new calorie goal
-    private void setCals() {
         // TODO
     }
 }
