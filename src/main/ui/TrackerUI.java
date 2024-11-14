@@ -1,6 +1,7 @@
 package ui;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -16,6 +17,7 @@ import javax.swing.JPanel;
 public class TrackerUI extends JFrame {
 
     private final JPanel mainPanel = new JPanel();
+    private final CardLayout cl = new CardLayout();
 
     // For Starting Menu
     private final JFrame frame = new JFrame();;
@@ -38,12 +40,16 @@ public class TrackerUI extends JFrame {
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
+        mainPanel.setLayout(cl);
+
+        mainPanel.add(homePanel, "1");
+        cl.show(mainPanel, "1");
+
+        setHomePanel();
+
         frame.setTitle("Calorie Tracker");
         frame.setSize(1000, 600);
         frame.setLocationRelativeTo(null);
-
-        startMenu();
-
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         showWindow();
     }
@@ -54,7 +60,7 @@ public class TrackerUI extends JFrame {
     }
 
     // EFFECTS: displays starting menu with option to load previous mode
-    public void startMenu() {
+    public void setHomePanel() {
         JLabel label = new JLabel("The Calorie Tracker");
 
         homePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 2));
