@@ -15,8 +15,10 @@ import javax.swing.JPanel;
 // GUI for program
 public class TrackerUI extends JFrame {
 
+    private final JPanel mainPanel = new JPanel();
+
     // For Starting Menu
-    private final JFrame startWindow = new JFrame();;
+    private final JFrame frame = new JFrame();;
     private final JPanel homePanel = new JPanel();
     private final JButton b1 = new JButton("Load Previously Saved State");
     private final JButton b2 = new JButton("Create New Tracker");
@@ -24,19 +26,19 @@ public class TrackerUI extends JFrame {
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
-        startWindow.setTitle("Calorie Tracker");
-        startWindow.setSize(1000, 600);
-        startWindow.setLocationRelativeTo(null);
+        frame.setTitle("Calorie Tracker");
+        frame.setSize(1000, 600);
+        frame.setLocationRelativeTo(null);
 
         startMenu();
 
-        startWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         showWindow();
     }
 
     // EFFECTS: shows window of GUI
     public void showWindow() {
-        startWindow.setVisible(true);
+        frame.setVisible(true);
     }
 
     // EFFECTS: displays starting menu with option to load previous mode
@@ -58,7 +60,7 @@ public class TrackerUI extends JFrame {
         homePanel.add(b1);
         homePanel.add(b2);
 
-        startWindow.add(homePanel, BorderLayout.CENTER);
+        frame.add(homePanel, BorderLayout.CENTER);
     }
 
     // EFFECTS: adds functionality for b1 when button is clicked
