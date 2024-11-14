@@ -20,8 +20,7 @@ public class TrackerUI extends JFrame {
     // For Starting Menu
     private final JFrame frame = new JFrame();;
     private final JPanel homePanel = new JPanel();
-    private final JButton b1 = new JButton("Load Previously Saved State");
-    private final JButton b2 = new JButton("Create New Tracker");
+    private final JButton b1 = new JButton("Click Here To Get Started!");
     private final JLabel labelHome = new JLabel("The Calorie Tracker");
 
     // For Goal Menu
@@ -81,16 +80,13 @@ public class TrackerUI extends JFrame {
         homePanel.setBackground(new Color(0, 255, 51));
 
         b1.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-        b2.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         labelHome.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
         labelHome.setBounds(300, 0, 500, 200);
-        b1.setBounds(300, 150, 400, 100);
-        b2.setBounds(300, 300, 400, 100);
+        b1.setBounds(250, 150, 500, 100);
 
         homePanel.add(labelHome);
         homePanel.add(b1);
-        homePanel.add(b2);
     }
 
     // EFFECTS: creates menu allowing user to make calorie goal
