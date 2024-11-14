@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -18,25 +19,25 @@ import javax.swing.border.Border;
 // GUI for program
 public class TrackerUI extends JFrame {
 
-    private JFrame window;
+    private JFrame startWindow;
 
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
-        window = new JFrame();
-        window.setTitle("Calorie Tracker");
-        window.setSize(1000, 600);
-        window.setLocationRelativeTo(null);
+        startWindow = new JFrame();
+        startWindow.setTitle("Calorie Tracker");
+        startWindow.setSize(1000, 600);
+        startWindow.setLocationRelativeTo(null);
 
         startMenu();
 
-        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        startWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         showWindow();
     }
 
     // EFFECTS: shows window of GUI
     public void showWindow() {
-        window.setVisible(true);
+        startWindow.setVisible(true);
     }
 
     // EFFECTS: displays starting menu with option to load previous mode
@@ -62,18 +63,35 @@ public class TrackerUI extends JFrame {
         panel2.add(b1);
         panel2.add(b2);
 
-        window.add(panel1, BorderLayout.NORTH);
-        window.add(panel2, BorderLayout.CENTER);
+        startWindow.add(panel1, BorderLayout.NORTH);
+        startWindow.add(panel2, BorderLayout.CENTER);
     }
 
     // EFFECTS: adds functionality for b1 when button is clicked
     private ActionListener b1Listener() {
-        return null;
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadExercises();
+                loadFoods();
+            }
+
+        };
+        return al;
     }
 
     // EFFECTS: adds functionality for b2 when button is clicked
     private ActionListener b2Listener() {
-        return null;
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                goalMenu();
+                loadNewExercises();
+                loadNewFoods();
+            }
+
+        };
+        return al;
     }
 
     // MODIFIES: calories
