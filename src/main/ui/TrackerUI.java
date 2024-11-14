@@ -44,8 +44,10 @@ public class TrackerUI extends JFrame {
     private final JButton loadButton = new JButton("Load");
     private final JButton setGoalButtone = new JButton("Set Calorie Goal");
     private final LocalDate today = LocalDate.now();
-    private final JLabel title = new JLabel("Please select an option");
-    private final JLabel todayDate = new JLabel("Today's Date: " + today);
+    private final JLabel title = new JLabel("Please select an option: ");
+    private final JLabel todayDate = new JLabel(
+            "Today's Date: " + today.getMonthValue() + "-" + today.getDayOfMonth() + "-" +
+                    today.getYear());
     private JLabel goal = new JLabel("");
 
     // For Adding FoodItems Screen
@@ -119,18 +121,18 @@ public class TrackerUI extends JFrame {
         goalPanel.add(calGoal);
     }
 
-    // EFFECTS: displays main menu 
+    // EFFECTS: displays main menu
     private void setMainScreenPanel() {
         mainScreenPanel.setLayout(null);
-        homePanel.setBackground(new Color(0, 255, 51));
+        mainScreenPanel.setBackground(new Color(0, 255, 51));
 
         goal.setFont(new Font("Times New Roman", Font.PLAIN, 48));
-        title.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+        title.setFont(new Font("Times New Roman", Font.PLAIN, 44));
         todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
-        title.setBounds(300, 150, 2000, 200);
-        goal.setBounds(300, 75, 700, 200);
-        todayDate.setBounds(300, 0, 500, 200);
+        title.setBounds(250, 150, 2000, 200);
+        goal.setBounds(250, 75, 700, 200);
+        todayDate.setBounds(250, 0, 5000, 200);
         addFoodButton.setBounds(0, 300, 100, 75);
         removeFoodButton.setBounds(125, 300, 100, 75);
         addExerciseButton.setBounds(250, 300, 100, 75);
@@ -172,7 +174,7 @@ public class TrackerUI extends JFrame {
     private void setAddExPanel() {
         // TODO
     }
-    
+
     // EFFECTS: sets remove exercise panel
     private void setRemoveExPanel() {
         // TODO
