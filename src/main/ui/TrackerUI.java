@@ -139,6 +139,26 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.add(loadButton);
     }
 
+    // EFFECTS: sets add food panel
+    private void setAddFoodPanel() {
+        // TODO
+    }
+
+    // EFFECTS: sets remove food panel
+    private void setRemoveFoodPanel() {
+        // TODO
+    }
+
+    // EFFECTS: sets add exercise panel
+    private void setAddExPanel() {
+        // TODO
+    }
+    
+    // EFFECTS: sets remove exercise panel
+    private void setRemoveExPanel() {
+        // TODO
+    }
+
     // EFFECTS: responsible for performing all the button actions
     private void actionPerformed() {
         // TODO
