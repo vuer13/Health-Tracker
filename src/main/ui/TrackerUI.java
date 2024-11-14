@@ -2,6 +2,7 @@ package ui;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -24,6 +25,7 @@ public class TrackerUI extends JFrame {
     private final JPanel homePanel = new JPanel();
     private final JButton b1 = new JButton("Load Previously Saved State");
     private final JButton b2 = new JButton("Create New Tracker");
+    private final JLabel labelHome = new JLabel("The Calorie Tracker");
 
     // For Main Screen
 
@@ -47,6 +49,7 @@ public class TrackerUI extends JFrame {
 
         setHomePanel();
 
+        frame.add(mainPanel);
         frame.setTitle("Calorie Tracker");
         frame.setSize(1000, 600);
         frame.setLocationRelativeTo(null);
@@ -56,24 +59,20 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: displays starting menu with option to load previous mode
     public void setHomePanel() {
-        JLabel label = new JLabel("The Calorie Tracker");
-
-        homePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 2));
+        homePanel.setLayout(null);
+        homePanel.setBackground(new Color(0, 255, 51));
 
         b1.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         b2.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-        b1.setPreferredSize(new Dimension(400, 75));
-        b2.setPreferredSize(new Dimension(400, 75));
-        label.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+        labelHome.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
-        b1.addActionListener(b1Listener());
-        b2.addActionListener(b2Listener());
+        labelHome.setBounds(300, 0, 500, 200);
+        b1.setBounds(300, 150, 400, 100);
+        b2.setBounds(300, 300, 400, 100);
 
-        homePanel.add(label);
+        homePanel.add(labelHome);
         homePanel.add(b1);
         homePanel.add(b2);
-
-        frame.add(homePanel, BorderLayout.CENTER);
     }
 
     // EFFECTS: adds functionality for b1 when button is clicked
