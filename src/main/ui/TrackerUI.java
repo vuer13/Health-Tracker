@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -63,6 +64,16 @@ public class TrackerUI extends JFrame {
 
         window.add(panel1, BorderLayout.NORTH);
         window.add(panel2, BorderLayout.CENTER);
+    }
+
+    // EFFECTS: adds functionality for b1 when button is clicked
+    private ActionListener b1Listener() {
+        return null;
+    }
+
+    // EFFECTS: adds functionality for b2 when button is clicked
+    private ActionListener b2Listener() {
+        return null;
     }
 
     // MODIFIES: calories
