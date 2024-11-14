@@ -27,6 +27,8 @@ public class TrackerUI extends JFrame {
     private final JButton b2 = new JButton("Create New Tracker");
     private final JLabel labelHome = new JLabel("The Calorie Tracker");
 
+    // For Goal Menu
+
     // For Main Screen
 
     // For Adding FoodItems Screen
@@ -75,14 +77,14 @@ public class TrackerUI extends JFrame {
         homePanel.add(b2);
     }
 
-    // EFFECTS: responsible for performing all the button actions
-    private void actionPerformed() {
-        // TODO
-    }
-
     // MODIFIES: calories
     // EFFECTS: creates menu allowing user to make calorie goal
     private void goalMenu() {
+        // TODO
+    }
+
+    // EFFECTS: responsible for performing all the button actions
+    private void actionPerformed() {
         // TODO
     }
 
