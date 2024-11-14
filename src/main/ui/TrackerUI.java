@@ -46,7 +46,6 @@ public class TrackerUI extends JFrame {
     private final LocalDate today = LocalDate.now();
     private final JLabel title = new JLabel("Please select an option");
     private final JLabel todayDate = new JLabel("Today's Date: " + today);
-    private JLabel titleCal;
 
     // For Adding FoodItems Screen
 
@@ -123,12 +122,10 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.setLayout(null);
         homePanel.setBackground(new Color(0, 255, 51));
 
-        titleCal.setFont(new Font("Times New Roman", Font.PLAIN, 48));
         title.setFont(new Font("Times New Roman", Font.PLAIN, 48));
         todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
         title.setBounds(300, 150, 700, 200);
-        titleCal.setBounds(300, 75, 500, 200);
         todayDate.setBounds(300, 0, 500, 200);
         addFoodButton.setBounds(0, 300, 100, 75);
         removeFoodButton.setBounds(125, 300, 100, 75);
@@ -154,7 +151,6 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.add(homeButton);
         mainScreenPanel.add(saveButton);
         mainScreenPanel.add(loadButton);
-        mainScreenPanel.add(titleCal);
     }
 
     // EFFECTS: sets add food panel
