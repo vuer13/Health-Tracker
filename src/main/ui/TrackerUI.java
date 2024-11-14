@@ -3,6 +3,8 @@ package ui;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDate;
 
 import javax.swing.JButton;
@@ -11,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import model.Calories;
+
 // GUI for program
 public class TrackerUI extends JFrame {
 
@@ -18,10 +22,11 @@ public class TrackerUI extends JFrame {
     private final CardLayout cl = new CardLayout();
 
     // For Starting Menu
-    private final JFrame frame = new JFrame();;
+    private final JFrame frame = new JFrame();
     private final JPanel homePanel = new JPanel();
-    private final JButton b1 = new JButton("Click Here To Get Started!");
     private final JLabel labelHome = new JLabel("The Calorie Tracker");
+    private final JTextField calGoalStart = new JTextField();
+    private Calories cal;
 
     // For Goal Menu
     private final JTextField calGoal = new JTextField();
@@ -79,14 +84,23 @@ public class TrackerUI extends JFrame {
         homePanel.setLayout(null);
         homePanel.setBackground(new Color(0, 255, 51));
 
-        b1.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+        calGoalStart.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         labelHome.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
         labelHome.setBounds(300, 0, 500, 200);
-        b1.setBounds(250, 150, 500, 100);
+        calGoalStart.setBounds(250, 150, 500, 100);
 
         homePanel.add(labelHome);
-        homePanel.add(b1);
+        homePanel.add(calGoalStart);
+
+        calGoalStart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int goal = Integer.parseInt(calGoalStart.getText());
+                cal = new Calories(goal);
+                cl.show(mainPanel, "3");
+            }
+        });
     }
 
     // EFFECTS: creates menu allowing user to make calorie goal
