@@ -20,6 +20,8 @@ import javax.swing.border.Border;
 public class TrackerUI extends JFrame {
 
     private JFrame startWindow;
+    private JPanel panel1;
+    private JPanel panel2;
 
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
@@ -42,8 +44,8 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: displays starting menu with option to load previous mode
     public void startMenu() {
-        JPanel panel1 = new JPanel();
-        JPanel panel2 = new JPanel();
+        panel1 = new JPanel();
+        panel2 = new JPanel();
         JLabel label = new JLabel("The Calorie Tracker");
 
         panel1.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 2));
