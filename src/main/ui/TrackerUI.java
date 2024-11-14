@@ -129,7 +129,16 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: adds buttons to mainScreenPanel
     private void addMainButtons() {
-        // TODO
+        mainScreenPanel.add(title);
+        mainScreenPanel.add(todayDate);
+        mainScreenPanel.add(addFoodButton);
+        mainScreenPanel.add(removeFoodButton);
+        mainScreenPanel.add(addExerciseButton);
+        mainScreenPanel.add(removeExerciseButton);
+        mainScreenPanel.add(setGoalButtone);
+        mainScreenPanel.add(homeButton);
+        mainScreenPanel.add(saveButton);
+        mainScreenPanel.add(loadButton);
     }
 
     // EFFECTS: responsible for performing all the button actions
