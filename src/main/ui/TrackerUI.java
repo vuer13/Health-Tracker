@@ -82,6 +82,7 @@ public class TrackerUI extends JFrame {
         frame.setVisible(true);
     }
 
+    // MODIFIES: this
     // EFFECTS: displays starting menu with option to load previous mode
     public void setHomePanel() {
         homePanel.setLayout(null);
