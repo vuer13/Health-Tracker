@@ -51,11 +51,6 @@ public class TrackerUI extends JFrame {
         frame.setSize(1000, 600);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        showWindow();
-    }
-
-    // EFFECTS: shows window of GUI
-    public void showWindow() {
         frame.setVisible(true);
     }
 
