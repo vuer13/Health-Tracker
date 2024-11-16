@@ -21,6 +21,9 @@ public class TrackerUI extends JFrame {
     private final JPanel mainPanel = new JPanel();
     private final CardLayout cl = new CardLayout();
 
+    // GENERAL:
+    private final JButton backButton = new JButton("Back"); // Use for both adds and both removes
+
     // For Starting Menu
     private final JFrame frame = new JFrame();
     private final JPanel homePanel = new JPanel();
@@ -51,6 +54,15 @@ public class TrackerUI extends JFrame {
     private JLabel goal = new JLabel("");
 
     // For Adding FoodItems Screen
+    private final JPanel addFoodItemsPanel = new JPanel();
+    private final JLabel addFoodName = new JLabel("Food Name: ");
+    private final JLabel addCals = new JLabel("Calories: ");
+    private final JLabel addGroup = new JLabel("Food Group: ");
+    private final JButton addFood = new JButton("Add Food (+)");
+    private final JButton clearFood = new JButton("Clear");
+    private final JTextField addFoodNameField = new JTextField();
+    private final JTextField addCalsField = new JTextField();
+    private final JTextField addGroupField = new JTextField();
 
     // For Removing FoodItems Screen
 
@@ -163,7 +175,28 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: sets add food panel
     private void setAddFoodPanel() {
-        // TODO
+        addFoodItemsPanel.setLayout(null);
+
+        addFoodName.setBounds(30, 10, 100, 100);
+        addFoodNameField.setBounds(180, 50, 100, 20);
+        addCals.setBounds(30, 100, 100, 100);
+        addCalsField.setBounds(180, 150, 100, 20);
+        addGroup.setBounds(30, 200, 100, 100);
+        addGroupField.setBounds(180, 250, 100, 20);
+
+        addFood.setBounds(150, 450, 100, 75);
+        clearFood.setBounds(250, 450, 100, 75);
+        backButton.setBounds(350, 450, 100, 75);
+
+        addFoodItemsPanel.add(addFoodName);
+        addFoodItemsPanel.add(addFoodNameField);
+        addFoodItemsPanel.add(addCals);
+        addFoodItemsPanel.add(addCalsField);
+        addFoodItemsPanel.add(addGroup);
+        addFoodItemsPanel.add(addGroupField);
+        addFoodItemsPanel.add(addFood);
+        addFoodItemsPanel.add(clearFood);
+        addFoodItemsPanel.add(backButton);
     }
 
     // EFFECTS: sets remove food panel
