@@ -67,6 +67,13 @@ public class TrackerUI extends JFrame {
     // For Removing FoodItems Screen
 
     // For Adding Exercises Screen
+    private final JPanel addExPanel = new JPanel();
+    private final JLabel addExName = new JLabel("Exercise: ");
+    private final JLabel calExName = new JLabel("Calories Burnt: ");
+    private final JTextField exName = new JTextField();
+    private final JTextField calName = new JTextField();
+    private final JButton addExButton = new JButton("Add Exercise (+)");
+    private final JButton clearEx = new JButton("Clear");
 
     // For Removing Exercises Screen
 
@@ -210,7 +217,22 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: sets add exercise panel
     private void setAddExPanel() {
-        // TODO
+        addExPanel.setLayout(null);
+        
+        addExName.setBounds(30, 10, 100, 100);
+        exName.setBounds(180, 50, 100, 20);
+        calExName.setBounds(30, 100, 100, 100);
+        calName.setBounds(180, 150, 100, 20);
+
+        addExButton.setBounds(150, 450, 100, 75);
+        clearEx.setBounds(250, 450, 100, 75);
+
+        addExPanel.add(addExName);
+        addExPanel.add(exName);
+        addExPanel.add(calExName);
+        addExPanel.add(calName);
+        addExPanel.add(addExButton);
+        addExPanel.add(clearEx);
     }
 
     // EFFECTS: sets remove exercise panel
