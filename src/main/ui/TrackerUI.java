@@ -175,7 +175,7 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.add(goal);
     }
 
-    // EFFECTS: sets add food panel
+    // EFFECTS: sets add food items panel
     private void setAddFoodPanel() {
         addFoodItemsPanel.setLayout(null);
 
@@ -201,7 +201,7 @@ public class TrackerUI extends JFrame {
         addFoodItemsPanel.add(backButton);
     }
 
-    // EFFECTS: sets remove food panel
+    // EFFECTS: sets remove food items panel
     private void setRemoveFoodPanel() {
         // TODO
     }
