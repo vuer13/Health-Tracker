@@ -80,11 +80,13 @@ public class TrackerUI extends JFrame {
         mainPanel.add(homePanel, "1");
         mainPanel.add(goalPanel, "2");
         mainPanel.add(mainScreenPanel, "3");
+        mainPanel.add(addFoodItemsPanel, "4");
         cl.show(mainPanel, "1");
 
         setHomePanel();
         setGoalPanel();
         setMainScreenPanel();
+        setAddFoodPanel();
 
         frame.add(mainPanel);
         frame.setTitle("Calorie Tracker");
