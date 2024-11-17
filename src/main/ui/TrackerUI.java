@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -109,12 +111,25 @@ public class TrackerUI extends JFrame {
         initializeUI();
         initializeData();
 
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                frame.setVisible(false);
+                saveTracker();
+            }
+        });
+
         loadTracker();
     }
 
     // MODIFIES: this
     // EFFECTS: initializes UI components
     private void initializeUI() {
+        frame.add(mainPanel);
+        frame.setTitle("Calorie Tracker");
+        frame.setSize(2000, 1000);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         mainPanel.setLayout(cl);
 
         mainPanel.add(homePanel, "1");
@@ -128,12 +143,6 @@ public class TrackerUI extends JFrame {
         setMainScreenPanel();
         setAddFoodPanel();
         setAddExPanel();
-
-        frame.add(mainPanel);
-        frame.setTitle("Calorie Tracker");
-        frame.setSize(1000, 600);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     // MODIFIES: this
