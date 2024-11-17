@@ -142,6 +142,10 @@ public class TrackerUI extends JFrame {
         readerFood = new JsonReader(JSON_STORE_FOOD);
         readerEx = new JsonReader(JSON_STORE_EX);
         readerCal = new JsonReader(JSON_STORE_CAL);
+
+        writerEx = new JsonWriter(JSON_STORE_EX);
+        writerCal = new JsonWriter(JSON_STORE_CAL);
+        writerFood = new JsonWriter(JSON_STORE_FOOD);
     }
 
     // MODIFIES: this
