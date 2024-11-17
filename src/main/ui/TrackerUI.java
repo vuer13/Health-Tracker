@@ -125,6 +125,12 @@ public class TrackerUI extends JFrame {
     }
 
     // MODIFIES: this
+    // EFFECTS: initializes UI components
+    private void initializeUI() {
+        // TODO
+    }
+
+    // MODIFIES: this
     // EFFECTS: Initizlizes calorie tracker data
     private void initializeData() {
         readerFood = new JsonReader(JSON_STORE_FOOD);
