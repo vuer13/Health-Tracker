@@ -5,21 +5,37 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.time.LocalDate;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import model.Calories;
+import model.ListExercise;
+import model.ListOfFoodItems;
+import persistance.JsonReader;
 
 // GUI for program
 public class TrackerUI extends JFrame {
 
     private final JPanel mainPanel = new JPanel();
     private final CardLayout cl = new CardLayout();
+
+    private ListOfFoodItems lofi;
+    private ListExercise loe;
+    private Calories cal;
+
+    private static final String JSON_STORE_FOOD = "./data/foodItems.json";
+    private static final String JSON_STORE_EX = "./data/exercises.json";
+    private static final String JSON_STORE_CAL = "./data/cal.json";
+
+    // For Loading Menu
+    private JsonReader reader;
 
     // GENERAL:
     private final JButton backButton = new JButton("Back"); // Use for both adds and both removes
@@ -29,7 +45,6 @@ public class TrackerUI extends JFrame {
     private final JPanel homePanel = new JPanel();
     private final JLabel labelHome = new JLabel("Enter your calorie goal: ");
     private final JTextField calGoalStart = new JTextField();
-    private Calories cal;
 
     // For Goal Menu
     private final JTextField calGoal = new JTextField();
@@ -220,7 +235,7 @@ public class TrackerUI extends JFrame {
     // EFFECTS: sets add exercise panel
     private void setAddExPanel() {
         addExPanel.setLayout(null);
-        
+
         addExName.setBounds(30, 10, 100, 100);
         exName.setBounds(180, 50, 100, 20);
         calExName.setBounds(30, 100, 100, 100);
@@ -259,7 +274,20 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: pops window open, giving user option to load previously saved data
     private void loadTracker() {
-        // TODO
+        int reponse = JOptionPane.showConfirmDialog(null,
+                "Would you like to load your previously saved list of food items and exercises?",
+                "Load Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (reponse == JOptionPane.YES_OPTION) {
+            try {
+                lofi = reader.readFootItems();
+                loe = reader.readExercise();
+                cal = reader.readCalories();
+                // need some sort of update function, use loads???
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "Error: Unable to load tracker", "Load Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }
 
     // EFFECTS: pops window open, giving user option to save current data
