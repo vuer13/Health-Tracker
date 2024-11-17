@@ -101,6 +101,12 @@ public class TrackerUI extends JFrame {
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
+        initializeUI();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: initializes UI components
+    private void initializeUI() {
         mainPanel.setLayout(cl);
 
         mainPanel.add(homePanel, "1");
@@ -122,12 +128,6 @@ public class TrackerUI extends JFrame {
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: initializes UI components
-    private void initializeUI() {
-        // TODO
     }
 
     // MODIFIES: this
