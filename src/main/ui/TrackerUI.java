@@ -127,7 +127,19 @@ public class TrackerUI extends JFrame {
     // MODIFIES: this
     // EFFECTS: Initizlizes calorie tracker data
     private void initializeData() {
-        // TODO
+        readerFood = new JsonReader(JSON_STORE_FOOD);
+        readerEx = new JsonReader(JSON_STORE_EX);
+        readerCal = new JsonReader(JSON_STORE_CAL);
+        try {
+            lofi = readerFood.readFootItems();
+            loe = readerEx.readExercise();
+            cal = readerCal.readCalories();
+            // need some sort of update function, use loads???
+        } catch (IOException e) {
+            lofi = new ListOfFoodItems();
+            loe = new ListExercise();
+            cal = new Calories(0);
+        }
     }
 
     // MODIFIES: this
