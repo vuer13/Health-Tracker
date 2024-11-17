@@ -35,7 +35,9 @@ public class TrackerUI extends JFrame {
     private static final String JSON_STORE_CAL = "./data/cal.json";
 
     // For Loading Menu
-    private JsonReader reader;
+    private JsonReader readerFood;
+    private JsonReader readerEx;
+    private JsonReader readerCal;
 
     // GENERAL:
     private final JButton backButton = new JButton("Back"); // Use for both adds and both removes
@@ -120,6 +122,12 @@ public class TrackerUI extends JFrame {
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: Initizlizes calorie tracker data
+    private void initializeData() {
+        // TODO
     }
 
     // MODIFIES: this
@@ -279,9 +287,9 @@ public class TrackerUI extends JFrame {
                 "Load Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (reponse == JOptionPane.YES_OPTION) {
             try {
-                lofi = reader.readFootItems();
-                loe = reader.readExercise();
-                cal = reader.readCalories();
+                lofi = readerFood.readFootItems();
+                loe = readerEx.readExercise();
+                cal = readerCal.readCalories();
                 // need some sort of update function, use loads???
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(null, "Error: Unable to load tracker", "Load Error",
