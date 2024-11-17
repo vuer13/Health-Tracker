@@ -257,6 +257,16 @@ public class TrackerUI extends JFrame {
         // TODO
     }
 
+    // EFFECTS: pops window open, giving user option to load previously saved data
+    private void loadTracker() {
+        // TODO
+    }
+
+    // EFFECTS: pops window open, giving user option to save current data
+    private void saveTracker() {
+        // TODO
+    }
+
     // MODIFIES: this
     // EFFECTS: creates new list of exercises
     private void loadNewExercises() {
