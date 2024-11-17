@@ -117,7 +117,6 @@ public class TrackerUI extends JFrame {
         mainPanel.add(mainScreenPanel, "3");
         mainPanel.add(addFoodItemsPanel, "4");
         mainPanel.add(addExPanel, "5");
-        cl.show(mainPanel, "1");
 
         setHomePanel();
         setGoalPanel();
@@ -301,10 +300,17 @@ public class TrackerUI extends JFrame {
                 loe = readerEx.readExercise();
                 cal = readerCal.readCalories();
                 // need some sort of update function, use loads???
+                goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal())); // put apart of update
+                cl.show(mainPanel, "3");
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(null, "Error: Unable to load tracker", "Load Error",
                         JOptionPane.ERROR_MESSAGE);
             }
+        } else {
+            lofi = new ListOfFoodItems();
+            loe = new ListExercise();
+            cal = new Calories(0);
+            cl.show(mainPanel, "1");
         }
         frame.setVisible(true);
     }
