@@ -311,6 +311,33 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: pops window open, giving user option to save current data
     private void saveTracker() {
+        int reponse = JOptionPane.showConfirmDialog(null,
+        "Would you like to save your tracker before closing?",
+        "Save Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (reponse == JOptionPane.YES_OPTION) {
+            try {
+                open();
+                write();
+                close();
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "Error: Unable to save tracker", "Save Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+    // EFFECTS: Opens all data files
+    private void open() {
+        // TODO
+    }
+
+    // EFFECTS: Writes data into date files
+    private void write() {
+        // TODO
+    }
+
+    // EFFECTS: Closes data files
+    private void close() {
         // TODO
     }
 
