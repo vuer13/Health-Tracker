@@ -102,6 +102,9 @@ public class TrackerUI extends JFrame {
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
         initializeUI();
+        initializeData();
+
+        loadTracker();
     }
 
     // MODIFIES: this
