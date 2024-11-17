@@ -60,8 +60,6 @@ public class TrackerUI extends JFrame {
     private final JButton addExerciseButton = new JButton("Add Exercise (+)");
     private final JButton removeExerciseButton = new JButton("Remove Exercise (-)");
     private final JButton homeButton = new JButton("Home");
-    private final JButton saveButton = new JButton("Save");
-    private final JButton loadButton = new JButton("Load");
     private final JButton setGoalButtone = new JButton("Set Calorie Goal");
     private final LocalDate today = LocalDate.now();
     private final JLabel title = new JLabel("Please select an option: ");
@@ -197,8 +195,6 @@ public class TrackerUI extends JFrame {
         removeExerciseButton.setBounds(375, 300, 100, 75);
         setGoalButtone.setBounds(125, 450, 100, 75);
         homeButton.setBounds(0, 450, 100, 75);
-        saveButton.setBounds(250, 450, 100, 75);
-        loadButton.setBounds(375, 450, 100, 75);
 
         addMainButtons();
     }
@@ -213,8 +209,6 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.add(removeExerciseButton);
         mainScreenPanel.add(setGoalButtone);
         mainScreenPanel.add(homeButton);
-        mainScreenPanel.add(saveButton);
-        mainScreenPanel.add(loadButton);
         mainScreenPanel.add(goal);
     }
 
