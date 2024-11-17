@@ -130,7 +130,6 @@ public class TrackerUI extends JFrame {
         frame.setSize(1000, 600);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setVisible(true);
     }
 
     // MODIFIES: this
@@ -307,6 +306,7 @@ public class TrackerUI extends JFrame {
                         JOptionPane.ERROR_MESSAGE);
             }
         }
+        frame.setVisible(true);
     }
 
     // EFFECTS: pops window open, giving user option to save current data
