@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -19,6 +20,7 @@ import model.Calories;
 import model.ListExercise;
 import model.ListOfFoodItems;
 import persistance.JsonReader;
+import persistance.JsonWriter;
 
 // GUI for program
 public class TrackerUI extends JFrame {
@@ -38,6 +40,11 @@ public class TrackerUI extends JFrame {
     private JsonReader readerFood;
     private JsonReader readerEx;
     private JsonReader readerCal;
+
+    // For Saving 
+    private JsonWriter writerFood;
+    private JsonWriter writerEx;
+    private JsonWriter writerCal;
 
     // GENERAL:
     private final JButton backButton = new JButton("Back"); // Use for both adds and both removes
@@ -319,7 +326,7 @@ public class TrackerUI extends JFrame {
                 open();
                 write();
                 close();
-            } catch (IOException e) {
+            } catch (FileNotFoundException e) {
                 JOptionPane.showMessageDialog(null, "Error: Unable to save tracker", "Save Error",
                         JOptionPane.ERROR_MESSAGE);
             }
@@ -327,18 +334,24 @@ public class TrackerUI extends JFrame {
     }
 
     // EFFECTS: Opens all data files
-    private void open() {
-        // TODO
+    private void open() throws FileNotFoundException {
+        writerEx.open();
+        writerCal.open();
+        writerFood.open();
     }
 
     // EFFECTS: Writes data into date files
     private void write() {
-        // TODO
+        writerEx.writeExercise(loe);
+        writerCal.writeCalorie(cal);
+        writerFood.writeFood(lofi);
     }
 
     // EFFECTS: Closes data files
     private void close() {
-        // TODO
+        writerEx.close();
+        writerCal.close();
+        writerFood.close();
     }
 
     // MODIFIES: this
