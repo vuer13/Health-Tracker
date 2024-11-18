@@ -11,14 +11,18 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import model.Calories;
+import model.Exercise;
+import model.FoodItems;
 import model.ListExercise;
 import model.ListOfFoodItems;
 import persistance.JsonReader;
@@ -76,6 +80,11 @@ public class TrackerUI extends JFrame {
             "Today's Date: " + today.getMonthValue() + "-" + today.getDayOfMonth() + "-" +
                     today.getYear());
     private JLabel goal = new JLabel("");
+
+    private DefaultListModel<FoodItems> lofiModel;
+    private DefaultListModel<Exercise> loeModel;
+    private JList<FoodItems> lofiJlist;
+    private JList<Exercise> loeJlist;
 
     // For Adding FoodItems Screen
     private final JPanel addFoodItemsPanel = new JPanel();
@@ -220,9 +229,18 @@ public class TrackerUI extends JFrame {
         addMainButtons();
     }
 
-    // EFFECTS: Updates UI with most current data 
-    private void updateUI() {
-        // TODO
+    // MODIFIES: this
+    // EFFECTS: Updates UI with most current food items 
+    private void updateUIfoodItems() {
+        lofiModel.clear();
+        loeModel.clear();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: Updates UI with most current exercises
+    private void updateUIex() {
+        lofiModel.clear();
+        loeModel.clear();
     }
 
     // EFFECTS: Displays all food items that have been added
