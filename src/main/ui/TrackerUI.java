@@ -383,9 +383,7 @@ public class TrackerUI extends JFrame {
                         JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            lofi = new ListOfFoodItems();
-            loe = new ListExercise();
-            cal = new Calories(0);
+            createNewInstances();
             updateUIfoodItems();
             updateUIex();
             cl.show(mainPanel, "1");
@@ -395,7 +393,9 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: creates new instances of objected
     private void createNewInstances() {
-        // TODO
+        lofi = new ListOfFoodItems();
+        loe = new ListExercise();
+        cal = new Calories(0);
     }
 
     // EFFECTS: pops window open, giving user option to save current data
