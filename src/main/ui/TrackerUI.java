@@ -1,7 +1,9 @@
 package ui;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import model.Calories;
@@ -87,6 +90,8 @@ public class TrackerUI extends JFrame {
     private JList<FoodItems> lofiJlist;
     private JList<Exercise> loeJlist;
 
+    private JPanel listsPanel = new JPanel();
+
     // For Adding FoodItems Screen
     private final JPanel addFoodItemsPanel = new JPanel();
     private final JLabel addFoodName = new JLabel("Food Name: ");
@@ -138,8 +143,8 @@ public class TrackerUI extends JFrame {
         frame.setSize(2000, 1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        viewAllFoodItems();
         viewAllEx();
+        viewAllFoodItems();
 
         mainPanel.setLayout(cl);
 
@@ -217,17 +222,20 @@ public class TrackerUI extends JFrame {
         title.setFont(new Font("Times New Roman", Font.PLAIN, 44));
         todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
+        // title.setBounds(250, 150, 2000, 200);
+        // goal.setBounds(250, 75, 700, 200);
+        // todayDate.setBounds(250, 0, 5000, 200);
+
+        mainScreenPanel.add(listsPanel, BorderLayout.CENTER);
+        listsPanel.setBounds(95, 100, 1250, 550);
 
 
-        title.setBounds(250, 150, 2000, 200);
-        goal.setBounds(250, 75, 700, 200);
-        todayDate.setBounds(250, 0, 5000, 200);
-        addFoodButton.setBounds(0, 300, 100, 75);
-        removeFoodButton.setBounds(125, 300, 100, 75);
-        addExerciseButton.setBounds(250, 300, 100, 75);
-        removeExerciseButton.setBounds(375, 300, 100, 75);
-        setGoalButtone.setBounds(125, 450, 100, 75);
-        homeButton.setBounds(0, 450, 100, 75);
+        // addFoodButton.setBounds(0, 300, 100, 75);
+        // removeFoodButton.setBounds(125, 300, 100, 75);
+        // addExerciseButton.setBounds(250, 300, 100, 75);
+        // removeExerciseButton.setBounds(375, 300, 100, 75);
+        // setGoalButtone.setBounds(125, 450, 100, 75);
+        // homeButton.setBounds(0, 450, 100, 75);
 
         addMainButtons();
     }
@@ -254,24 +262,36 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: Displays all food items that have been added
     private void viewAllFoodItems() {
-        // TODO
+        lofiModel = new DefaultListModel<>();
+        lofiJlist = new JList<>(lofiModel);
+        lofiJlist.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+
+        JScrollPane scroll = new JScrollPane(lofiJlist);
+        scroll.setPreferredSize(new Dimension(620, 540));
+        listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
     // EFFECTS: Displays all exercises that have been added
     private void viewAllEx() {
-        // TODO
+        loeModel = new DefaultListModel<>();
+        loeJlist = new JList<>(loeModel);
+        listsPanel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+
+        JScrollPane scroll = new JScrollPane(loeJlist);
+        scroll.setPreferredSize(new Dimension(620, 540));
+        listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
     // EFFECTS: adds buttons to mainScreenPanel
     private void addMainButtons() {
         mainScreenPanel.add(title);
         mainScreenPanel.add(todayDate);
-        mainScreenPanel.add(addFoodButton);
-        mainScreenPanel.add(removeFoodButton);
-        mainScreenPanel.add(addExerciseButton);
-        mainScreenPanel.add(removeExerciseButton);
-        mainScreenPanel.add(setGoalButtone);
-        mainScreenPanel.add(homeButton);
+        mainScreenPanel.add(addFoodButton, BorderLayout.SOUTH);
+        mainScreenPanel.add(removeFoodButton, BorderLayout.SOUTH);
+        mainScreenPanel.add(addExerciseButton, BorderLayout.SOUTH);
+        mainScreenPanel.add(removeExerciseButton, BorderLayout.SOUTH);
+        mainScreenPanel.add(setGoalButtone, BorderLayout.SOUTH);
+        mainScreenPanel.add(homeButton, BorderLayout.SOUTH);
         mainScreenPanel.add(goal);
     }
 
