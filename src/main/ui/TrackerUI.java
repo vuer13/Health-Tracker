@@ -408,28 +408,4 @@ public class TrackerUI extends JFrame {
         writerCal.close();
         writerFood.close();
     }
-
-    // MODIFIES: this
-    // EFFECTS: creates new list of exercises
-    private void loadNewExercises() {
-        // TODO
-    }
-
-    // MODIFIES: this
-    // EFFECTS: loads list of exercises
-    private void loadExercises() {
-        // TODO
-    }
-
-    // MODIFIES: this
-    // EFFECTS: creates new list of food items from previously saved items
-    private void loadNewFoods() {
-        // TODO
-    }
-
-    // MODIFIES: this
-    // EFFECTS: loads list of food items from previously saved items
-    private void loadFoods() {
-        // TODO
-    }
 }
