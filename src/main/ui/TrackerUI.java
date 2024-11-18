@@ -348,7 +348,7 @@ public class TrackerUI extends JFrame {
         // TODO
     }
 
-    // EFFECTS: shows statistics of data inputted
+    // EFFECTS: shows statistics of data inputted as a pop up window 
     private void setStatistics() {
         // TODO
     }
