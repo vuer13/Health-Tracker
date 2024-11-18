@@ -138,6 +138,9 @@ public class TrackerUI extends JFrame {
         frame.setSize(2000, 1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        viewAllFoodItems();
+        viewAllEx();
+
         mainPanel.setLayout(cl);
 
         mainPanel.add(homePanel, "1");
@@ -214,8 +217,7 @@ public class TrackerUI extends JFrame {
         title.setFont(new Font("Times New Roman", Font.PLAIN, 44));
         todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
-        viewAllFoodItems();
-        viewAllEx();
+
 
         title.setBounds(250, 150, 2000, 200);
         goal.setBounds(250, 75, 700, 200);
