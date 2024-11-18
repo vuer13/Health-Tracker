@@ -103,8 +103,6 @@ public class TrackerUI extends JFrame {
 
     // For Changing Calorie Goal Screen
 
-    // For Seeing Lists and Statistics Screen
-
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
