@@ -366,6 +366,8 @@ public class TrackerUI extends JFrame {
             lofi = new ListOfFoodItems();
             loe = new ListExercise();
             cal = new Calories(0);
+            updateUIfoodItems();
+            updateUIex();
             cl.show(mainPanel, "1");
         }
         frame.setVisible(true);
