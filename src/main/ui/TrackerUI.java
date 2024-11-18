@@ -220,6 +220,11 @@ public class TrackerUI extends JFrame {
         addMainButtons();
     }
 
+    // EFFECTS: Updates UI with most current data 
+    private void updateUI() {
+        // TODO
+    }
+
     // EFFECTS: Displays all food items that have been added
     private void viewAllFoodItems() {
         // TODO
