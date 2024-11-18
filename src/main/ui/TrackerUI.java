@@ -354,7 +354,8 @@ public class TrackerUI extends JFrame {
                 lofi = readerFood.readFootItems();
                 loe = readerEx.readExercise();
                 cal = readerCal.readCalories();
-                // need some sort of update function, use loads???
+                updateUIfoodItems();
+                updateUIex();
                 goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal())); // put apart of update
                 cl.show(mainPanel, "3");
             } catch (IOException e) {
