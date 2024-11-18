@@ -230,12 +230,12 @@ public class TrackerUI extends JFrame {
 
         addMainButtons();
 
-        addFoodButton.setBounds(100, 650, 100, 75);
-        removeFoodButton.setBounds(250, 650, 100, 75);
-        addExerciseButton.setBounds(400, 650, 100, 75);
-        removeExerciseButton.setBounds(550, 650, 100, 75);
-        setGoalButtone.setBounds(700, 650, 100, 75);
-        homeButton.setBounds(850, 650, 100, 75);
+        addFoodButton.setBounds(100, 650, 150, 75);
+        removeFoodButton.setBounds(300, 650, 150, 75);
+        addExerciseButton.setBounds(500, 650, 150, 75);
+        removeExerciseButton.setBounds(700, 650, 150, 75);
+        setGoalButtone.setBounds(900, 650, 150, 75);
+        homeButton.setBounds(1100, 650, 150, 75);
     }
 
     // MODIFIES: this
