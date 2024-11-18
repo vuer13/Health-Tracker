@@ -348,8 +348,8 @@ public class TrackerUI extends JFrame {
         // TODO
     }
 
-    // EFFECTS: shows both exercises and food items lists and statistics
-    private void setListsAndStatistics() {
+    // EFFECTS: shows statistics of data inputted
+    private void setStatistics() {
         // TODO
     }
 
