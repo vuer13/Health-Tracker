@@ -225,18 +225,17 @@ public class TrackerUI extends JFrame {
         goal.setBounds(100, 40, 800, 100);
         todayDate.setBounds(700, 40, 600, 100);
 
-        mainScreenPanel.add(listsPanel, BorderLayout.CENTER);
+        mainScreenPanel.add(listsPanel);
         listsPanel.setBounds(95, 175, 1250, 450);
 
-
-        addFoodButton.setBounds(0, 300, 100, 75);
-        removeFoodButton.setBounds(125, 300, 100, 75);
-        addExerciseButton.setBounds(250, 300, 100, 75);
-        removeExerciseButton.setBounds(375, 300, 100, 75);
-        setGoalButtone.setBounds(125, 450, 100, 75);
-        homeButton.setBounds(0, 450, 100, 75);
-
         addMainButtons();
+
+        addFoodButton.setBounds(100, 650, 100, 75);
+        removeFoodButton.setBounds(250, 650, 100, 75);
+        addExerciseButton.setBounds(400, 650, 100, 75);
+        removeExerciseButton.setBounds(550, 650, 100, 75);
+        setGoalButtone.setBounds(700, 650, 100, 75);
+        homeButton.setBounds(850, 650, 100, 75);
     }
 
     // MODIFIES: this
@@ -285,12 +284,12 @@ public class TrackerUI extends JFrame {
     private void addMainButtons() {
         mainScreenPanel.add(title);
         mainScreenPanel.add(todayDate);
-        mainScreenPanel.add(addFoodButton, BorderLayout.SOUTH);
-        mainScreenPanel.add(removeFoodButton, BorderLayout.SOUTH);
-        mainScreenPanel.add(addExerciseButton, BorderLayout.SOUTH);
-        mainScreenPanel.add(removeExerciseButton, BorderLayout.SOUTH);
-        mainScreenPanel.add(setGoalButtone, BorderLayout.SOUTH);
-        mainScreenPanel.add(homeButton, BorderLayout.SOUTH);
+        mainScreenPanel.add(addFoodButton);
+        mainScreenPanel.add(removeFoodButton);
+        mainScreenPanel.add(addExerciseButton);
+        mainScreenPanel.add(removeExerciseButton);
+        mainScreenPanel.add(setGoalButtone);
+        mainScreenPanel.add(homeButton);
         mainScreenPanel.add(goal);
     }
 
