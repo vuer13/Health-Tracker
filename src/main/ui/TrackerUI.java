@@ -116,8 +116,6 @@ public class TrackerUI extends JFrame {
 
     // For Removing Exercises Screen
 
-    // For Changing Calorie Goal Screen
-
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
     public TrackerUI() {
@@ -352,11 +350,6 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: shows both exercises and food items lists and statistics
     private void setListsAndStatistics() {
-        // TODO
-    }
-
-    // EFFECTS: sets new calorie goal
-    private void setCalsPanel() {
         // TODO
     }
 
