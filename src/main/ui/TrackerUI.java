@@ -393,11 +393,6 @@ public class TrackerUI extends JFrame {
         frame.setVisible(true);
     }
 
-    // EFFECTS: Reads files 
-    private void readFiles() {
-        // TODO
-    }
-
     // EFFECTS: pops window open, giving user option to save current data
     private void saveTracker() {
         int reponse = JOptionPane.showConfirmDialog(null,
