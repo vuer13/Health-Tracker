@@ -393,6 +393,11 @@ public class TrackerUI extends JFrame {
         frame.setVisible(true);
     }
 
+    // EFFECTS: creates new instances of objected
+    private void createNewInstances() {
+        // TODO
+    }
+
     // EFFECTS: pops window open, giving user option to save current data
     private void saveTracker() {
         int reponse = JOptionPane.showConfirmDialog(null,
