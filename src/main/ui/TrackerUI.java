@@ -51,7 +51,7 @@ public class TrackerUI extends JFrame {
     private JsonReader readerEx;
     private JsonReader readerCal;
 
-    // For Saving 
+    // For Saving
     private JsonWriter writerFood;
     private JsonWriter writerEx;
     private JsonWriter writerCal;
@@ -239,7 +239,7 @@ public class TrackerUI extends JFrame {
     }
 
     // MODIFIES: this
-    // EFFECTS: Updates UI with most current food items 
+    // EFFECTS: Updates UI with most current food items
     private void updateUIfoodItems() {
         lofiModel.clear();
         List<FoodItems> fis = lofi.getListOfFoodItems();
@@ -360,6 +360,7 @@ public class TrackerUI extends JFrame {
     }
 
     // EFFECTS: responsible for performing all the button actions
+    @SuppressWarnings("methodlength")
     private void actionPerformed() {
         // TODO
     }
@@ -401,8 +402,8 @@ public class TrackerUI extends JFrame {
     // EFFECTS: pops window open, giving user option to save current data
     private void saveTracker() {
         int reponse = JOptionPane.showConfirmDialog(null,
-        "Would you like to save your tracker before closing?",
-        "Save Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                "Would you like to save your tracker before closing?",
+                "Save Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (reponse == JOptionPane.YES_OPTION) {
             try {
                 open();
