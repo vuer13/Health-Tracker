@@ -10,6 +10,7 @@ import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -233,14 +234,20 @@ public class TrackerUI extends JFrame {
     // EFFECTS: Updates UI with most current food items 
     private void updateUIfoodItems() {
         lofiModel.clear();
-        loeModel.clear();
+        List<FoodItems> fis = lofi.getListOfFoodItems();
+        for (FoodItems food : fis) {
+            lofiModel.addElement(food);
+        }
     }
 
     // MODIFIES: this
     // EFFECTS: Updates UI with most current exercises
     private void updateUIex() {
-        lofiModel.clear();
         loeModel.clear();
+        List<Exercise> es = loe.getListExercise();
+        for (Exercise e : es) {
+            loeModel.addElement(e);
+        }
     }
 
     // EFFECTS: Displays all food items that have been added
