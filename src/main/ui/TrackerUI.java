@@ -220,6 +220,16 @@ public class TrackerUI extends JFrame {
         addMainButtons();
     }
 
+    // EFFECTS: Displays all food items that have been added
+    private void viewAllFoodItems() {
+        // TODO
+    }
+
+    // EFFECTS: Displays all exercises that have been added
+    private void viewAllEx() {
+        // TODO
+    }
+
     // EFFECTS: adds buttons to mainScreenPanel
     private void addMainButtons() {
         mainScreenPanel.add(title);
