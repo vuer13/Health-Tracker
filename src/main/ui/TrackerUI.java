@@ -369,6 +369,13 @@ public class TrackerUI extends JFrame {
                 cl.show(mainPanel, "4");
             }
         });
+
+        addFood.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO
+            }
+        });
     }
 
     // EFFECTS: pops window open, giving user option to load previously saved data
