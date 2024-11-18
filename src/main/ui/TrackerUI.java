@@ -204,6 +204,9 @@ public class TrackerUI extends JFrame {
         title.setFont(new Font("Times New Roman", Font.PLAIN, 44));
         todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 48));
 
+        viewAllFoodItems();
+        viewAllEx();
+
         title.setBounds(250, 150, 2000, 200);
         goal.setBounds(250, 75, 700, 200);
         todayDate.setBounds(250, 0, 5000, 200);
