@@ -159,6 +159,7 @@ public class TrackerUI extends JFrame {
         setMainScreenPanel();
         setAddFoodPanel();
         setAddExPanel();
+        actionPerformed();
     }
 
     // MODIFIES: this
@@ -362,7 +363,12 @@ public class TrackerUI extends JFrame {
     // EFFECTS: responsible for performing all the button actions
     @SuppressWarnings("methodlength")
     private void actionPerformed() {
-        // TODO
+        addFoodButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(mainPanel, "4");
+            }
+        });
     }
 
     // EFFECTS: pops window open, giving user option to load previously saved data
