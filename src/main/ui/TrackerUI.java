@@ -218,24 +218,23 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.setLayout(null);
         mainScreenPanel.setBackground(new Color(0, 255, 51));
 
-        goal.setFont(new Font("Times New Roman", Font.PLAIN, 48));
-        title.setFont(new Font("Times New Roman", Font.PLAIN, 44));
-        todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+        goal.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+        title.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+        todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 24));
 
-        // title.setBounds(250, 150, 2000, 200);
-        // goal.setBounds(250, 75, 700, 200);
-        // todayDate.setBounds(250, 0, 5000, 200);
+        goal.setBounds(100, 40, 800, 100);
+        todayDate.setBounds(700, 40, 600, 100);
 
         mainScreenPanel.add(listsPanel, BorderLayout.CENTER);
-        listsPanel.setBounds(95, 100, 1250, 550);
+        listsPanel.setBounds(95, 175, 1250, 450);
 
 
-        // addFoodButton.setBounds(0, 300, 100, 75);
-        // removeFoodButton.setBounds(125, 300, 100, 75);
-        // addExerciseButton.setBounds(250, 300, 100, 75);
-        // removeExerciseButton.setBounds(375, 300, 100, 75);
-        // setGoalButtone.setBounds(125, 450, 100, 75);
-        // homeButton.setBounds(0, 450, 100, 75);
+        addFoodButton.setBounds(0, 300, 100, 75);
+        removeFoodButton.setBounds(125, 300, 100, 75);
+        addExerciseButton.setBounds(250, 300, 100, 75);
+        removeExerciseButton.setBounds(375, 300, 100, 75);
+        setGoalButtone.setBounds(125, 450, 100, 75);
+        homeButton.setBounds(0, 450, 100, 75);
 
         addMainButtons();
     }
@@ -267,7 +266,7 @@ public class TrackerUI extends JFrame {
         lofiJlist.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 
         JScrollPane scroll = new JScrollPane(lofiJlist);
-        scroll.setPreferredSize(new Dimension(620, 540));
+        scroll.setPreferredSize(new Dimension(620, 440));
         listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
@@ -278,7 +277,7 @@ public class TrackerUI extends JFrame {
         listsPanel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 
         JScrollPane scroll = new JScrollPane(loeJlist);
-        scroll.setPreferredSize(new Dimension(620, 540));
+        scroll.setPreferredSize(new Dimension(620, 440));
         listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
