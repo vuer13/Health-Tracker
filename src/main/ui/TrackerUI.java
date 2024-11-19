@@ -431,6 +431,20 @@ public class TrackerUI extends JFrame {
                 setStatistics();
             }
         });
+
+        foodStatsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setFoodStatistics();
+            }
+        });
+
+        exStatsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setExStatistics();
+            }
+        });
     }
 
     // EFFECTS: pops window open, giving user option to load previously saved data
