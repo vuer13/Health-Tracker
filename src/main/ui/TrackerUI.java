@@ -84,6 +84,9 @@ public class TrackerUI extends JFrame {
             "Today's Date: " + today.getMonthValue() + "-" + today.getDayOfMonth() + "-" +
                     today.getYear());
     private JLabel goal = new JLabel("");
+    private final JButton calStatsButton = new JButton("Calorie Statistics");
+    private final JButton foodStatsButton = new JButton("Food Statistics");
+    private final JButton exStatsButton = new JButton("Exercise Statistics");
 
     private DefaultListModel<FoodItems> lofiModel;
     private DefaultListModel<Exercise> loeModel;
@@ -229,12 +232,15 @@ public class TrackerUI extends JFrame {
 
         addMainButtons();
 
-        addFoodButton.setBounds(100, 650, 150, 75);
-        removeFoodButton.setBounds(300, 650, 150, 75);
-        addExerciseButton.setBounds(500, 650, 150, 75);
-        removeExerciseButton.setBounds(700, 650, 150, 75);
-        setGoalButtone.setBounds(900, 650, 150, 75);
-        homeButton.setBounds(1100, 650, 150, 75);
+        addFoodButton.setBounds(50, 650, 150, 75);
+        removeFoodButton.setBounds(200, 650, 150, 75);
+        addExerciseButton.setBounds(350, 650, 150, 75);
+        removeExerciseButton.setBounds(500, 650, 150, 75);
+        setGoalButtone.setBounds(650, 650, 150, 75);
+        homeButton.setBounds(800, 650, 150, 75);
+        calStatsButton.setBounds(950, 650, 150, 75);
+        foodStatsButton.setBounds(1100, 650, 150, 75);
+        exStatsButton.setBounds(1250, 650, 150, 75);
     }
 
     // MODIFIES: this
@@ -290,6 +296,9 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.add(setGoalButtone);
         mainScreenPanel.add(homeButton);
         mainScreenPanel.add(goal);
+        mainScreenPanel.add(calStatsButton);
+        mainScreenPanel.add(foodStatsButton);
+        mainScreenPanel.add(exStatsButton);
     }
 
     // EFFECTS: sets add food items panel
