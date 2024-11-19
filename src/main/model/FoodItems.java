@@ -66,4 +66,9 @@ public class FoodItems implements Writeable {
         json.put("Food Group", foodGroups);
         return json;
     }
+
+    // EFFECTS: returns a string that states
+    public String formatFoodString() {
+        return null;
+    }
 }
