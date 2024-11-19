@@ -448,7 +448,7 @@ public class TrackerUI extends JFrame {
         clearFood.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO
+                clearFoodPanel();
             }
         });
     }
