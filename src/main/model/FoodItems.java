@@ -69,6 +69,6 @@ public class FoodItems implements Writeable {
 
     // EFFECTS: returns a string that states
     public String formatFoodString() {
-        return null;
+        return this.name + ", Calories: " + this.calories + ", Food Group: " + this.foodGroups;
     }
 }
