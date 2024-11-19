@@ -415,6 +415,13 @@ public class TrackerUI extends JFrame {
                 // TODO
             }
         });
+
+        calStatsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setStatistics();
+            }
+        });
     }
 
     // EFFECTS: pops window open, giving user option to load previously saved data
