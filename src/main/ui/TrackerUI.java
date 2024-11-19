@@ -378,12 +378,16 @@ public class TrackerUI extends JFrame {
         int lofiDiarySize = lofi.getDairyList().size();
         int lofiFGrainSize = lofi.getGrainList().size();
         int totalLofi = lofi.totalNumOfCalories();
+
+        // TODO
     }
 
     // EFFECTS: shows exercises statistics
     private void setExStatistics() {
         int loeSize = loe.getListExercise().size();
         int totalLoe = loe.getTotalCaloriesBurnt();
+
+        // TODO
     }
 
     // EFFECTS: responsible for performing all the button actions
