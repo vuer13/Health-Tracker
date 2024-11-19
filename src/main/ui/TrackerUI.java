@@ -65,11 +65,6 @@ public class TrackerUI extends JFrame {
     private final JLabel labelHome = new JLabel("Enter your calorie goal: ");
     private final JTextField calGoalStart = new JTextField();
 
-    // For Goal Menu
-    private final JTextField calGoal = new JTextField();
-    private final JPanel goalPanel = new JPanel();
-    private final JLabel labelGoal = new JLabel("Enter your calorie goal: ");
-
     // For Main Screen
     private final JPanel mainScreenPanel = new JPanel();
     private final JButton addFoodButton = new JButton("Add Food (+)");
@@ -150,13 +145,11 @@ public class TrackerUI extends JFrame {
         mainPanel.setLayout(cl);
 
         mainPanel.add(homePanel, "1");
-        mainPanel.add(goalPanel, "2");
         mainPanel.add(mainScreenPanel, "3");
         mainPanel.add(addFoodItemsPanel, "4");
         mainPanel.add(addExPanel, "5");
 
         setHomePanel();
-        setGoalPanel();
         setMainScreenPanel();
         setAddFoodPanel();
         setAddExPanel();
@@ -199,20 +192,6 @@ public class TrackerUI extends JFrame {
                 goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal()));
             }
         });
-    }
-
-    // EFFECTS: creates menu allowing user to make calorie goal
-    private void setGoalPanel() {
-        goalPanel.setLayout(null);
-
-        labelGoal.setFont(new Font("Times New Roman", Font.PLAIN, 48));
-        labelHome.setBounds(300, 0, 500, 200);
-
-        calGoal.setBounds(300, 150, 400, 100);
-        calGoal.setFont(new Font("Times New Roman", Font.BOLD, 24));
-
-        goalPanel.add(labelGoal);
-        goalPanel.add(calGoal);
     }
 
     // EFFECTS: displays main menu
