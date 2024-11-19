@@ -360,7 +360,7 @@ public class TrackerUI extends JFrame {
         String message = String.format(
                 "Calorie Goal: %d\nCalories Required: %d\nCalories Over Goal: %d\nDifference in Calories Burnt and Gained: %d\nTotal Food Calories: %d\nTotal Calories Burnt: ",
                 goal, needed, over, difference, totalLofi, totalLoe);
-        JOptionPane.showMessageDialog(null, message, "Sleep Statistics",
+        JOptionPane.showMessageDialog(null, message, "Calories Statistics",
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
