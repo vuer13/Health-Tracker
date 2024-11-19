@@ -508,4 +508,10 @@ public class TrackerUI extends JFrame {
         writerCal.close();
         writerFood.close();
     }
+
+    // EFFECTS: constructs new food item with info from text fields
+    private FoodItems makeFoodItem() {
+        return null;
+        // TODO
+    }
 }
