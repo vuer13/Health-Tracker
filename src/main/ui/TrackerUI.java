@@ -83,9 +83,9 @@ public class TrackerUI extends JFrame {
     private final JButton foodStatsButton = new JButton("Food Statistics");
     private final JButton exStatsButton = new JButton("Exercise Statistics");
 
-    private DefaultListModel<FoodItems> lofiModel;
+    private DefaultListModel<String> lofiModel;
     private DefaultListModel<Exercise> loeModel;
-    private JList<FoodItems> lofiJlist;
+    private JList<String> lofiJlist;
     private JList<Exercise> loeJlist;
 
     private JPanel listsPanel = new JPanel();
@@ -227,7 +227,7 @@ public class TrackerUI extends JFrame {
         lofiModel.clear();
         List<FoodItems> fis = lofi.getListOfFoodItems();
         for (FoodItems food : fis) {
-            lofiModel.addElement(food);
+            lofiModel.addElement(food.formatFoodString());
         }
     }
 
@@ -401,7 +401,7 @@ public class TrackerUI extends JFrame {
                 FoodItems fi; 
                 try {
                     fi = makeFoodItem();
-                    lofiModel.addElement(fi);
+                    lofiModel.addElement(fi.formatFoodString());
                     clearFoodPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
