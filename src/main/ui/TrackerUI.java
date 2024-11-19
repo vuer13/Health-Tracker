@@ -401,6 +401,7 @@ public class TrackerUI extends JFrame {
                 FoodItems fi; 
                 try {
                     fi = makeFoodItem();
+                    lofi.addFood(fi);
                     lofiModel.addElement(fi.formatFoodString());
                     clearFoodPanel();
                 } catch (IllegalArgumentException i) {
