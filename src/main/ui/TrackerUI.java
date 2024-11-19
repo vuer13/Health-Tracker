@@ -522,4 +522,10 @@ public class TrackerUI extends JFrame {
         FoodItems f = new FoodItems(name, cals, group);
         return f;
     }
+
+    // MODIFIES: this
+    // EFFECTS: sets all text fields to blank after adding an item
+    private void clearFoodPanel() {
+        // TODO
+    }
 }
