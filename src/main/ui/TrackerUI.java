@@ -71,7 +71,6 @@ public class TrackerUI extends JFrame {
     private final JButton removeFoodButton = new JButton("Remove Food (-)");
     private final JButton addExerciseButton = new JButton("Add Exercise (+)");
     private final JButton removeExerciseButton = new JButton("Remove Exercise (-)");
-    private final JButton homeButton = new JButton("Home");
     private final JButton setGoalButtone = new JButton("Set Calorie Goal");
     private final LocalDate today = LocalDate.now();
     private final JLabel title = new JLabel("Please select an option: ");
@@ -211,15 +210,14 @@ public class TrackerUI extends JFrame {
 
         addMainButtons();
 
-        addFoodButton.setBounds(50, 650, 150, 75);
-        removeFoodButton.setBounds(200, 650, 150, 75);
-        addExerciseButton.setBounds(350, 650, 150, 75);
-        removeExerciseButton.setBounds(500, 650, 150, 75);
-        setGoalButtone.setBounds(650, 650, 150, 75);
-        homeButton.setBounds(800, 650, 150, 75);
-        calStatsButton.setBounds(950, 650, 150, 75);
-        foodStatsButton.setBounds(1100, 650, 150, 75);
-        exStatsButton.setBounds(1250, 650, 150, 75);
+        addFoodButton.setBounds(125, 650, 150, 75);
+        removeFoodButton.setBounds(275, 650, 150, 75);
+        addExerciseButton.setBounds(425, 650, 150, 75);
+        removeExerciseButton.setBounds(575, 650, 150, 75);
+        setGoalButtone.setBounds(725, 650, 150, 75);
+        calStatsButton.setBounds(875, 650, 150, 75);
+        foodStatsButton.setBounds(1025, 650, 150, 75);
+        exStatsButton.setBounds(1175, 650, 150, 75);
     }
 
     // MODIFIES: this
@@ -273,7 +271,6 @@ public class TrackerUI extends JFrame {
         mainScreenPanel.add(addExerciseButton);
         mainScreenPanel.add(removeExerciseButton);
         mainScreenPanel.add(setGoalButtone);
-        mainScreenPanel.add(homeButton);
         mainScreenPanel.add(goal);
         mainScreenPanel.add(calStatsButton);
         mainScreenPanel.add(foodStatsButton);
