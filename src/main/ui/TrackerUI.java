@@ -367,7 +367,7 @@ public class TrackerUI extends JFrame {
         int totalLoe = loe.getTotalCaloriesBurnt();
 
         String message = String.format(
-                "Calorie Goal: %d\nCalories Required: %d\nCalories Over Goal: %d\nDifference in Calories Burnt and Gained: %d\nTotal Food Calories: %d\nTotal Calories Burnt: ",
+                "Calorie Goal: %d\nCalories Required: %d\nCalories Over Goal: %d\nDifference in Calories Burnt and Gained: %d\nTotal Food Calories: %d\nTotal Calories Burnt: %d",
                 goal, needed, over, difference, totalLofi, totalLoe);
         JOptionPane.showMessageDialog(null, message, "Calories Statistics",
                 JOptionPane.INFORMATION_MESSAGE);
@@ -389,7 +389,7 @@ public class TrackerUI extends JFrame {
         int totalLofi = lofi.totalNumOfCalories();
 
         String message = String.format(
-                "Number of foods eaten: %d\nCalories consumed: %d\nNumber of Fruits eaten: &d\nCalories of Fruit consumed: %d\nNumber of Vegetables eaten: &d\nCalories of Vegetables consumed: %d\nNumber of Proteins eaten: %d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains consumed: %d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: ",
+                "Number of foods eaten: %d\nCalories consumed: %d\nNumber of Fruits eaten: %d\nCalories of Fruit consumed: %d\nNumber of Vegetables eaten: %d\nCalories of Vegetables consumed: %d\nNumber of Proteins eaten: %d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains consumed: %d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: %d",
                 lofiSize, totalLofi, lofiFruitSize, lofiFruitCals, lofiVegetableSize, lofiVegetableCals,
                 lofiProteinSize, lofiProteinCals, lofiFGrainSize, lofiGrainCals, lofiDiarySize, lofiDiaryCals);
         JOptionPane.showMessageDialog(null, message, "Food Statistics",
@@ -402,7 +402,7 @@ public class TrackerUI extends JFrame {
         int totalLoe = loe.getTotalCaloriesBurnt();
 
         String message = String.format(
-                "Number of Exercises performed: %d\nTotal Calories Burnt: ", loeSize, totalLoe);
+                "Number of Exercises performed: %d\nTotal Calories Burnt: %d", loeSize, totalLoe);
 
         JOptionPane.showMessageDialog(null, message, "Exercise Statistics",
                 JOptionPane.INFORMATION_MESSAGE);
