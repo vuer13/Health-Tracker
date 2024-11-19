@@ -348,13 +348,20 @@ public class TrackerUI extends JFrame {
         // TODO
     }
 
-    // EFFECTS: shows statistics of data inputted as a pop up window 
+    // EFFECTS: shows statistics of data inputted as a pop up window
     private void setStatistics() {
         int difference = cal.difference(lofi, loe);
+        int goal = cal.getCalorieGoal();
         int needed = cal.neededAmount(lofi, loe);
         int over = cal.overAmount(lofi, loe);
         int totalLofi = lofi.totalNumOfCalories();
         int totalLoe = loe.getTotalCaloriesBurnt();
+
+        String message = String.format(
+                "Calorie Goal: %d\nCalories Required: %d\nCalories Over Goal: %d\nDifference in Calories Burnt and Gained: %d\nTotal Food Calories: %d\nTotal Calories Burnt: ",
+                goal, needed, over, difference, totalLofi, totalLoe);
+        JOptionPane.showMessageDialog(null, message, "Sleep Statistics",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 
     // EFFECTS: shows food statistics
@@ -378,7 +385,6 @@ public class TrackerUI extends JFrame {
         int loeSize = loe.getListExercise().size();
         int totalLoe = loe.getTotalCaloriesBurnt();
     }
-
 
     // EFFECTS: responsible for performing all the button actions
     @SuppressWarnings("methodlength")
