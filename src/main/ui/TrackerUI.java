@@ -397,7 +397,14 @@ public class TrackerUI extends JFrame {
         addFood.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO
+                FoodItems fi; 
+                try {
+                    fi = makeFoodItem();
+                    // TODO
+                    lofiModel.addElement(fi);
+                } catch (IllegalArgumentException i) {
+                    // TODO
+                }
             }
         });
 
