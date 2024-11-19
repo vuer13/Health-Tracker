@@ -401,10 +401,10 @@ public class TrackerUI extends JFrame {
                 FoodItems fi; 
                 try {
                     fi = makeFoodItem();
-                    // TODO
                     lofiModel.addElement(fi);
                 } catch (IllegalArgumentException i) {
-                    // TODO
+                    JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
+                        JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
