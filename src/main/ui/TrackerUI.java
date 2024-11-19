@@ -350,8 +350,35 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: shows statistics of data inputted as a pop up window 
     private void setStatistics() {
+        int lofiSize = lofi.getListOfFoodItems().size();
+        int loeSize = loe.getListExercise().size();
+        int lofiFruitCals = lofi.totalFruitCalories();
+        int lofiVegetableCals = lofi.totalVegetableCalories();
+        int lofiGrainCals = lofi.totalGrainCalories();
+        int lofiDiaryCals = lofi.totalDairyCalories();
+        int lofiProteinCals = lofi.totalProteinCalories();
+        int lofiFruitSize = lofi.getFruitList().size();
+        int lofiVegetableSize = lofi.getVegetableList().size();
+        int lofiProteinSize = lofi.getProteinList().size();
+        int lofiDiarySize = lofi.getDairyList().size();
+        int lofiFGrainSize = lofi.getGrainList().size();
+        int difference = cal.difference(lofi, loe);
+        int needed = cal.neededAmount(lofi, loe);
+        int over = cal.overAmount(lofi, loe);
+        int totalLofi = lofi.totalNumOfCalories();
+        int totalLoe = loe.getTotalCaloriesBurnt();
+    }
+
+    // EFFECTS: shows food statistics
+    private void setFoodStatistics() {
         // TODO
     }
+
+    // EFFECTS: shows exercises statistics
+    private void setExStatistics() {
+        // TODO
+    }
+
 
     // EFFECTS: responsible for performing all the button actions
     @SuppressWarnings("methodlength")
