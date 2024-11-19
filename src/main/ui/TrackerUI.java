@@ -441,7 +441,7 @@ public class TrackerUI extends JFrame {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO
+                cl.show(mainPanel, "3");
             }
         });
     }
