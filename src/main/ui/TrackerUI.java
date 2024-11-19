@@ -402,6 +402,7 @@ public class TrackerUI extends JFrame {
                 try {
                     fi = makeFoodItem();
                     lofiModel.addElement(fi);
+                    clearFoodPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
                         JOptionPane.ERROR_MESSAGE);
