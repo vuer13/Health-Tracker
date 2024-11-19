@@ -26,6 +26,7 @@ import javax.swing.JTextField;
 
 import model.Calories;
 import model.Exercise;
+import model.FoodGroup;
 import model.FoodItems;
 import model.ListExercise;
 import model.ListOfFoodItems;
@@ -511,7 +512,11 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: constructs new food item with info from text fields
     private FoodItems makeFoodItem() {
-        return null;
-        // TODO
+        String name = addFoodNameField.getText().toLowerCase();
+        int cals = Integer.parseInt(addCalsField.getText());
+        FoodGroup group = FoodGroup.valueOf(addFoodNameField.getText().toUpperCase());
+
+        FoodItems f = new FoodItems(name, cals, group);
+        return f;
     }
 }
