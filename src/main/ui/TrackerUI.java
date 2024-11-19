@@ -526,6 +526,8 @@ public class TrackerUI extends JFrame {
     // MODIFIES: this
     // EFFECTS: sets all text fields to blank after adding an item
     private void clearFoodPanel() {
-        // TODO
+        addFoodNameField.setText("");
+        addCalsField.setText("");
+        addGroupField.setText("");
     }
 }
