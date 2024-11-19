@@ -388,7 +388,12 @@ public class TrackerUI extends JFrame {
         int lofiFGrainSize = lofi.getGrainList().size();
         int totalLofi = lofi.totalNumOfCalories();
 
-        // TODO
+        String message = String.format(
+                "Number of foods eaten: %d\nCalories consumed: %d\nNumber of Fruits eaten: &d\nCalories of Fruit consumed: %d\nNumber of Vegetables eaten: &d\nCalories of Vegetables consumed: %d\nNumber of Proteins eaten: %d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains consumed: %d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: ",
+                lofiSize, totalLofi, lofiFruitSize, lofiFruitCals, lofiVegetableSize, lofiVegetableCals,
+                lofiProteinSize, lofiProteinCals, lofiFGrainSize, lofiGrainCals, lofiDiarySize, lofiDiaryCals);
+        JOptionPane.showMessageDialog(null, message, "Food Statistics",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 
     // EFFECTS: shows exercises statistics
