@@ -445,6 +445,13 @@ public class TrackerUI extends JFrame {
                 setExStatistics();
             }
         });
+
+        setGoalButtone.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(mainPanel, "1");
+            }
+        });
     }
 
     // EFFECTS: pops window open, giving user option to load previously saved data
