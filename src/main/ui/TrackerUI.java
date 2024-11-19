@@ -401,7 +401,11 @@ public class TrackerUI extends JFrame {
         int loeSize = loe.getListExercise().size();
         int totalLoe = loe.getTotalCaloriesBurnt();
 
-        // TODO
+        String message = String.format(
+                "Number of Exercises performed: %d\nTotal Calories Burnt: ", loeSize, totalLoe);
+
+        JOptionPane.showMessageDialog(null, message, "Exercise Statistics",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 
     // EFFECTS: responsible for performing all the button actions
