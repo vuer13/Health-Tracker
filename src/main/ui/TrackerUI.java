@@ -139,8 +139,8 @@ public class TrackerUI extends JFrame {
         frame.setSize(2000, 1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        viewAllEx();
         viewAllFoodItems();
+        viewAllEx();
 
         mainPanel.setLayout(cl);
 
