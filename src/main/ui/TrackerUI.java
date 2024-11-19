@@ -512,9 +512,11 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: constructs new food item with info from text fields
     private FoodItems makeFoodItem() {
-        String name = addFoodNameField.getText().toLowerCase();
-        int cals = Integer.parseInt(addCalsField.getText());
-        FoodGroup group = FoodGroup.valueOf(addFoodNameField.getText().toUpperCase());
+        int cals;
+        FoodGroup group;
+        String name = addFoodNameField.getText();
+        cals = Integer.parseInt(addCalsField.getText());
+        group = FoodGroup.valueOf(addGroupField.getText().toUpperCase());
 
         FoodItems f = new FoodItems(name, cals, group);
         return f;
