@@ -491,6 +491,20 @@ public class TrackerUI extends JFrame {
                 cl.show(mainPanel, "5");
             }
         });
+
+        removeFoodButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO
+            }
+        });
+
+        removeExerciseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO
+            }
+        });
     }
 
     // EFFECTS: pops window open, giving user option to load previously saved data
