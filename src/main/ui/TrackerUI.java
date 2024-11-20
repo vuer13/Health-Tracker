@@ -456,7 +456,16 @@ public class TrackerUI extends JFrame {
         addExButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO
+                Exercise ex;
+                try {
+                    ex = makeExercise();
+                    loe.addExercise(ex);
+                    // MODIFY THE STRING
+                    clearExPanel();
+                } catch (IllegalArgumentException i) {
+                    JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
+                        JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
     }
