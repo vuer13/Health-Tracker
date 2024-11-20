@@ -552,4 +552,16 @@ public class TrackerUI extends JFrame {
         addCalsField.setText("");
         addGroupField.setText("");
     }
+
+    // EFFECTS: constructs new exercise with info from text fields
+    private Exercise makeExercise() {
+        return null;
+        // TODO
+    }
+
+    // MODIFIES: this
+    // EFFECTS: sets all text fields to blank after adding an exercise
+    private void clearExPanel() {
+        // TODO
+    }
 }
