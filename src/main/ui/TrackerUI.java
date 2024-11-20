@@ -263,7 +263,10 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private void viewAllEx() {
         loeModel = new DefaultListModel<>();
         loeJlist = new JList<>(loeModel);
-        listsPanel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        loeJlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        loeJlist.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        loeJlist.addListSelectionListener(this);
+        loeJlist.setCellRenderer(new ExerciseRenderer());
 
         JScrollPane scroll = new JScrollPane(loeJlist);
         scroll.setPreferredSize(new Dimension(620, 440));
