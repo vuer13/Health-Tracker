@@ -54,6 +54,6 @@ public class Exercise implements Writeable {
 
     // EFFECTS: returns a string that described food item
     public String formatExString() {
-        return null;
+        return this.exercise + ", Calories: " + this.caloriesburnt;
     }
 }
