@@ -449,6 +449,13 @@ public class TrackerUI extends JFrame {
             }
         });
 
+        backButtonEx.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(mainPanel, "3");
+            }
+        });
+
         clearFood.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
