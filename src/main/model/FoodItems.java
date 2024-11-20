@@ -66,9 +66,4 @@ public class FoodItems implements Writeable {
         json.put("Food Group", foodGroups);
         return json;
     }
-
-    // EFFECTS: returns a string that described food item
-    public String formatFoodString() {
-        return this.name + ", Calories: " + this.calories + ", Food Group: " + this.foodGroups;
-    }
 }

@@ -13,7 +13,7 @@ public class FoodItemsRenderer extends DefaultListCellRenderer {
     // EFFECTS: Configures rendering for FoodItems objects in JList
     @Override
     public Component getListCellRendererComponent(
-            JList list, Object value, int index,
+            JList<?> list, Object value, int index,
             boolean isSelected, boolean cellHasFocus) {
         super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
         FoodItems food = (FoodItems) value;
