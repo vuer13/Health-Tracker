@@ -58,7 +58,7 @@ public class TrackerUI extends JFrame {
     private JsonWriter writerCal;
 
     // GENERAL:
-    private final JButton backButtonFood = new JButton("Back"); 
+    private final JButton backButtonFood = new JButton("Back");
     private final JButton backButtonEx = new JButton("Back");
 
     // For Starting Menu
@@ -77,8 +77,8 @@ public class TrackerUI extends JFrame {
     private final LocalDate today = LocalDate.now();
     private final JLabel title = new JLabel("Please select an option: ");
     private final JLabel todayDate = new JLabel(
-            "Today's Date: " + today.getMonthValue() + "-" + today.getDayOfMonth() + "-" +
-                    today.getYear());
+            "Today's Date: " + today.getMonthValue() + "-" + today.getDayOfMonth() + "-"
+                    + today.getYear());
     private JLabel goal = new JLabel("");
     private final JButton calStatsButton = new JButton("Calorie Statistics");
     private final JButton foodStatsButton = new JButton("Food Statistics");
@@ -347,7 +347,8 @@ public class TrackerUI extends JFrame {
         int totalLoe = loe.getTotalCaloriesBurnt();
 
         String message = String.format(
-                "Calorie Goal: %d\nCalories Required: %d\nCalories Over Goal: %d\nDifference in Calories Burnt and Gained: %d\nTotal Food Calories: %d\nTotal Calories Burnt: %d",
+                "Calorie Goal: %d\nCalories Required: %d\nCalories Over Goal: %d\nDifference in Calories Burnt"
+                        + "and Gained: %d\nTotal Food Calories: %d\nTotal Calories Burnt: %d",
                 goal, needed, over, difference, totalLofi, totalLoe);
         JOptionPane.showMessageDialog(null, message, "Calories Statistics",
                 JOptionPane.INFORMATION_MESSAGE);
@@ -369,7 +370,11 @@ public class TrackerUI extends JFrame {
         int totalLofi = lofi.totalNumOfCalories();
 
         String message = String.format(
-                "Number of foods eaten: %d\nCalories consumed: %d\nNumber of Fruits eaten: %d\nCalories of Fruit consumed: %d\nNumber of Vegetables eaten: %d\nCalories of Vegetables consumed: %d\nNumber of Proteins eaten: %d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains consumed: %d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: %d",
+                "Number of foods eaten: %d\nCalories consumed: %d\nNumber of Fruits eaten: "
+                + "%d\nCalories of Fruit consumed: %d\nNumber of Vegetables eaten: "
+                + "%d\nCalories of Vegetables consumed: %d\nNumber of Proteins eaten: "
+                + "%d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains consumed: "
+                + "%d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: %d",
                 lofiSize, totalLofi, lofiFruitSize, lofiFruitCals, lofiVegetableSize, lofiVegetableCals,
                 lofiProteinSize, lofiProteinCals, lofiFGrainSize, lofiGrainCals, lofiDiarySize, lofiDiaryCals);
         JOptionPane.showMessageDialog(null, message, "Food Statistics",
@@ -401,7 +406,7 @@ public class TrackerUI extends JFrame {
         addFood.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FoodItems fi; 
+                FoodItems fi;
                 try {
                     fi = makeFoodItem();
                     lofi.addFood(fi);
@@ -409,7 +414,7 @@ public class TrackerUI extends JFrame {
                     clearFoodPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
-                        JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -474,7 +479,7 @@ public class TrackerUI extends JFrame {
                     clearExPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
-                        JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
