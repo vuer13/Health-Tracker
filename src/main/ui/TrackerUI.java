@@ -495,14 +495,14 @@ public class TrackerUI extends JFrame {
         removeFoodButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO
+                removeFoodItem();
             }
         });
 
         removeExerciseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO
+                removeExercise();
             }
         });
     }
