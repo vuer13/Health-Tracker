@@ -51,4 +51,9 @@ public class Exercise implements Writeable {
         json.put("Calories", caloriesburnt);
         return json;
     }
+
+    // EFFECTS: returns a string that described food item
+    public String formatExString() {
+        return null;
+    }
 }
