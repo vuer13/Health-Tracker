@@ -517,6 +517,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 removeExercise();
+                updateUIex();
             }
         });
     }
