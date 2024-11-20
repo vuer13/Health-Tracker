@@ -555,13 +555,18 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: constructs new exercise with info from text fields
     private Exercise makeExercise() {
-        return null;
-        // TODO
+        int cals;
+        String name = exName.getText();
+        cals = Integer.parseInt(calName.getText());
+
+        Exercise e = new Exercise(name, cals);
+        return e;
     }
 
     // MODIFIES: this
     // EFFECTS: sets all text fields to blank after adding an exercise
     private void clearExPanel() {
-        // TODO
+        exName.setText("");
+        calName.setText("");
     }
 }
