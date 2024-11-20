@@ -20,7 +20,7 @@ public class FoodItemsRenderer extends DefaultListCellRenderer {
         String name = food.getName();
         int cal = food.getCalories();
         FoodGroup group = food.getFoodGroup();
-        String nightText = "Food: " + name + "Calories: " + cal + "Food Group: " + group;
+        String nightText = "Food: " + name + ", Calories: " + cal + ", Food Group: " + group;
         setText(nightText);
         return this;
     }
