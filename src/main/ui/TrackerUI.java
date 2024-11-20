@@ -504,6 +504,7 @@ public class TrackerUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 removeFoodItem();
+                updateUIfoodItems();
             }
         });
 
