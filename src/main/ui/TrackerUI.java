@@ -252,6 +252,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         lofiJlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         lofiJlist.setFont(new Font("Times New Roman", Font.PLAIN, 16));
         lofiJlist.addListSelectionListener(this);
+        lofiJlist.setCellRenderer(new FoodItemsRenderer());
 
         JScrollPane scroll = new JScrollPane(lofiJlist);
         scroll.setPreferredSize(new Dimension(620, 440));
