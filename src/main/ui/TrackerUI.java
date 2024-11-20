@@ -320,6 +320,7 @@ public class TrackerUI extends JFrame {
 
         addExButton.setBounds(150, 450, 100, 75);
         clearEx.setBounds(250, 450, 100, 75);
+        backButton.setBounds(350, 450, 100, 75);
 
         addExPanel.add(addExName);
         addExPanel.add(exName);
@@ -327,6 +328,7 @@ public class TrackerUI extends JFrame {
         addExPanel.add(calName);
         addExPanel.add(addExButton);
         addExPanel.add(clearEx);
+        addExPanel.add(backButton);
     }
 
     // EFFECTS: sets remove exercise panel
