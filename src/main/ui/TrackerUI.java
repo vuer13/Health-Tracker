@@ -87,9 +87,9 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private final JButton foodStatsButton = new JButton("Food Statistics");
     private final JButton exStatsButton = new JButton("Exercise Statistics");
 
-    private DefaultListModel<String> lofiModel;
+    private DefaultListModel<FoodItems> lofiModel;
     private DefaultListModel<String> loeModel;
-    private JList<String> lofiJlist;
+    private JList<FoodItems> lofiJlist;
     private JList<String> loeJlist;
 
     private JPanel listsPanel = new JPanel();
@@ -231,7 +231,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         lofiModel.clear();
         List<FoodItems> fis = lofi.getListOfFoodItems();
         for (FoodItems food : fis) {
-            lofiModel.addElement(food.formatFoodString());
+            lofiModel.addElement(food);
         }
     }
 
@@ -314,9 +314,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private void removeFoodItem() {
         int selected = lofiJlist.getSelectedIndex();
         if (selected != -1) {
-            lofiJlist.remove(selected);
-            FoodItems f = lofi.getListOfFoodItems().get(selected);
-            lofi.removeFood(f);
+            lofiModel.remove(selected);
+            lofi.removeFood(lofi.getListOfFoodItems().get(selected));
         } else {
             JOptionPane.showMessageDialog(null, "Please select a food item to remove.",
                     "No Food Selected", JOptionPane.WARNING_MESSAGE);
@@ -424,7 +423,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 try {
                     fi = makeFoodItem();
                     lofi.addFood(fi);
-                    lofiModel.addElement(fi.formatFoodString());
+                    lofiModel.addElement(fi);
                     clearFoodPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
