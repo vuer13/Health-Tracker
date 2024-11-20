@@ -23,6 +23,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import model.Calories;
 import model.Exercise;
@@ -34,7 +37,7 @@ import persistance.JsonReader;
 import persistance.JsonWriter;
 
 // GUI for program
-public class TrackerUI extends JFrame {
+public class TrackerUI extends JFrame implements ListSelectionListener {
 
     private final JPanel mainPanel = new JPanel();
     private final CardLayout cl = new CardLayout();
@@ -246,7 +249,9 @@ public class TrackerUI extends JFrame {
     private void viewAllFoodItems() {
         lofiModel = new DefaultListModel<>();
         lofiJlist = new JList<>(lofiModel);
+        lofiJlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         lofiJlist.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        lofiJlist.addListSelectionListener(this);
 
         JScrollPane scroll = new JScrollPane(lofiJlist);
         scroll.setPreferredSize(new Dimension(620, 440));
@@ -623,5 +628,10 @@ public class TrackerUI extends JFrame {
     private void clearExPanel() {
         exName.setText("");
         calName.setText("");
+    }
+
+    @Override
+    public void valueChanged(ListSelectionEvent e) {
+        // not required
     }
 }
