@@ -84,9 +84,9 @@ public class TrackerUI extends JFrame {
     private final JButton exStatsButton = new JButton("Exercise Statistics");
 
     private DefaultListModel<String> lofiModel;
-    private DefaultListModel<Exercise> loeModel;
+    private DefaultListModel<String> loeModel;
     private JList<String> lofiJlist;
-    private JList<Exercise> loeJlist;
+    private JList<String> loeJlist;
 
     private JPanel listsPanel = new JPanel();
 
@@ -237,7 +237,7 @@ public class TrackerUI extends JFrame {
         loeModel.clear();
         List<Exercise> es = loe.getListExercise();
         for (Exercise e : es) {
-            loeModel.addElement(e);
+            loeModel.addElement(e.formatExString());
         }
     }
 
