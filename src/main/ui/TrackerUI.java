@@ -307,7 +307,15 @@ public class TrackerUI extends JFrame {
 
     // EFFECTS: removes food item from the list
     private void removeFoodItem() {
-        // TODO
+        int selected = lofiJlist.getSelectedIndex();
+        if (selected != -1) {
+            lofiJlist.remove(selected);
+            FoodItems f = lofi.getListOfFoodItems().get(selected);
+            lofi.removeFood(f);
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a food item to remove.",
+                    "No Food Selected", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
 
