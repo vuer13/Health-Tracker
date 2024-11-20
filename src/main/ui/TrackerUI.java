@@ -460,7 +460,7 @@ public class TrackerUI extends JFrame {
                 try {
                     ex = makeExercise();
                     loe.addExercise(ex);
-                    // MODIFY THE STRING
+                    loeModel.addElement(ex.formatExString());
                     clearExPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
