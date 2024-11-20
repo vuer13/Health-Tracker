@@ -326,7 +326,14 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: removes exercise from the list
     private void removeExercise() {
-        // TODO
+        int selected = loeJlist.getSelectedIndex();
+        if (selected != -1) {
+            loeModel.remove(selected);
+            loe.removeExercise(loe.getListExercise().get(selected));
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a exercise to remove.",
+                    "No Exercise Selected", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     // EFFECTS: sets add exercise panel
