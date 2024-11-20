@@ -305,8 +305,14 @@ public class TrackerUI extends JFrame {
         addFoodItemsPanel.add(backButtonFood);
     }
 
-    // EFFECTS: sets remove food items panel
-    private void setRemoveFoodPanel() {
+    // EFFECTS: removes food item from the list
+    private void removeFoodItem() {
+        // TODO
+    }
+
+
+    // EFFECTS: removes exercise from the list
+    private void removeExercise() {
         // TODO
     }
 
@@ -330,11 +336,6 @@ public class TrackerUI extends JFrame {
         addExPanel.add(addExButton);
         addExPanel.add(clearEx);
         addExPanel.add(backButtonEx);
-    }
-
-    // EFFECTS: sets remove exercise panel
-    private void setRemoveExPanel() {
-        // TODO
     }
 
     // EFFECTS: shows statistics of data inputted as a pop up window
