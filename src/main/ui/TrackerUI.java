@@ -58,7 +58,8 @@ public class TrackerUI extends JFrame {
     private JsonWriter writerCal;
 
     // GENERAL:
-    private final JButton backButton = new JButton("Back"); // Use for both adds and both removes
+    private final JButton backButtonFood = new JButton("Back"); 
+    private final JButton backButtonEx = new JButton("Back");
 
     // For Starting Menu
     private final JFrame frame = new JFrame();
@@ -291,7 +292,7 @@ public class TrackerUI extends JFrame {
 
         addFood.setBounds(150, 450, 100, 75);
         clearFood.setBounds(250, 450, 100, 75);
-        backButton.setBounds(350, 450, 100, 75);
+        backButtonFood.setBounds(350, 450, 100, 75);
 
         addFoodItemsPanel.add(addFoodName);
         addFoodItemsPanel.add(addFoodNameField);
@@ -301,7 +302,7 @@ public class TrackerUI extends JFrame {
         addFoodItemsPanel.add(addGroupField);
         addFoodItemsPanel.add(addFood);
         addFoodItemsPanel.add(clearFood);
-        addFoodItemsPanel.add(backButton);
+        addFoodItemsPanel.add(backButtonFood);
     }
 
     // EFFECTS: sets remove food items panel
@@ -320,7 +321,7 @@ public class TrackerUI extends JFrame {
 
         addExButton.setBounds(150, 450, 100, 75);
         clearEx.setBounds(250, 450, 100, 75);
-        backButton.setBounds(350, 450, 100, 75);
+        backButtonEx.setBounds(350, 450, 100, 75);
 
         addExPanel.add(addExName);
         addExPanel.add(exName);
@@ -328,7 +329,7 @@ public class TrackerUI extends JFrame {
         addExPanel.add(calName);
         addExPanel.add(addExButton);
         addExPanel.add(clearEx);
-        addExPanel.add(backButton);
+        addExPanel.add(backButtonEx);
     }
 
     // EFFECTS: sets remove exercise panel
@@ -441,7 +442,7 @@ public class TrackerUI extends JFrame {
             }
         });
 
-        backButton.addActionListener(new ActionListener() {
+        backButtonFood.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cl.show(mainPanel, "3");
