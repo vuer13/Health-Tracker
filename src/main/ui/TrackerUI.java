@@ -88,9 +88,9 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private final JButton exStatsButton = new JButton("Exercise Statistics");
 
     private DefaultListModel<FoodItems> lofiModel;
-    private DefaultListModel<String> loeModel;
+    private DefaultListModel<Exercise> loeModel;
     private JList<FoodItems> lofiJlist;
-    private JList<String> loeJlist;
+    private JList<Exercise> loeJlist;
 
     private JPanel listsPanel = new JPanel();
 
@@ -241,7 +241,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         loeModel.clear();
         List<Exercise> es = loe.getListExercise();
         for (Exercise e : es) {
-            loeModel.addElement(e.formatExString());
+            loeModel.addElement(e);
         }
     }
 
@@ -489,7 +489,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 try {
                     ex = makeExercise();
                     loe.addExercise(ex);
-                    loeModel.addElement(ex.formatExString());
+                    loeModel.addElement(ex);
                     clearExPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
