@@ -483,8 +483,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 "Number of foods eaten: %d\nCalories consumed: %d\nNumber of Fruits eaten: "
                         + "%d\nCalories of Fruit consumed: %d\nNumber of Vegetables eaten: "
                         + "%d\nCalories of Vegetables consumed: %d\nNumber of Proteins eaten: "
-                        + "%d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains consumed: "
-                        + "%d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: %d",
+                        + "%d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains"
+                        + " consumed: %d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: %d",
                 lofiSize, totalLofi, lofiFruitSize, lofiFruitCals, lofiVegetableSize, lofiVegetableCals,
                 lofiProteinSize, lofiProteinCals, lofiFGrainSize, lofiGrainCals, lofiDiarySize, lofiDiaryCals);
         JOptionPane.showMessageDialog(null, message, "Food Statistics",
