@@ -27,3 +27,6 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
 - As a User, I want to be able to clear the lists of food items or list of exercises
 - As a User, I want the option to save my food items & exercise lists, as well as my calorie goal (if I choose to do so)
 - As a User, I want the option to load the my previous lists, and calorie goal when I start the application (if I choose to do so)
+
+# Instructions for the User
+- 
