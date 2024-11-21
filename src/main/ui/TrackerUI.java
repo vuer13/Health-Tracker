@@ -21,6 +21,7 @@ import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -91,6 +92,9 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private final JButton calStatsButton = new JButton("Calorie Statistics");
     private final JButton foodStatsButton = new JButton("Food Statistics");
     private final JButton exStatsButton = new JButton("Exercise Statistics");
+
+    String[] foodGroups = { "All", "Fruit", "Vegetable", "Grain", "Protein", "Dairy"};
+    private final JComboBox<?> foodGroupsBox = new JComboBox<>(foodGroups);
 
     private DefaultListModel<FoodItems> lofiModel;
     private DefaultListModel<Exercise> loeModel;
@@ -217,7 +221,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         todayDate.setBounds(700, 40, 600, 100);
 
         mainScreenPanel.add(listsPanel);
-        listsPanel.setBounds(95, 175, 1250, 450);
+        listsPanel.setBounds(95, 175, 1250, 375);
 
         addMainButtons();
 
@@ -267,7 +271,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         lofiJlist.setCellRenderer(new FoodItemsRenderer());
 
         JScrollPane scroll = new JScrollPane(lofiJlist);
-        scroll.setPreferredSize(new Dimension(620, 440));
+        scroll.setPreferredSize(new Dimension(620, 370));
         listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
