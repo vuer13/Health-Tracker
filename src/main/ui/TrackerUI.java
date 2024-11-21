@@ -381,14 +381,19 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addExPanel.setLayout(null);
         addExPanel.setBackground(new Color(79, 158, 219));
 
-        addExName.setBounds(30, 10, 100, 100);
-        exName.setBounds(180, 50, 100, 20);
-        calExName.setBounds(30, 100, 100, 100);
-        calName.setBounds(180, 150, 100, 20);
+        addExName.setBounds(110, 200, 300, 80);
+        exName.setBounds(350, 200, 300, 80);
+        addExName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
+        exName.setFont(new Font("Times New Roman", Font.PLAIN, 36));
 
-        addExButton.setBounds(150, 450, 100, 75);
-        clearEx.setBounds(250, 450, 100, 75);
-        backButtonEx.setBounds(350, 450, 100, 75);
+        calExName.setBounds(100, 400, 300, 80);
+        calName.setBounds(350, 400, 300, 80);
+        calExName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
+        calName.setFont(new Font("Times New Roman", Font.PLAIN, 36));
+
+        addExButton.setBounds(180, 600, 120, 80);
+        clearEx.setBounds(310, 600, 120, 80);
+        backButtonEx.setBounds(440, 600, 120, 80);
 
         addExPanel.add(addExName);
         addExPanel.add(exName);
