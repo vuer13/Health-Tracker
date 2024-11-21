@@ -10,11 +10,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -320,15 +323,11 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // adds images to the add food panel
     private void addImagesToFoodPanel() {
+
+        
         addImagePanel("data/food1.png");
         addImagePanel("data/food2.png");
         addImagePanel("data/food3.png");
-    }
-
-    // EFFECTS: creates image and puts it on a label
-    private JLabel addImagePanel(String file) {
-        return null;
-        // TODO
     }
 
     // EFFECTS: removes food item from the list
