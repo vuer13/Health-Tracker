@@ -335,7 +335,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             BufferedImage newPicture = ImageIO.read(new File("data/food1.png"));
             Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
             JLabel picture = new JLabel(new ImageIcon(newImg));
-            picture.setBounds(1100, 50, 300, 300);
+            picture.setBounds(1000, 50, 300, 300);
             addFoodItemsPanel.add(picture);
         } catch (IOException e) {
             System.out.println("IOException caught, file not found");
