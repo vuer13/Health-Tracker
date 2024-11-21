@@ -305,7 +305,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addFoodItemsPanel.setLayout(null);
         addFoodItemsPanel.setBackground(new Color(230, 133, 154));
 
-        setFonts();
+        setAddFoodItemsFonts();
 
         addFoodName.setBounds(30, 10, 100, 100);
         addFoodNameField.setBounds(180, 50, 100, 20);
@@ -333,7 +333,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // MODIFIES: this
     // EFFECTS: changes fonts of panels and labels
-    private void setFonts() {
+    private void setAddFoodItemsFonts() {
         addFoodName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
         addFoodNameField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
         addCals.setFont(new Font("Times New Roman", Font.PLAIN, 38));
