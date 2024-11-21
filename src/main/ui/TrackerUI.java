@@ -10,11 +10,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -416,7 +419,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 "Number of Exercises performed: %d\nTotal Calories Burnt: %d", loeSize, totalLoe);
 
         JOptionPane.showMessageDialog(null, message, "Exercise Statistics",
-                JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.INFORMATION_MESSAGE, 
+                addImage("./data/images.png", 150, 150));
     }
 
     // EFFECTS: responsible for performing all the button actions
@@ -573,7 +577,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private void saveTracker() {
         int reponse = JOptionPane.showConfirmDialog(null,
                 "Would you like to save your tracker before closing?",
-                "Save Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                "Save Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+                addImage("./data/saving.jpeg", 150, 150));
         if (reponse == JOptionPane.YES_OPTION) {
             try {
                 open();
