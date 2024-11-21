@@ -5,6 +5,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -650,7 +651,9 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: creates new image instance
     private ImageIcon addImage(String file, int height, int width) {
-        // TODO
-        return null;
+        ImageIcon imageIcon = new ImageIcon(file);
+        Image image = imageIcon.getImage();
+        Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(newImg);
     }
 }
