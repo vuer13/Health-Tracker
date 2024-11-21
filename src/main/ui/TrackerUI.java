@@ -221,7 +221,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         todayDate.setBounds(700, 40, 600, 100);
 
         mainScreenPanel.add(listsPanel);
-        listsPanel.setBounds(95, 175, 1250, 375);
+        listsPanel.setBounds(95, 175, 1250, 410);
 
         addMainButtons();
 
@@ -233,6 +233,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         calStatsButton.setBounds(875, 650, 150, 75);
         foodStatsButton.setBounds(1025, 650, 150, 75);
         exStatsButton.setBounds(1175, 650, 150, 75);
+        foodGroupsBox.setBounds(125, 600, 150, 75);
     }
 
     // MODIFIES: this
@@ -271,7 +272,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         lofiJlist.setCellRenderer(new FoodItemsRenderer());
 
         JScrollPane scroll = new JScrollPane(lofiJlist);
-        scroll.setPreferredSize(new Dimension(620, 370));
+        scroll.setPreferredSize(new Dimension(620, 400));
         listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
@@ -285,7 +286,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         loeJlist.setCellRenderer(new ExerciseRenderer());
 
         JScrollPane scroll = new JScrollPane(loeJlist);
-        scroll.setPreferredSize(new Dimension(620, 440));
+        scroll.setPreferredSize(new Dimension(620, 400));
         listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
@@ -302,6 +303,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         mainScreenPanel.add(calStatsButton);
         mainScreenPanel.add(foodStatsButton);
         mainScreenPanel.add(exStatsButton);
+        mainScreenPanel.add(foodGroupsBox);
     }
 
     // EFFECTS: sets add food items panel
