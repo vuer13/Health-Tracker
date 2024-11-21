@@ -181,7 +181,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     // EFFECTS: displays starting menu with option to load previous mode
     public void setHomePanel() {
         homePanel.setLayout(null);
-        homePanel.setBackground(new Color(0, 255, 51));
+        homePanel.setBackground(new Color(92, 214, 121));
 
         calGoalStart.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         labelHome.setFont(new Font("Times New Roman", Font.PLAIN, 48));
@@ -206,7 +206,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     // EFFECTS: displays main menu
     private void setMainScreenPanel() {
         mainScreenPanel.setLayout(null);
-        mainScreenPanel.setBackground(new Color(0, 255, 51));
+        mainScreenPanel.setBackground(new Color(92, 214, 121));
 
         goal.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         title.setFont(new Font("Times New Roman", Font.PLAIN, 24));
