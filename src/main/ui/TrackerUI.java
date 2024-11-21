@@ -334,7 +334,12 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     // MODIFIES: this
     // EFFECTS: changes fonts of panels and labels
     private void setFonts() {
-        // TODO
+        addFoodName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
+        addFoodNameField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
+        addCals.setFont(new Font("Times New Roman", Font.PLAIN, 38));
+        addCalsField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
+        addGroup.setFont(new Font("Times New Roman", Font.PLAIN, 38));
+        addGroupField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
     }
 
     // adds images to the add food panel
@@ -370,7 +375,6 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                     "No Food Selected", JOptionPane.WARNING_MESSAGE);
         }
     }
-
 
     // EFFECTS: removes exercise from the list
     private void removeExercise() {
