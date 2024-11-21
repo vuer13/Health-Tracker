@@ -307,16 +307,16 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
         setAddFoodItemsFonts();
 
-        addFoodName.setBounds(30, 10, 100, 100);
-        addFoodNameField.setBounds(180, 50, 100, 20);
-        addCals.setBounds(30, 100, 100, 100);
-        addCalsField.setBounds(180, 150, 100, 20);
-        addGroup.setBounds(30, 200, 100, 100);
-        addGroupField.setBounds(180, 250, 100, 20);
+        addFoodName.setBounds(110, 150, 300, 80);
+        addFoodNameField.setBounds(350, 150, 300, 80);
+        addCals.setBounds(110, 300, 300, 80);
+        addCalsField.setBounds(350, 300, 300, 80);
+        addGroup.setBounds(110, 450, 300, 80);
+        addGroupField.setBounds(350, 450, 300, 80);
 
-        addFood.setBounds(150, 450, 100, 75);
-        clearFood.setBounds(250, 450, 100, 75);
-        backButtonFood.setBounds(350, 450, 100, 75);
+        addFood.setBounds(180, 600, 120, 80);
+        clearFood.setBounds(310, 600, 120, 80);
+        backButtonFood.setBounds(440, 600, 120, 80);
 
         addFoodItemsPanel.add(addFoodName);
         addFoodItemsPanel.add(addFoodNameField);
