@@ -397,6 +397,13 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addExPanel.add(addExButton);
         addExPanel.add(clearEx);
         addExPanel.add(backButtonEx);
+
+        addImagesToExPanel();
+    }
+
+    // EFFECTS: adds images to add ex panel
+    private void addImagesToExPanel() {
+        // TODO
     }
 
     // EFFECTS: shows statistics of data inputted as a pop up window
