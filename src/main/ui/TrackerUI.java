@@ -403,7 +403,24 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: adds images to add ex panel
     private void addImagesToExPanel() {
-        // TODO
+        try {
+            BufferedImage newPicture = ImageIO.read(new File("data/ex1.png"));
+            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            JLabel picture = new JLabel(new ImageIcon(newImg));
+            picture.setBounds(1000, 50, 300, 300);
+            addExPanel.add(picture);
+        } catch (IOException e) {
+            System.out.println("IOException caught, file not found");
+        }
+        try {
+            BufferedImage newPicture = ImageIO.read(new File("data/ex2.png"));
+            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            JLabel picture = new JLabel(new ImageIcon(newImg));
+            picture.setBounds(800, 400, 300, 300);
+            addExPanel.add(picture);
+        } catch (IOException e) {
+            System.out.println("IOException caught, file not found");
+        }
     }
 
     // EFFECTS: shows statistics of data inputted as a pop up window
