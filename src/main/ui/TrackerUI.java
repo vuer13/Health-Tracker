@@ -305,7 +305,6 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addFoodItemsPanel.setLayout(null);
         addFoodItemsPanel.setBackground(new Color(230, 133, 154));
 
-
         addFoodName.setBounds(30, 10, 100, 100);
         addFoodNameField.setBounds(180, 50, 100, 20);
         addCals.setBounds(30, 100, 100, 100);
@@ -380,6 +379,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     // EFFECTS: sets add exercise panel
     private void setAddExPanel() {
         addExPanel.setLayout(null);
+        addExPanel.setBackground(new Color(79, 158, 219));
 
         addExName.setBounds(30, 10, 100, 100);
         exName.setBounds(180, 50, 100, 20);
