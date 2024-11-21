@@ -641,27 +641,47 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: shows only fruits
     private void updateUIfoodItemsFruit() {
-        // TODO
+        lofiModel.clear();
+        List<FoodItems> fis = lofi.getFruitList();
+        for (FoodItems food : fis) {
+            lofiModel.addElement(food);
+        }
     }
 
     // EFFECTS: shows only vegetables
     private void updateUIfoodItemsVeg() {
-        // TODO
+        lofiModel.clear();
+        List<FoodItems> fis = lofi.getVegetableList();
+        for (FoodItems food : fis) {
+            lofiModel.addElement(food);
+        }
     }
 
     // EFFECTS: shows only grains
     private void updateUIfoodItemsGrain() {
-        // TODO
+        lofiModel.clear();
+        List<FoodItems> fis = lofi.getGrainList();
+        for (FoodItems food : fis) {
+            lofiModel.addElement(food);
+        }
     }
 
     // EFFECTS: shows only proteins
     private void updateUIfoodItemsProtein() {
-        // TODO
+        lofiModel.clear();
+        List<FoodItems> fis = lofi.getProteinList();
+        for (FoodItems food : fis) {
+            lofiModel.addElement(food);
+        }
     }
 
     // EFFECTS: shows only dairy
     private void updateUIfoodItemsDairy() {
-        // TODO
+        lofiModel.clear();
+        List<FoodItems> fis = lofi.getDairyList();
+        for (FoodItems food : fis) {
+            lofiModel.addElement(food);
+        }
     }
 
     // EFFECTS: pops window open, giving user option to load previously saved data
