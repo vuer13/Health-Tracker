@@ -377,7 +377,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                         + "and Gained: %d\nTotal Food Calories: %d\nTotal Calories Burnt: %d",
                 goal, needed, over, difference, totalLofi, totalLoe);
         JOptionPane.showMessageDialog(null, message, "Calories Statistics",
-                JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.INFORMATION_MESSAGE,
+                addImage("./data/cals.png", 150, 150));
     }
 
     // EFFECTS: shows food statistics
@@ -417,7 +418,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
         JOptionPane.showMessageDialog(null, message, "Exercise Statistics",
                 JOptionPane.INFORMATION_MESSAGE, 
-                addImage("./data/images.png", 150, 150));
+                addImage("./data/weights.png", 150, 150));
     }
 
     // EFFECTS: responsible for performing all the button actions
@@ -540,7 +541,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         int reponse = JOptionPane.showConfirmDialog(null,
                 "Would you like to load your previously saved list of food items and exercises?",
                 "Load Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
-                addImage("./data/loading.jpeg", 150, 150));
+                addImage("./data/loading.png", 150, 150));
         if (reponse == JOptionPane.YES_OPTION) {
             try {
                 lofi = readerFood.readFootItems();
@@ -575,7 +576,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         int reponse = JOptionPane.showConfirmDialog(null,
                 "Would you like to save your tracker before closing?",
                 "Save Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
-                addImage("./data/saving.jpeg", 150, 150));
+                addImage("./data/save.png", 150, 150));
         if (reponse == JOptionPane.YES_OPTION) {
             try {
                 open();
