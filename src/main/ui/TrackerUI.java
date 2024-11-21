@@ -93,7 +93,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private final JButton foodStatsButton = new JButton("Food Statistics");
     private final JButton exStatsButton = new JButton("Exercise Statistics");
 
-    String[] foodGroups = { "All", "Fruit", "Vegetable", "Grain", "Protein", "Dairy"};
+    String[] foodGroups = { "All", "Fruit", "Vegetable", "Grain", "Protein", "Dairy" };
     private final JComboBox<?> foodGroupsBox = new JComboBox<>(foodGroups);
 
     private DefaultListModel<FoodItems> lofiModel;
@@ -481,10 +481,10 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
         String message = String.format(
                 "Number of foods eaten: %d\nCalories consumed: %d\nNumber of Fruits eaten: "
-                + "%d\nCalories of Fruit consumed: %d\nNumber of Vegetables eaten: "
-                + "%d\nCalories of Vegetables consumed: %d\nNumber of Proteins eaten: "
-                + "%d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains consumed: "
-                + "%d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: %d",
+                        + "%d\nCalories of Fruit consumed: %d\nNumber of Vegetables eaten: "
+                        + "%d\nCalories of Vegetables consumed: %d\nNumber of Proteins eaten: "
+                        + "%d\nCalories of Proteins consumed: %d\nNumber of Grains eaten: %d\nCalories of Grains consumed: "
+                        + "%d\nNumber of Dairy eaten: %d\nCalories of Dairy consumed: %d",
                 lofiSize, totalLofi, lofiFruitSize, lofiFruitCals, lofiVegetableSize, lofiVegetableCals,
                 lofiProteinSize, lofiProteinCals, lofiFGrainSize, lofiGrainCals, lofiDiarySize, lofiDiaryCals);
         JOptionPane.showMessageDialog(null, message, "Food Statistics",
@@ -500,7 +500,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 "Number of Exercises performed: %d\nTotal Calories Burnt: %d", loeSize, totalLoe);
 
         JOptionPane.showMessageDialog(null, message, "Exercise Statistics",
-                JOptionPane.INFORMATION_MESSAGE, 
+                JOptionPane.INFORMATION_MESSAGE,
                 addImage("./data/weights.png", 150, 150));
     }
 
@@ -525,7 +525,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                     clearFoodPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
-                                JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -621,16 +621,54 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         foodGroupsBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO
+                int selected = foodGroupsBox.getSelectedIndex();
+                if (selected == 0) {
+                    updateUIfoodItems();
+                } else if (selected == 1) {
+                    updateUIfoodItemsFruit();
+                } else if (selected == 2) {
+                    updateUIfoodItemsVeg();
+                } else if (selected == 3) {
+                    updateUIfoodItemsGrain();
+                } else if (selected == 4) {
+                    updateUIfoodItemsProtein();
+                } else if (selected == 5) {
+                    updateUIfoodItemsDairy();
+                }
             }
         });
+    }
+
+    // EFFECTS: shows only fruits
+    private void updateUIfoodItemsFruit() {
+        // TODO
+    }
+
+    // EFFECTS: shows only vegetables
+    private void updateUIfoodItemsVeg() {
+        // TODO
+    }
+
+    // EFFECTS: shows only grains
+    private void updateUIfoodItemsGrain() {
+        // TODO
+    }
+
+    // EFFECTS: shows only proteins
+    private void updateUIfoodItemsProtein() {
+        // TODO
+    }
+
+    // EFFECTS: shows only dairy
+    private void updateUIfoodItemsDairy() {
+        // TODO
     }
 
     // EFFECTS: pops window open, giving user option to load previously saved data
     private void loadTracker() {
         int reponse = JOptionPane.showConfirmDialog(null,
                 "Would you like to load your previously saved list of food items and exercises?",
-                "Load Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+                "Load Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
                 addImage("./data/loading.png", 150, 150));
         if (reponse == JOptionPane.YES_OPTION) {
             try {
