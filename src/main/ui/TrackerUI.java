@@ -199,6 +199,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 cal = new Calories(goals);
                 cl.show(mainPanel, "3");
                 goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal()));
+                calGoalStart.setText("");
             }
         });
     }
