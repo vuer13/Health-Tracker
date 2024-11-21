@@ -252,7 +252,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: updates both ex and fooditems UI
     private void updateUI() {
-        // TODO
+        updateUIfoodItems();
+        updateUIex();
     }
 
     // EFFECTS: Displays all food items that have been added
