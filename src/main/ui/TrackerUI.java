@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -536,7 +537,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private void loadTracker() {
         int reponse = JOptionPane.showConfirmDialog(null,
                 "Would you like to load your previously saved list of food items and exercises?",
-                "Load Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                "Load Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+                addImage("./data/loading.jpg", 150, 150));
         if (reponse == JOptionPane.YES_OPTION) {
             try {
                 lofi = readerFood.readFootItems();
@@ -644,5 +646,11 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     @Override
     public void valueChanged(ListSelectionEvent e) {
         // not required
+    }
+
+    // EFFECTS: creates new image instance
+    private ImageIcon addImage(String file, int height, int width) {
+        // TODO
+        return null;
     }
 }
