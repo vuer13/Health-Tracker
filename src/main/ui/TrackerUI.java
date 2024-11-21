@@ -320,7 +320,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // adds images to the add food panel
     private void addImagesToFoodPanel() {
-        // TODO
+        // TODO. 
     }
 
     // EFFECTS: removes food item from the list
