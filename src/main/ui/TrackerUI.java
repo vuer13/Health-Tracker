@@ -580,8 +580,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 lofi = readerFood.readFootItems();
                 loe = readerEx.readExercise();
                 cal = readerCal.readCalories();
-                updateUIfoodItems();
-                updateUIex();
+                updateUI();
                 goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal())); // put apart of update
                 cl.show(mainPanel, "3");
             } catch (IOException e) {
@@ -590,8 +589,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             }
         } else {
             createNewInstances();
-            updateUIfoodItems();
-            updateUIex();
+            updateUI();
             cl.show(mainPanel, "1");
         }
         frame.setVisible(true);
