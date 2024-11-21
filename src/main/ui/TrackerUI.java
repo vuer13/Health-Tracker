@@ -438,7 +438,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         int totalLoe = loe.getTotalCaloriesBurnt();
 
         String message = String.format(
-                "Calorie Goal: %d\nCalories Required: %d\nCalories Over Goal: %d\nDifference in Calories Burnt"
+                "Calorie Goal: %d\nCalories Required: %d\nCalories Over Goal: %d\nDifference in Calories Burned "
                         + "and Gained: %d\nTotal Food Calories: %d\nTotal Calories Burnt: %d",
                 goal, needed, over, difference, totalLofi, totalLoe);
         JOptionPane.showMessageDialog(null, message, "Calories Statistics",
