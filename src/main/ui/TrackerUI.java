@@ -320,7 +320,15 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // adds images to the add food panel
     private void addImagesToFoodPanel() {
-        // TODO. 
+        addImagePanel("data/food1.png");
+        addImagePanel("data/food2.png");
+        addImagePanel("data/food3.png");
+    }
+
+    // EFFECTS: creates image and puts it on a label
+    private JLabel addImagePanel(String file) {
+        return null;
+        // TODO
     }
 
     // EFFECTS: removes food item from the list
