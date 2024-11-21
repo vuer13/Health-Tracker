@@ -539,7 +539,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         int reponse = JOptionPane.showConfirmDialog(null,
                 "Would you like to load your previously saved list of food items and exercises?",
                 "Load Calorie Tracker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
-                addImage("./data/loading.jpg", 150, 150));
+                addImage("./data/loading.jpeg", 150, 150));
         if (reponse == JOptionPane.YES_OPTION) {
             try {
                 lofi = readerFood.readFootItems();
