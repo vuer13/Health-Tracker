@@ -305,6 +305,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addFoodItemsPanel.setLayout(null);
         addFoodItemsPanel.setBackground(new Color(230, 133, 154));
 
+        setFonts();
+
         addFoodName.setBounds(30, 10, 100, 100);
         addFoodNameField.setBounds(180, 50, 100, 20);
         addCals.setBounds(30, 100, 100, 100);
@@ -327,6 +329,12 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addFoodItemsPanel.add(backButtonFood);
 
         addImagesToFoodPanel();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes fonts of panels and labels
+    private void setFonts() {
+        // TODO
     }
 
     // adds images to the add food panel
