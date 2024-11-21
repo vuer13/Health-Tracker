@@ -178,7 +178,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     }
 
     // MODIFIES: this
-    // EFFECTS: displays starting menu with option to load previous mode
+    // EFFECTS: displays starting menu allowing user to set calorie goal
     public void setHomePanel() {
         homePanel.setLayout(null);
         homePanel.setBackground(new Color(92, 214, 121));
