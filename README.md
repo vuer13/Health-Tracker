@@ -38,5 +38,7 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
     - When starting the application, a loading icon will show up in the pop up menu 
     - When closing the application, a save icon will show up in the pop up menu
     - There are visual components in the add food panel and the add exercise panel
+    - When opening up the statistics for each category (food items, exercise and calories)
+    - When setting your calorie goal
 - You can load the state by clicking "yes" when the pop up menu shows up when you begin the tracker
 - You can save the state by clicking "yes" when the pop up menu shows up when you close the tracker 

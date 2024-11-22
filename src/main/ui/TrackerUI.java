@@ -93,7 +93,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private final JButton foodStatsButton = new JButton("Food Statistics");
     private final JButton exStatsButton = new JButton("Exercise Statistics");
 
-    String[] foodGroups = { "All", "Fruit", "Vegetable", "Grain", "Protein", "Dairy" };
+    String[] foodGroups = { "All Food Items", "Fruit", "Vegetable", "Grain", "Protein", "Dairy" };
     private final JComboBox<?> foodGroupsBox = new JComboBox<>(foodGroups);
 
     private DefaultListModel<FoodItems> lofiModel;
