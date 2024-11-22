@@ -40,5 +40,6 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
     - There are visual components in the add food panel and the add exercise panel
     - When opening up the statistics for each category (food items, exercise and calories)
     - When setting your calorie goal
+    - When commiting an error (ie. not selecting a item to remove, insufficient inputs when adding an item)
 - You can load the state by clicking "yes" when the pop up menu shows up when you begin the tracker
 - You can save the state by clicking "yes" when the pop up menu shows up when you close the tracker 
