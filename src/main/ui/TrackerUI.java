@@ -391,7 +391,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             lofi.removeFood(lofi.getListOfFoodItems().get(selected));
         } else {
             JOptionPane.showMessageDialog(null, "Please select a food item to remove.",
-                    "No Food Selected", JOptionPane.WARNING_MESSAGE);
+                    "No Food Selected", JOptionPane.WARNING_MESSAGE,
+                    addImage("./data/error.png", 150, 150));
         }
     }
 
@@ -403,7 +404,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             loe.removeExercise(loe.getListExercise().get(selected));
         } else {
             JOptionPane.showMessageDialog(null, "Please select a exercise to remove.",
-                    "No Exercise Selected", JOptionPane.WARNING_MESSAGE);
+                    "No Exercise Selected", JOptionPane.WARNING_MESSAGE,
+                    addImage("./data/error.png", 150, 150));
         }
     }
 
@@ -539,7 +541,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                     clearFoodPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
-                            JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.ERROR_MESSAGE,
+                            addImage("./data/error.png", 150, 150));
                 }
             }
         });
@@ -604,7 +607,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                     clearExPanel();
                 } catch (IllegalArgumentException i) {
                     JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
-                            JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.ERROR_MESSAGE,
+                            addImage("./data/error.png", 150, 150));
                 }
             }
         });
@@ -725,7 +729,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 cl.show(mainPanel, "3");
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(null, "Error: Unable to load tracker", "Load Error",
-                        JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.ERROR_MESSAGE,
+                        addImage("./data/error.png", 150, 150));
             }
         } else {
             createNewInstances();
@@ -755,7 +760,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 close();
             } catch (FileNotFoundException e) {
                 JOptionPane.showMessageDialog(null, "Error: Unable to save tracker", "Save Error",
-                        JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.ERROR_MESSAGE,
+                        addImage("./data/error.png", 150, 150));
             }
         }
     }
