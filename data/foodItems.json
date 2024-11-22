@@ -1,1 +1,17 @@
-{"Food Items": []}
+{"Food Items": [
+    {
+        "Food Group": "FRUIT",
+        "Calories": 10,
+        "Food": "Banana"
+    },
+    {
+        "Food Group": "PROTEIN",
+        "Calories": 30,
+        "Food": "beef"
+    },
+    {
+        "Food Group": "GRAIN",
+        "Calories": 50,
+        "Food": "cereal"
+    }
+]}
