@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 import org.json.JSONException;
 
-// UI of the program
+// UI of the program for the console
 public class Tracker {
 
     private Scanner scanner;

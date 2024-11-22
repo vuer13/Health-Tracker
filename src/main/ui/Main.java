@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.SwingUtilities;
 
-// Opens panel up
+// Opens panel up, beginning of program
 public class Main {
     
     // EFFECTS: creates new TrackerUI instance, using Java Swing library
