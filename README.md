@@ -29,4 +29,15 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
 - As a User, I want the option to load the my previous lists, and calorie goal when I start the application (if I choose to do so)
 
 # Instructions for the User
-- 
+- You can generate the first required action (adding) related to the user story "adding multiple Food Items to a List of Food Items" by clicking the "add food (+)" button in the main menu, and inputting the name, amount of calories and food group, and clicking "add food (+)"
+- You can generate the first required action (adding) related to the user story "adding multiple Exercises to a List of Exercises" by clicking the "add exercise (+)" button in the main menu, and inputting the name and calories burnt, and click "add exercise (+)"
+- You can generate the second required action (removing) related to the user story "adding multiple Food Items to a List of Food Items" by clicking on the item you want to remove in the list, and clicking the "remove food (-)" button
+- You can generate the second required action (removing) related to the user story "adding multiple Exercises to a List of Exercises" by clicking on the item you want to remove in the list, and clicking the "remove exercise (-)" button
+- You can filter out the list of food items by food group simply by clicking the drop down menu and selecting the food group of your choice
+- You can see the statistics of the food items added, exercises added and how they compare to your calorie goal by clicking "food statistics", "exercise statistics" and "calorie statistics" respectively
+- You can locate my visual component in a variety of places, in particular:
+    - When starting the application, a loading icon will show up in the pop up menu 
+    - When closing the application, a save icon will show up in the pop up menu
+    - There are visual components in the add food panel and the add exercise panel
+- You can load the state by clicking "yes" when the pop up menu shows up when you begin the tracker
+- You can save the state by clicking "yes" when the pop up menu shows up when you close the tracker 
