@@ -196,23 +196,29 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         homePanel.add(labelHome);
         homePanel.add(calGoalStart);
 
-        calGoalStart.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int goals = Integer.parseInt(calGoalStart.getText());
-                cal = new Calories(goals);
-                cl.show(mainPanel, "3");
-                goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal()));
-                calGoalStart.setText("");
-            }
-        });
-
         addCalPhotos();
     }
 
     // EFFECTS: Adds photos to the calorie goal menu
     private void addCalPhotos() {
-        // TODO
+        try {
+            BufferedImage newPicture = ImageIO.read(new File("data/calGoal1.png"));
+            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            JLabel picture = new JLabel(new ImageIcon(newImg));
+            picture.setBounds(50, 50, 300, 300);
+            homePanel.add(picture);
+        } catch (IOException e) {
+            System.out.println("IOException caught, file not found");
+        }
+        try {
+            BufferedImage newPicture = ImageIO.read(new File("data/calGoal2.png"));
+            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            JLabel picture = new JLabel(new ImageIcon(newImg));
+            picture.setBounds(1100, 400, 300, 300);
+            homePanel.add(picture);
+        } catch (IOException e) {
+            System.out.println("IOException caught, file not found");
+        }
     }
 
     // EFFECTS: displays main menu
@@ -643,6 +649,17 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 } else if (selected == 5) {
                     updateUIfoodItemsDairy();
                 }
+            }
+        });
+
+        calGoalStart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int goals = Integer.parseInt(calGoalStart.getText());
+                cal = new Calories(goals);
+                cl.show(mainPanel, "3");
+                goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal()));
+                calGoalStart.setText("");
             }
         });
     }
