@@ -226,7 +226,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     }
 
     // MODIFIES: this
-    // EFFECTS: displays main menu
+    // EFFECTS: displays main menu & allows users to view lists
     private void setMainScreenPanel() {
         mainScreenPanel.setLayout(null);
         mainScreenPanel.setBackground(new Color(92, 214, 121));
@@ -363,7 +363,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     }
 
     // MODIFIES: this
-    // EFFECTS: changes fonts of panels and labels
+    // EFFECTS: changes fonts of panels and labels in the add food panel 
     private void setAddFoodItemsFonts() {
         addFoodName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
         addFoodNameField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
@@ -397,7 +397,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     }
 
     // MODIFIES: this
-    // EFFECTS: removes food item from the list
+    // EFFECTS: removes food item from the list of food items
     private void removeFoodItem() {
         int selected = lofiJlist.getSelectedIndex();
         if (selected != -1) {
@@ -411,7 +411,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     }
 
     // MODIFIES: this
-    // EFFECTS: removes exercise from the list
+    // EFFECTS: removes exercise from the list of exercises
     private void removeExercise() {
         int selected = loeJlist.getSelectedIndex();
         if (selected != -1) {
@@ -496,7 +496,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 addImage("./data/cals.png", 150, 150));
     }
 
-    // EFFECTS: shows food statistics
+    // EFFECTS: shows food statistics as pop up window
     private void setFoodStatistics() {
         int lofiSize = lofi.getListOfFoodItems().size();
         int lofiFruitCals = lofi.totalFruitCalories();
@@ -524,7 +524,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 addImage("./data/food3.png", 150, 150));
     }
 
-    // EFFECTS: shows exercises statistics
+    // EFFECTS: shows exercises statistics as pop up window
     private void setExStatistics() {
         int loeSize = loe.getListExercise().size();
         int totalLoe = loe.getTotalCaloriesBurnt();
@@ -763,7 +763,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         frame.setVisible(true);
     }
 
-    // EFFECTS: creates new instances of objected
+    // EFFECTS: creates new instances of objects
     private void createNewInstances() {
         lofi = new ListOfFoodItems();
         loe = new ListExercise();
