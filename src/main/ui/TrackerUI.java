@@ -488,7 +488,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 lofiSize, totalLofi, lofiFruitSize, lofiFruitCals, lofiVegetableSize, lofiVegetableCals,
                 lofiProteinSize, lofiProteinCals, lofiFGrainSize, lofiGrainCals, lofiDiarySize, lofiDiaryCals);
         JOptionPane.showMessageDialog(null, message, "Food Statistics",
-                JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.INFORMATION_MESSAGE,
+                addImage("./data/food3.png", 150, 150));
     }
 
     // EFFECTS: shows exercises statistics
