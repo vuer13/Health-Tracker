@@ -93,6 +93,9 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private final JButton foodStatsButton = new JButton("Food Statistics");
     private final JButton exStatsButton = new JButton("Exercise Statistics");
 
+    private final JLabel foodTitle = new JLabel("List of Food Items:");
+    private final JLabel exTitle = new JLabel("List of Exercises:");
+
     String[] foodGroups = { "All Food Items", "Fruit", "Vegetable", "Grain", "Protein", "Dairy" };
     private final JComboBox<?> foodGroupsBox = new JComboBox<>(foodGroups);
 
@@ -229,12 +232,17 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         goal.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         title.setFont(new Font("Times New Roman", Font.PLAIN, 24));
         todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+        foodTitle.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        exTitle.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 
-        goal.setBounds(100, 40, 800, 100);
-        todayDate.setBounds(700, 40, 600, 100);
+        goal.setBounds(95, 40, 800, 100);
+        todayDate.setBounds(720, 40, 600, 100);
 
         mainScreenPanel.add(listsPanel);
         listsPanel.setBounds(95, 175, 1250, 410);
+
+        foodTitle.setBounds(95, 115, 400, 55);
+        exTitle.setBounds(720, 115, 400, 55);
 
         addMainButtons();
 
@@ -317,6 +325,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         mainScreenPanel.add(foodStatsButton);
         mainScreenPanel.add(exStatsButton);
         mainScreenPanel.add(foodGroupsBox);
+        mainScreenPanel.add(foodTitle);
+        mainScreenPanel.add(exTitle);
     }
 
     // EFFECTS: sets add food items panel
