@@ -1,4 +1,5 @@
 package model;
+
 import static model.FoodGroup.DAIRY;
 import static model.FoodGroup.FRUIT;
 import static model.FoodGroup.GRAIN;
