@@ -818,6 +818,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         calName.setText("");
     }
 
+    // EFFECTS: helper method that needs to be implemented
+    // Has no effect on this code
     @Override
     public void valueChanged(ListSelectionEvent e) {
         // not required
