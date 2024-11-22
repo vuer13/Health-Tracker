@@ -206,6 +206,13 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 calGoalStart.setText("");
             }
         });
+
+        addCalPhotos();
+    }
+
+    // EFFECTS: Adds photos to the calorie goal menu
+    private void addCalPhotos() {
+        // TODO
     }
 
     // EFFECTS: displays main menu
