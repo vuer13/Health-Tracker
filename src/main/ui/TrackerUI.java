@@ -202,6 +202,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addCalPhotos();
     }
 
+    // MODIFIES: this
     // EFFECTS: Adds photos to the calorie goal menu
     private void addCalPhotos() {
         try {
@@ -224,6 +225,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: displays main menu
     private void setMainScreenPanel() {
         mainScreenPanel.setLayout(null);
@@ -371,7 +373,8 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addGroupField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
     }
 
-    // adds images to the add food panel
+    // MODIFIES: this
+    // EFFECTS: adds images to the add food panel
     private void addImagesToFoodPanel() {
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/food1.png"));
@@ -393,6 +396,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: removes food item from the list
     private void removeFoodItem() {
         int selected = lofiJlist.getSelectedIndex();
@@ -406,6 +410,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: removes exercise from the list
     private void removeExercise() {
         int selected = loeJlist.getSelectedIndex();
@@ -419,6 +424,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: sets add exercise panel
     private void setAddExPanel() {
         addExPanel.setLayout(null);
@@ -449,6 +455,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addImagesToExPanel();
     }
 
+    // MODIFIES: this
     // EFFECTS: adds images to add ex panel
     private void addImagesToExPanel() {
         try {
@@ -678,6 +685,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         });
     }
 
+    // MODIFIES: this
     // EFFECTS: shows only fruits
     private void updateUIfoodItemsFruit() {
         lofiModel.clear();
@@ -687,6 +695,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: shows only vegetables
     private void updateUIfoodItemsVeg() {
         lofiModel.clear();
@@ -696,6 +705,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: shows only grains
     private void updateUIfoodItemsGrain() {
         lofiModel.clear();
@@ -705,6 +715,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: shows only proteins
     private void updateUIfoodItemsProtein() {
         lofiModel.clear();
@@ -714,6 +725,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: shows only dairy
     private void updateUIfoodItemsDairy() {
         lofiModel.clear();
@@ -723,6 +735,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: pops window open, giving user option to load previously saved data
     private void loadTracker() {
         int reponse = JOptionPane.showConfirmDialog(null,
@@ -757,6 +770,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         cal = new Calories(0);
     }
 
+    // MODIFIES: this
     // EFFECTS: pops window open, giving user option to save current data
     private void saveTracker() {
         int reponse = JOptionPane.showConfirmDialog(null,
@@ -783,6 +797,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         writerFood.open();
     }
 
+    // MODIFIES: this
     // EFFECTS: Writes data into date files
     private void write() {
         writerEx.writeExercise(loe);
