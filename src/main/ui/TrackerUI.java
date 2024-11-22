@@ -188,10 +188,10 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         homePanel.setBackground(new Color(92, 214, 121));
 
         calGoalStart.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-        labelHome.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+        labelHome.setFont(new Font("Palatino", Font.PLAIN, 48));
 
-        labelHome.setBounds(250, 0, 500, 200);
-        calGoalStart.setBounds(250, 150, 500, 100);
+        labelHome.setBounds(475, 200, 1000, 200);
+        calGoalStart.setBounds(475, 400, 500, 100);
 
         homePanel.add(labelHome);
         homePanel.add(calGoalStart);
