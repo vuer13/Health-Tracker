@@ -117,8 +117,6 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private final JTextField addCalsField = new JTextField();
     private final JTextField addGroupField = new JTextField();
 
-    // For Removing FoodItems Screen
-
     // For Adding Exercises Screen
     private final JPanel addExPanel = new JPanel();
     private final JLabel addExName = new JLabel("Exercise: ");
@@ -127,8 +125,6 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private final JTextField calName = new JTextField();
     private final JButton addExButton = new JButton("Add Exercise (+)");
     private final JButton clearEx = new JButton("Clear");
-
-    // For Removing Exercises Screen
 
     // MODIFIES: this
     // EFFECTS: Sets Up GUI
@@ -172,7 +168,6 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         actionPerformed();
     }
 
-    // MODIFIES: this
     // EFFECTS: Initizlizes calorie tracker data
     private void initializeData() {
         readerFood = new JsonReader(JSON_STORE_FOOD);
@@ -362,7 +357,6 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addImagesToFoodPanel();
     }
 
-    // MODIFIES: this
     // EFFECTS: changes fonts of panels and labels in the add food panel 
     private void setAddFoodItemsFonts() {
         addFoodName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
@@ -424,7 +418,6 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
-    // MODIFIES: this
     // EFFECTS: sets add exercise panel
     private void setAddExPanel() {
         addExPanel.setLayout(null);
