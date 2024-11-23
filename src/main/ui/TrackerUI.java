@@ -207,7 +207,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             picture.setBounds(50, 50, 300, 300);
             homePanel.add(picture);
         } catch (IOException e) {
-            System.out.println("IOException caught, file not found");
+            // do nothing, won't display photo
         }
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/calGoal2.png"));
@@ -216,7 +216,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             picture.setBounds(1100, 400, 300, 300);
             homePanel.add(picture);
         } catch (IOException e) {
-            System.out.println("IOException caught, file not found");
+            // do nothing, won't display photo
         }
     }
 
@@ -377,7 +377,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             picture.setBounds(1000, 50, 300, 300);
             addFoodItemsPanel.add(picture);
         } catch (IOException e) {
-            System.out.println("IOException caught, file not found");
+            // do nothing, won't display photo
         }
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/food2.png"));
@@ -386,7 +386,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             picture.setBounds(800, 400, 300, 300);
             addFoodItemsPanel.add(picture);
         } catch (IOException e) {
-            System.out.println("IOException caught, file not found");
+            // do nothing, won't display photo
         }
     }
 
@@ -458,7 +458,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             picture.setBounds(1000, 50, 300, 300);
             addExPanel.add(picture);
         } catch (IOException e) {
-            System.out.println("IOException caught, file not found");
+            // do nothing, won't display photo
         }
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/ex2.png"));
@@ -467,7 +467,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             picture.setBounds(800, 400, 300, 300);
             addExPanel.add(picture);
         } catch (IOException e) {
-            System.out.println("IOException caught, file not found");
+            // do nothing, won't display photo
         }
     }
 
