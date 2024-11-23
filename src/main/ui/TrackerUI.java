@@ -357,7 +357,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addImagesToFoodPanel();
     }
 
-    // EFFECTS: changes fonts of panels and labels in the add food panel 
+    // EFFECTS: changes fonts of panels and labels in the add food panel
     private void setAddFoodItemsFonts() {
         addFoodName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
         addFoodNameField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
