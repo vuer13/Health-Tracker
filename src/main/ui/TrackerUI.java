@@ -33,6 +33,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import exceptions.AllFoodsSelected;
 import model.Calories;
 import model.Exercise;
 import model.FoodGroup;
@@ -392,7 +393,10 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // MODIFIES: this
     // EFFECTS: removes food item from the list of food items
-    private void removeFoodItem() {
+    private void removeFoodItem() throws AllFoodsSelected {
+        if (foodGroupsBox.getSelectedIndex() != 0) {
+            throw new AllFoodsSelected();
+        }
         int selected = lofiJlist.getSelectedIndex();
         if (selected != -1) {
             lofiModel.remove(selected);
@@ -633,8 +637,26 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         removeFoodButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                removeFoodItem();
-                updateUIfoodItems();
+                try {
+                    removeFoodItem();
+                } catch (AllFoodsSelected o) {
+                    JOptionPane.showMessageDialog(null,
+                            "Error: Unable to Remove, Please select all food items before removing", "Remove Error",
+                            JOptionPane.ERROR_MESSAGE,
+                            addImage("./data/error.png", 150, 150));
+                }
+                int selected = foodGroupsBox.getSelectedIndex();
+                if (selected == 1) {
+                    updateUIfoodItemsFruit();
+                } else if (selected == 2) {
+                    updateUIfoodItemsVeg();
+                } else if (selected == 3) {
+                    updateUIfoodItemsGrain();
+                } else if (selected == 4) {
+                    updateUIfoodItemsProtein();
+                } else if (selected == 5) {
+                    updateUIfoodItemsDairy();
+                }
             }
         });
 
