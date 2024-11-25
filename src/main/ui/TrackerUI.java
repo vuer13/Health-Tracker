@@ -229,14 +229,14 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         foodTitle.setFont(new Font("Times New Roman", Font.PLAIN, 15));
         exTitle.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 
-        addFoodButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-        removeFoodButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-        addExerciseButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-        removeExerciseButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-        setGoalButtone.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-        calStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-        foodStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-        exStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        addFoodButton.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        removeFoodButton.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        addExerciseButton.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        removeExerciseButton.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        setGoalButtone.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        calStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        foodStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        exStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 12));
         foodGroupsBox.setFont(new Font("Times New Roman", Font.PLAIN, 15));
     }
 
