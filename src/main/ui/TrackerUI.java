@@ -221,17 +221,16 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    // EFFECTS: changes items font size for main screen
+    private void changeFontMain() {
+        // TODO
+    }
+
     // MODIFIES: this
     // EFFECTS: displays main menu & allows users to view lists
     private void setMainScreenPanel() {
         mainScreenPanel.setLayout(null);
         mainScreenPanel.setBackground(new Color(92, 214, 121));
-
-        goal.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-        title.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-        todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-        foodTitle.setFont(new Font("Times New Roman", Font.PLAIN, 15));
-        exTitle.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 
         goal.setBounds(71, 30, 600, 75);
         todayDate.setBounds(540, 30, 450, 75);
@@ -243,6 +242,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         exTitle.setBounds(540, 86, 300, 41);
 
         addMainButtons();
+        changeFontMain();
 
         addFoodButton.setBounds(94, 488, 113, 56);
         removeFoodButton.setBounds(206, 488, 113, 56);
