@@ -2,16 +2,16 @@
     {
         "Food Group": "FRUIT",
         "Calories": 10,
-        "Food": "Banana"
+        "Food": "apple"
     },
     {
         "Food Group": "PROTEIN",
-        "Calories": 30,
-        "Food": "beef"
+        "Calories": 10,
+        "Food": "monster"
     },
     {
-        "Food Group": "GRAIN",
-        "Calories": 50,
-        "Food": "cereal"
+        "Food Group": "VEGETABLE",
+        "Calories": 30,
+        "Food": "water"
     }
 ]}

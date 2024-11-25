@@ -149,7 +149,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private void initializeUI() {
         frame.add(mainPanel);
         frame.setTitle("Calorie Tracker");
-        frame.setSize(2000, 1000);
+        frame.setSize(1100, 650);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         viewAllFoodItems();
@@ -186,11 +186,11 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         homePanel.setLayout(null);
         homePanel.setBackground(new Color(92, 214, 121));
 
-        calGoalStart.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-        labelHome.setFont(new Font("Palatino", Font.PLAIN, 48));
+        calGoalStart.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        labelHome.setFont(new Font("Palatino", Font.PLAIN, 36));
 
-        labelHome.setBounds(475, 200, 1000, 200);
-        calGoalStart.setBounds(475, 400, 500, 100);
+        labelHome.setBounds(356, 150, 750, 150);
+        calGoalStart.setBounds(356, 300, 375, 75);
 
         homePanel.add(labelHome);
         homePanel.add(calGoalStart);
@@ -203,18 +203,18 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private void addCalPhotos() {
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/calGoal1.png"));
-            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            Image newImg = newPicture.getScaledInstance(225, 225, Image.SCALE_SMOOTH);
             JLabel picture = new JLabel(new ImageIcon(newImg));
-            picture.setBounds(50, 50, 300, 300);
+            picture.setBounds(38, 38, 225, 225);
             homePanel.add(picture);
         } catch (IOException e) {
             // do nothing, won't display photo
         }
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/calGoal2.png"));
-            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            Image newImg = newPicture.getScaledInstance(225, 225, Image.SCALE_SMOOTH);
             JLabel picture = new JLabel(new ImageIcon(newImg));
-            picture.setBounds(1100, 400, 300, 300);
+            picture.setBounds(825, 300, 225, 225);
             homePanel.add(picture);
         } catch (IOException e) {
             // do nothing, won't display photo
@@ -227,32 +227,32 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         mainScreenPanel.setLayout(null);
         mainScreenPanel.setBackground(new Color(92, 214, 121));
 
-        goal.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-        title.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-        todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 24));
-        foodTitle.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        exTitle.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        goal.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        title.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        foodTitle.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        exTitle.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 
-        goal.setBounds(95, 40, 800, 100);
-        todayDate.setBounds(720, 40, 600, 100);
+        goal.setBounds(71, 30, 600, 75);
+        todayDate.setBounds(540, 30, 450, 75);
 
         mainScreenPanel.add(listsPanel);
-        listsPanel.setBounds(95, 175, 1250, 410);
+        listsPanel.setBounds(71, 131, 938, 308);
 
-        foodTitle.setBounds(95, 115, 400, 55);
-        exTitle.setBounds(720, 115, 400, 55);
+        foodTitle.setBounds(71, 86, 300, 41);
+        exTitle.setBounds(540, 86, 300, 41);
 
         addMainButtons();
 
-        addFoodButton.setBounds(125, 650, 150, 75);
-        removeFoodButton.setBounds(275, 650, 150, 75);
-        addExerciseButton.setBounds(425, 650, 150, 75);
-        removeExerciseButton.setBounds(575, 650, 150, 75);
-        setGoalButtone.setBounds(725, 650, 150, 75);
-        calStatsButton.setBounds(875, 650, 150, 75);
-        foodStatsButton.setBounds(1025, 650, 150, 75);
-        exStatsButton.setBounds(1175, 650, 150, 75);
-        foodGroupsBox.setBounds(125, 600, 150, 75);
+        addFoodButton.setBounds(94, 488, 113, 56);
+        removeFoodButton.setBounds(206, 488, 113, 56);
+        addExerciseButton.setBounds(319, 488, 113, 56);
+        removeExerciseButton.setBounds(431, 488, 113, 56);
+        setGoalButtone.setBounds(544, 488, 113, 56);
+        calStatsButton.setBounds(656, 488, 113, 56);
+        foodStatsButton.setBounds(769, 488, 113, 56);
+        exStatsButton.setBounds(881, 488, 113, 56);
+        foodGroupsBox.setBounds(94, 450, 113, 56);
     }
 
     // MODIFIES: this
@@ -286,12 +286,12 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         lofiModel = new DefaultListModel<>();
         lofiJlist = new JList<>(lofiModel);
         lofiJlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        lofiJlist.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        lofiJlist.setFont(new Font("Times New Roman", Font.PLAIN, 12));
         lofiJlist.addListSelectionListener(this);
         lofiJlist.setCellRenderer(new FoodItemsRenderer());
 
         JScrollPane scroll = new JScrollPane(lofiJlist);
-        scroll.setPreferredSize(new Dimension(620, 400));
+        scroll.setPreferredSize(new Dimension(455, 300));
         listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
@@ -300,12 +300,12 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         loeModel = new DefaultListModel<>();
         loeJlist = new JList<>(loeModel);
         loeJlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        loeJlist.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        loeJlist.setFont(new Font("Times New Roman", Font.PLAIN, 12));
         loeJlist.addListSelectionListener(this);
         loeJlist.setCellRenderer(new ExerciseRenderer());
 
         JScrollPane scroll = new JScrollPane(loeJlist);
-        scroll.setPreferredSize(new Dimension(620, 400));
+        scroll.setPreferredSize(new Dimension(455, 300));
         listsPanel.add(scroll, BorderLayout.CENTER);
     }
 
@@ -334,16 +334,16 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
         setAddFoodItemsFonts();
 
-        addFoodName.setBounds(110, 150, 300, 80);
-        addFoodNameField.setBounds(350, 150, 300, 80);
-        addCals.setBounds(110, 300, 300, 80);
-        addCalsField.setBounds(350, 300, 300, 80);
-        addGroup.setBounds(110, 450, 300, 80);
-        addGroupField.setBounds(350, 450, 300, 80);
+        addFoodName.setBounds(83, 113, 225, 60);
+        addFoodNameField.setBounds(263, 113, 225, 60);
+        addCals.setBounds(83, 225, 225, 60);
+        addCalsField.setBounds(263, 225, 225, 60);
+        addGroup.setBounds(83, 338, 225, 60);
+        addGroupField.setBounds(263, 338, 225, 60);
 
-        addFood.setBounds(180, 600, 120, 80);
-        clearFood.setBounds(310, 600, 120, 80);
-        backButtonFood.setBounds(440, 600, 120, 80);
+        addFood.setBounds(135, 450, 90, 60);
+        clearFood.setBounds(233, 450, 90, 60);
+        backButtonFood.setBounds(330, 450, 90, 60);
 
         addFoodItemsPanel.add(addFoodName);
         addFoodItemsPanel.add(addFoodNameField);
@@ -360,12 +360,12 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: changes fonts of panels and labels in the add food panel
     private void setAddFoodItemsFonts() {
-        addFoodName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
-        addFoodNameField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
-        addCals.setFont(new Font("Times New Roman", Font.PLAIN, 38));
-        addCalsField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
-        addGroup.setFont(new Font("Times New Roman", Font.PLAIN, 38));
-        addGroupField.setFont(new Font("Times New Roman", Font.PLAIN, 36));
+        addFoodName.setFont(new Font("Times New Roman", Font.PLAIN, 29));
+        addFoodNameField.setFont(new Font("Times New Roman", Font.PLAIN, 27));
+        addCals.setFont(new Font("Times New Roman", Font.PLAIN, 29));
+        addCalsField.setFont(new Font("Times New Roman", Font.PLAIN, 27));
+        addGroup.setFont(new Font("Times New Roman", Font.PLAIN, 29));
+        addGroupField.setFont(new Font("Times New Roman", Font.PLAIN, 27));
     }
 
     // MODIFIES: this
@@ -373,18 +373,18 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private void addImagesToFoodPanel() {
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/food1.png"));
-            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            Image newImg = newPicture.getScaledInstance(225, 225, Image.SCALE_SMOOTH);
             JLabel picture = new JLabel(new ImageIcon(newImg));
-            picture.setBounds(1000, 50, 300, 300);
+            picture.setBounds(750, 38, 225, 225);
             addFoodItemsPanel.add(picture);
         } catch (IOException e) {
             // do nothing, won't display photo
         }
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/food2.png"));
-            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            Image newImg = newPicture.getScaledInstance(225, 225, Image.SCALE_SMOOTH);
             JLabel picture = new JLabel(new ImageIcon(newImg));
-            picture.setBounds(800, 400, 300, 300);
+            picture.setBounds(600, 300, 225, 225);
             addFoodItemsPanel.add(picture);
         } catch (IOException e) {
             // do nothing, won't display photo
@@ -427,19 +427,19 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addExPanel.setLayout(null);
         addExPanel.setBackground(new Color(79, 158, 219));
 
-        addExName.setBounds(110, 200, 300, 80);
-        exName.setBounds(350, 200, 300, 80);
-        addExName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
-        exName.setFont(new Font("Times New Roman", Font.PLAIN, 36));
+        addExName.setBounds(83, 150, 225, 60);
+        exName.setBounds(263, 150, 225, 60);
+        addExName.setFont(new Font("Times New Roman", Font.PLAIN, 29));
+        exName.setFont(new Font("Times New Roman", Font.PLAIN, 27));
 
-        calExName.setBounds(100, 400, 300, 80);
-        calName.setBounds(350, 400, 300, 80);
-        calExName.setFont(new Font("Times New Roman", Font.PLAIN, 38));
-        calName.setFont(new Font("Times New Roman", Font.PLAIN, 36));
+        calExName.setBounds(75, 300, 225, 60);
+        calName.setBounds(263, 300, 225, 60);
+        calExName.setFont(new Font("Times New Roman", Font.PLAIN, 29));
+        calName.setFont(new Font("Times New Roman", Font.PLAIN, 27));
 
-        addExButton.setBounds(180, 600, 120, 80);
-        clearEx.setBounds(310, 600, 120, 80);
-        backButtonEx.setBounds(440, 600, 120, 80);
+        addExButton.setBounds(135, 450, 90, 60);
+        clearEx.setBounds(233, 450, 90, 60);
+        backButtonEx.setBounds(330, 450, 90, 60);
 
         addExPanel.add(addExName);
         addExPanel.add(exName);
@@ -457,18 +457,18 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     private void addImagesToExPanel() {
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/ex1.png"));
-            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            Image newImg = newPicture.getScaledInstance(225, 225, Image.SCALE_SMOOTH);
             JLabel picture = new JLabel(new ImageIcon(newImg));
-            picture.setBounds(1000, 50, 300, 300);
+            picture.setBounds(750, 38, 225, 225);
             addExPanel.add(picture);
         } catch (IOException e) {
             // do nothing, won't display photo
         }
         try {
             BufferedImage newPicture = ImageIO.read(new File("data/ex2.png"));
-            Image newImg = newPicture.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            Image newImg = newPicture.getScaledInstance(225, 225, Image.SCALE_SMOOTH);
             JLabel picture = new JLabel(new ImageIcon(newImg));
-            picture.setBounds(800, 400, 300, 300);
+            picture.setBounds(600, 300, 225, 225);
             addExPanel.add(picture);
         } catch (IOException e) {
             // do nothing, won't display photo
