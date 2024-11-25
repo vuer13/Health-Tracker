@@ -223,7 +223,21 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: changes items font size for main screen
     private void changeFontMain() {
-        // TODO
+        goal.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        title.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        todayDate.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        foodTitle.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        exTitle.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+
+        addFoodButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        removeFoodButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        addExerciseButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        removeExerciseButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        setGoalButtone.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        calStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        foodStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        exStatsButton.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        foodGroupsBox.setFont(new Font("Times New Roman", Font.PLAIN, 15));
     }
 
     // MODIFIES: this
@@ -252,7 +266,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         calStatsButton.setBounds(656, 488, 113, 56);
         foodStatsButton.setBounds(769, 488, 113, 56);
         exStatsButton.setBounds(881, 488, 113, 56);
-        foodGroupsBox.setBounds(94, 450, 113, 56);
+        foodGroupsBox.setBounds(94, 450, 200, 56);
     }
 
     // MODIFIES: this
