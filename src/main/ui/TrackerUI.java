@@ -897,6 +897,9 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: presents event log to console of all events
     public void windowClosing(WindowEvent e) {
-        // TODO
+        for (Event event : EventLog.getInstance()) {
+            System.out.println(event.getDescription());
+        }
+        System.exit(0);
     }
 }
