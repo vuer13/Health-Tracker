@@ -46,12 +46,21 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
 
 # Phase 4: Task 2
 A calorie goal was set
+
 A fruit has been added to the food items list
+
 An exercise has been added
+
 A protein has been added to the food items list
+
 An exercise has been added
+
 A protein has been removed to the food items list
+
 An exercise has been removed
+
 The list of exercises has been saved
+
 The calorie goal has been saved
+
 The list of food items has been saved
