@@ -7,6 +7,8 @@ import java.io.*;
 import org.json.JSONObject;
 
 import model.Calories;
+import model.Event;
+import model.EventLog;
 import model.ListExercise;
 import model.ListOfFoodItems;
 
@@ -54,6 +56,7 @@ public class JsonWriter {
     // MODIFIES: this
     // EFFECTS: closes writer
     public void close() {
+        EventLog.getInstance().logEvent(new Event("The lists and calorie goal has been saved"));
         writer.close();
     }
 

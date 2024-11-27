@@ -13,6 +13,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import model.Calories;
+import model.Event;
+import model.EventLog;
 import model.Exercise;
 import model.FoodGroup;
 import model.FoodItems;
@@ -34,6 +36,7 @@ public class JsonReader {
     public ListOfFoodItems readFootItems() throws IOException {
         String data = readFile(source);
         JSONObject object = new JSONObject(data);
+        EventLog.getInstance().logEvent(new Event("The list of food items has been loaded"));
         return parseListFoodItems(object);
     }
 
@@ -42,6 +45,7 @@ public class JsonReader {
     public ListExercise readExercise() throws IOException {
         String data = readFile(source);
         JSONObject object = new JSONObject(data);
+        EventLog.getInstance().logEvent(new Event("The list of exercises has been loaded"));
         return parseListExercise(object);
     }
 
@@ -50,6 +54,7 @@ public class JsonReader {
     public Calories readCalories() throws IOException {
         String data = readFile(source);
         JSONObject object = new JSONObject(data);
+        EventLog.getInstance().logEvent(new Event("The previous calorie goal has been loaded"));
         return parseCalories(object);
     }
 
