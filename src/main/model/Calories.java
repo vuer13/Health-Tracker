@@ -34,6 +34,7 @@ public class Calories implements Writeable {
     // EFFECTS: sets new calorie goal
     public void setNewGoal(int calorie) {
         calorieGoal = calorie;
+        EventLog.getInstance().logEvent(new Event("A calorie goal was set"));
     }
 
     // EFFECTS: determines difference between amount consumed and amount burned
