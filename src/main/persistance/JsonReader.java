@@ -36,7 +36,7 @@ public class JsonReader {
     public ListOfFoodItems readFootItems() throws IOException {
         String data = readFile(source);
         JSONObject object = new JSONObject(data);
-        EventLog.getInstance().logEvent(new Event("The list of food items has been loaded"));
+        EventLog.getInstance().logEvent(new Event("The list of food items has being loaded: "));
         return parseListFoodItems(object);
     }
 
@@ -45,7 +45,7 @@ public class JsonReader {
     public ListExercise readExercise() throws IOException {
         String data = readFile(source);
         JSONObject object = new JSONObject(data);
-        EventLog.getInstance().logEvent(new Event("The list of exercises has been loaded"));
+        EventLog.getInstance().logEvent(new Event("The list of exercises has being loaded: "));
         return parseListExercise(object);
     }
 
