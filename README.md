@@ -43,3 +43,15 @@ An active, healthy lifestyle can help individuals lead to an maximum performance
     - When commiting an error (ie. not selecting a item to remove, insufficient inputs when adding an item)
 - You can load the state by clicking "yes" when the pop up menu shows up when you begin the tracker
 - You can save the state by clicking "yes" when the pop up menu shows up when you close the tracker 
+
+# Phase 4: Task 2
+A calorie goal was set
+A fruit has been added to the food items list
+An exercise has been added
+A protein has been added to the food items list
+An exercise has been added
+A protein has been removed to the food items list
+An exercise has been removed
+The list of exercises has been saved
+The calorie goal has been saved
+The list of food items has been saved
