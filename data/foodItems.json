@@ -13,5 +13,15 @@
         "Food Group": "VEGETABLE",
         "Calories": 30,
         "Food": "water"
+    },
+    {
+        "Food Group": "FRUIT",
+        "Calories": 100,
+        "Food": "orange"
+    },
+    {
+        "Food Group": "PROTEIN",
+        "Calories": 10,
+        "Food": "banana"
     }
 ]}
