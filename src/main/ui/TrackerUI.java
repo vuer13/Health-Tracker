@@ -35,6 +35,7 @@ import javax.swing.event.ListSelectionListener;
 
 import exceptions.AllFoodsSelected;
 import model.Calories;
+import model.EventLog;
 import model.Exercise;
 import model.FoodGroup;
 import model.FoodItems;
@@ -891,5 +892,12 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         Image image = imageIcon.getImage();
         Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new ImageIcon(newImg);
+    }
+
+    // EFFECTS: created event log at the end when window is closed
+    private class CloseTheWindow extends WindowAdapter {
+        public void windowClosing(WindowEvent e) {
+            // TODO
+        }
     }
 }
