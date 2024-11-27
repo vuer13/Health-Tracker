@@ -50,14 +50,19 @@ public class ListOfFoodItems implements Writeable {
         FoodGroup foodGroup = food.getFoodGroup();
         if (foodGroup == FRUIT) {
             fruitList.add(food);
+            EventLog.getInstance().logEvent(new Event("A fruit has been added to the food items list"));
         } else if (foodGroup == VEGETABLE) {
             vegetableList.add(food);
+            EventLog.getInstance().logEvent(new Event("A vegetable has been added to the food items list"));
         } else if (foodGroup == GRAIN) {
             grainList.add(food);
+            EventLog.getInstance().logEvent(new Event("A grain has been added to the food items list"));
         } else if (foodGroup == DAIRY) {
             dairyList.add(food);
+            EventLog.getInstance().logEvent(new Event("A dairy has been added to the food items list"));
         } else {
             proteinList.add(food);
+            EventLog.getInstance().logEvent(new Event("A protein has been added to the food items list"));
         }
     }
 
@@ -69,14 +74,19 @@ public class ListOfFoodItems implements Writeable {
         FoodGroup foodGroup = food.getFoodGroup();
         if (foodGroup == FRUIT) {
             fruitList.remove(food);
+            EventLog.getInstance().logEvent(new Event("A fruit has been removed to the food items list"));
         } else if (foodGroup == VEGETABLE) {
             vegetableList.remove(food);
+            EventLog.getInstance().logEvent(new Event("A vegetable has been removed to the food items list"));
         } else if (foodGroup == GRAIN) {
             grainList.remove(food);
+            EventLog.getInstance().logEvent(new Event("A grain has been removed to the food items list"));
         } else if (foodGroup == DAIRY) {
             dairyList.remove(food);
+            EventLog.getInstance().logEvent(new Event("A dairy has been removed to the food items list"));
         } else {
             proteinList.remove(food);
+            EventLog.getInstance().logEvent(new Event("A protein has been removed to the food items list"));
         }
     }
 
@@ -99,6 +109,7 @@ public class ListOfFoodItems implements Writeable {
         return calories;
     }
 
+    // MODIFIES: this
     // EFFECTS: clears the list
     public void clearList() {
         listFoodItems.clear();
@@ -107,6 +118,7 @@ public class ListOfFoodItems implements Writeable {
         grainList.clear();
         proteinList.clear();
         dairyList.clear();
+        EventLog.getInstance().logEvent(new Event("All food items have been cleared"));
     }
 
     // EFFECTS: returns total fruit calories consumed

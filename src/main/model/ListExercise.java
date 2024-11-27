@@ -43,12 +43,14 @@ public class ListExercise implements Writeable {
     // EFFECTS: adds exercise to the list
     public void addExercise(Exercise e) {
         exercises.add(e);
+        EventLog.getInstance().logEvent(new Event("An exercise has been added"));
     }
 
     // MODIFIES: this
     // EFFECTS: removes exercise to the list
     public void removeExercise(Exercise e) {
         exercises.remove(e);
+        EventLog.getInstance().logEvent(new Event("An exercise has been removed"));
     }
 
     // EFFECTS: returns date of list
@@ -66,6 +68,7 @@ public class ListExercise implements Writeable {
     // EFFECTS: clears list
     public void clearList() {
         exercises.clear();
+        EventLog.getInstance().logEvent(new Event("An exercise list has been cleared"));
     }
 
     // EFFECTS: returns size of list
