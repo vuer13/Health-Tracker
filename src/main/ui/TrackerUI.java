@@ -894,4 +894,9 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         Image newImg = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new ImageIcon(newImg);
     }
+
+    // EFFECTS: presents event log to console of all events
+    public void windowClosing(WindowEvent e) {
+        // TODO
+    }
 }
