@@ -813,6 +813,7 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 open();
                 write();
                 close();
+                windowClosing(new WindowEvent(frame, 0));
             } catch (FileNotFoundException e) {
                 JOptionPane.showMessageDialog(null, "Error: Unable to save tracker", "Save Error",
                         JOptionPane.ERROR_MESSAGE,
