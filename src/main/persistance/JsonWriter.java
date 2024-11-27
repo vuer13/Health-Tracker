@@ -37,6 +37,7 @@ public class JsonWriter {
     public void writeFood(ListOfFoodItems lofi) {
         JSONObject jsonf = lofi.toJson();
         saveToFile(jsonf.toString(TAB));
+        EventLog.getInstance().logEvent(new Event("The list of food items has been saved"));
     }
 
     // MODIFIES: this
@@ -44,6 +45,7 @@ public class JsonWriter {
     public void writeExercise(ListExercise loe) {
         JSONObject jsone = loe.toJson();
         saveToFile(jsone.toString(TAB));
+        EventLog.getInstance().logEvent(new Event("The list of exercises has been saved"));
     }
 
     // MODIFIES: this
@@ -51,12 +53,12 @@ public class JsonWriter {
     public void writeCalorie(Calories c) {
         JSONObject jsonc = c.toJson();
         saveToFile(jsonc.toString(TAB));
+        EventLog.getInstance().logEvent(new Event("The calorie goal has been saved"));
     }
 
     // MODIFIES: this
     // EFFECTS: closes writer
     public void close() {
-        EventLog.getInstance().logEvent(new Event("The lists and calorie goal has been saved"));
         writer.close();
     }
 

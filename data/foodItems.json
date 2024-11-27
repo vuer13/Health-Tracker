@@ -18,5 +18,10 @@
         "Food Group": "PROTEIN",
         "Calories": 10,
         "Food": "banana"
+    },
+    {
+        "Food Group": "FRUIT",
+        "Calories": 10,
+        "Food": "Orange"
     }
 ]}
