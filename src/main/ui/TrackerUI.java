@@ -905,15 +905,4 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         }
         System.exit(0);
     }
-
-    // EFFECTS: creates new TrackerUI instance, using Java Swing library
-    public static void main(String[] args) throws Exception {
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new TrackerUI();
-            }
-        });
-    }
 }
