@@ -30,6 +30,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -903,5 +904,16 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
             System.out.println(event.getDescription());
         }
         System.exit(0);
+    }
+
+    // EFFECTS: creates new TrackerUI instance, using Java Swing library
+    public static void main(String[] args) throws Exception {
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new TrackerUI();
+            }
+        });
     }
 }
