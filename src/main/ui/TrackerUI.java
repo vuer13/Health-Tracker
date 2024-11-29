@@ -449,17 +449,15 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
         addExName.setBounds(83, 150, 225, 60);
         exName.setBounds(263, 150, 225, 60);
-        addExName.setFont(new Font("Times New Roman", Font.PLAIN, 29));
-        exName.setFont(new Font("Times New Roman", Font.PLAIN, 27));
 
         calExName.setBounds(75, 300, 225, 60);
         calName.setBounds(263, 300, 225, 60);
-        calExName.setFont(new Font("Times New Roman", Font.PLAIN, 29));
-        calName.setFont(new Font("Times New Roman", Font.PLAIN, 27));
 
         addExButton.setBounds(135, 450, 90, 60);
         clearEx.setBounds(233, 450, 90, 60);
         backButtonEx.setBounds(330, 450, 90, 60);
+
+        setExFonts();
 
         addExPanel.add(addExName);
         addExPanel.add(exName);
@@ -474,7 +472,14 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
 
     // EFFECTS: sets font of items on panel
     private void setExFonts() {
-        // TODO
+        addExName.setFont(new Font("Times New Roman", Font.PLAIN, 29));
+        exName.setFont(new Font("Times New Roman", Font.PLAIN, 27));
+        calExName.setFont(new Font("Times New Roman", Font.PLAIN, 29));
+        calName.setFont(new Font("Times New Roman", Font.PLAIN, 27));
+
+        addExButton.setFont(new Font("Times New Roman", Font.PLAIN, 10));
+        clearEx.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        backButtonEx.setFont(new Font("Times New Roman", Font.PLAIN, 12));
     }
 
     // MODIFIES: this
