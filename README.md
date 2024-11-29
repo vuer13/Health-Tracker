@@ -64,3 +64,9 @@ The list of exercises has been saved
 The calorie goal has been saved
 
 The list of food items has been saved
+
+
+# Phase 4: Task 3
+After reflecting on my UML diagram, implementing the Singleton Pattern was something that crossed my mind. This would ensure that the program only accesses one instance of the Calories class, List of Food Items class, and List of Exercises class. This would allow us to avoid any inconsistencies, and help improve memory usage and runtime. This would also ensure that we are only accessing one instance, and as a result, keeping an accurate track of our calories.
+
+However, many issues can arise from this. Although it would help my program at it's current state currently, future modifications of the program can be affected by the Singleton Pattern. If I wanted to calorie track every day, that would require a map, and thus multiple instances of the Calories class, List of Food Items class, and List of Exercises class, as I would map it to each day. Having the program access one class would not allow me to add this feature to this program. Testing would also become more difficult since the singleton object is shared across the whole program. Changing the state while testing can affect how the program runs, which makes it difficult to write independent tests to make sure our methods are correctly implemented. 
