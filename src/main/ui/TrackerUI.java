@@ -551,105 +551,75 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
     }
 
     // EFFECTS: responsible for performing all the button actions
-    @SuppressWarnings("methodlength")
     private void actionPerformed() {
-        addFoodButton.addActionListener(new ActionListener() {
+        addFoodButtonAction();
+        addFoodAction();
+        calStatsButtonAction();
+        foodStatsButtonAction();
+        exStatsButtonAction();
+        setGoalButtoneAction();
+        backButtonFoodAction();
+        backButtonExAction();
+        clearFoodAction();
+        addExButtonAction();
+        addExerciseButtonAction();
+        removeFoodButtonAction();
+        removeExerciseButtonAction();
+        foodGroupsBoxAction();
+        calGoalStartAction();
+    }
+
+    // EFFECTS: adds functionality to calGoalStart button
+    private void calGoalStartAction() {
+        calGoalStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cl.show(mainPanel, "4");
+                int goals = Integer.parseInt(calGoalStart.getText());
+                cal = new Calories(0);
+                cal.setNewGoal(goals);
+                cl.show(mainPanel, "3");
+                goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal()));
+                calGoalStart.setText("");
             }
         });
+    }
 
-        addFood.addActionListener(new ActionListener() {
+    // EFFECTS: adds functionality to foodGroupsBox button
+    private void foodGroupsBoxAction() {
+        foodGroupsBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FoodItems fi;
-                try {
-                    fi = makeFoodItem();
-                    lofi.addFood(fi);
-                    lofiModel.addElement(fi);
-                    clearFoodPanel();
-                } catch (IllegalArgumentException i) {
-                    JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
-                            JOptionPane.ERROR_MESSAGE,
-                            addImage("./data/error.png", 150, 150));
+                int selected = foodGroupsBox.getSelectedIndex();
+                if (selected == 0) {
+                    updateUIfoodItems();
+                } else if (selected == 1) {
+                    updateUIfoodItemsFruit();
+                } else if (selected == 2) {
+                    updateUIfoodItemsVeg();
+                } else if (selected == 3) {
+                    updateUIfoodItemsGrain();
+                } else if (selected == 4) {
+                    updateUIfoodItemsProtein();
+                } else if (selected == 5) {
+                    updateUIfoodItemsDairy();
                 }
             }
         });
+    }
 
-        calStatsButton.addActionListener(new ActionListener() {
+    // EFFECTS: adds functionality to removeExerciseButton button
+    private void removeExerciseButtonAction() {
+        removeExerciseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setStatistics();
+                removeExercise();
+                updateUIex();
             }
         });
+    }
 
-        foodStatsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setFoodStatistics();
-            }
-        });
-
-        exStatsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setExStatistics();
-            }
-        });
-
-        setGoalButtone.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cl.show(mainPanel, "1");
-            }
-        });
-
-        backButtonFood.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cl.show(mainPanel, "3");
-            }
-        });
-
-        backButtonEx.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cl.show(mainPanel, "3");
-            }
-        });
-
-        clearFood.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                clearFoodPanel();
-            }
-        });
-
-        addExButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Exercise ex;
-                try {
-                    ex = makeExercise();
-                    loe.addExercise(ex);
-                    loeModel.addElement(ex);
-                    clearExPanel();
-                } catch (IllegalArgumentException i) {
-                    JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
-                            JOptionPane.ERROR_MESSAGE,
-                            addImage("./data/error.png", 150, 150));
-                }
-            }
-        });
-
-        addExerciseButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cl.show(mainPanel, "5");
-            }
-        });
-
+    // EFFECTS: adds functionality to removeFoodButton button
+    private void removeFoodButtonAction() {
         removeFoodButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -675,121 +645,141 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                 }
             }
         });
-
-        removeExerciseButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                removeExercise();
-                updateUIex();
-            }
-        });
-
-        foodGroupsBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int selected = foodGroupsBox.getSelectedIndex();
-                if (selected == 0) {
-                    updateUIfoodItems();
-                } else if (selected == 1) {
-                    updateUIfoodItemsFruit();
-                } else if (selected == 2) {
-                    updateUIfoodItemsVeg();
-                } else if (selected == 3) {
-                    updateUIfoodItemsGrain();
-                } else if (selected == 4) {
-                    updateUIfoodItemsProtein();
-                } else if (selected == 5) {
-                    updateUIfoodItemsDairy();
-                }
-            }
-        });
-
-        calGoalStart.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int goals = Integer.parseInt(calGoalStart.getText());
-                cal = new Calories(0);
-                cal.setNewGoal(goals);
-                cl.show(mainPanel, "3");
-                goal.setText("Your Calorie Goal: " + String.valueOf(cal.getCalorieGoal()));
-                calGoalStart.setText("");
-            }
-        });
     }
 
-    // EFFECTS: adds functionality to calGoalStart button
-    private void calGoalStartAction() {
-        // TODO
-    }
-
-    // EFFECTS: adds functionality to foodGroupsBox button
-    private void foodGroupsBoxAction() {
-        // TODO
-    }
-
-    // EFFECTS: adds functionality to removeExerciseButton button
-    private void removeExerciseButtonAction() {
-        // TODO
-    }
-
-    // EFFECTS: adds functionality to removeFoodButton button
-    private void removeFoodButtonAction() {
+    // EFFECTS: Updates UI to the list that was selected
+    private void updateList() {
         // TODO
     }
 
     // EFFECTS: adds functionality to addExerciseButton button
     private void addExerciseButtonAction() {
-        // TODO
+        addExerciseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(mainPanel, "5");
+            }
+        });
     }
 
     // EFFECTS: adds functionality to addExButton button
     private void addExButtonAction() {
-        // TODO
+        addExButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Exercise ex;
+                try {
+                    ex = makeExercise();
+                    loe.addExercise(ex);
+                    loeModel.addElement(ex);
+                    clearExPanel();
+                } catch (IllegalArgumentException i) {
+                    JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
+                            JOptionPane.ERROR_MESSAGE,
+                            addImage("./data/error.png", 150, 150));
+                }
+            }
+        });
     }
 
     // EFFECTS: adds functionality to clearFood button
     private void clearFoodAction() {
-        // TODO
+        clearFood.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearFoodPanel();
+            }
+        });
     }
 
     // EFFECTS: adds functionality to backButtonEx button
     private void backButtonExAction() {
-        // TODO
+        backButtonEx.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(mainPanel, "3");
+            }
+        });
     }
 
     // EFFECTS: adds functionality to backButtonFood button
     private void backButtonFoodAction() {
-        // TODO
+        backButtonFood.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(mainPanel, "3");
+            }
+        });
     }
 
     // EFFECTS: adds functionality to setGoalButtone button
     private void setGoalButtoneAction() {
-        // TODO
+        setGoalButtone.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(mainPanel, "1");
+            }
+        });
     }
 
     // EFFECTS: adds functionality to exStatsButton button
     private void exStatsButtonAction() {
-        // TODO
+        exStatsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setExStatistics();
+            }
+        });
     }
 
     // EFFECTS: adds functionality to foodStatsButton button
     private void foodStatsButtonAction() {
-        // TODO
+        foodStatsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setFoodStatistics();
+            }
+        });
     }
 
     // EFFECTS: adds functionality to calStatsButton button
     private void calStatsButtonAction() {
-        // TODO
+        calStatsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setStatistics();
+            }
+        });
     }
 
     // EFFECTS: adds functionality to addFood button
     private void addFoodAction() {
-        // TODO
+        addFood.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FoodItems fi;
+                try {
+                    fi = makeFoodItem();
+                    lofi.addFood(fi);
+                    lofiModel.addElement(fi);
+                    clearFoodPanel();
+                } catch (IllegalArgumentException i) {
+                    JOptionPane.showMessageDialog(null, "Error: Invalid Inputs, Please Try Again", "Invalid",
+                            JOptionPane.ERROR_MESSAGE,
+                            addImage("./data/error.png", 150, 150));
+                }
+            }
+        });
     }
 
     // EFFECTS: adds functionality to addFoodButton button
     private void addFoodButtonAction() {
-        // TODO
+        addFoodButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cl.show(mainPanel, "4");
+            }
+        });
     }
 
     // MODIFIES: this
