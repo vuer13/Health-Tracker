@@ -631,25 +631,25 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
                             JOptionPane.ERROR_MESSAGE,
                             addImage("./data/error.png", 150, 150));
                 }
-                int selected = foodGroupsBox.getSelectedIndex();
-                if (selected == 1) {
-                    updateUIfoodItemsFruit();
-                } else if (selected == 2) {
-                    updateUIfoodItemsVeg();
-                } else if (selected == 3) {
-                    updateUIfoodItemsGrain();
-                } else if (selected == 4) {
-                    updateUIfoodItemsProtein();
-                } else if (selected == 5) {
-                    updateUIfoodItemsDairy();
-                }
+                updateList();
             }
         });
     }
 
     // EFFECTS: Updates UI to the list that was selected
     private void updateList() {
-        // TODO
+        int selected = foodGroupsBox.getSelectedIndex();
+        if (selected == 1) {
+            updateUIfoodItemsFruit();
+        } else if (selected == 2) {
+            updateUIfoodItemsVeg();
+        } else if (selected == 3) {
+            updateUIfoodItemsGrain();
+        } else if (selected == 4) {
+            updateUIfoodItemsProtein();
+        } else if (selected == 5) {
+            updateUIfoodItemsDairy();
+        }
     }
 
     // EFFECTS: adds functionality to addExerciseButton button
