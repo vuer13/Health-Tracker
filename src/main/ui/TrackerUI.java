@@ -382,6 +382,10 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addCalsField.setFont(new Font("Times New Roman", Font.PLAIN, 27));
         addGroup.setFont(new Font("Times New Roman", Font.PLAIN, 29));
         addGroupField.setFont(new Font("Times New Roman", Font.PLAIN, 27));
+
+        addFood.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        clearFood.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        backButtonFood.setFont(new Font("Times New Roman", Font.PLAIN, 12));
     }
 
     // MODIFIES: this
@@ -466,6 +470,11 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         addExPanel.add(backButtonEx);
 
         addImagesToExPanel();
+    }
+
+    // EFFECTS: sets font of items on panel
+    private void setExFonts() {
+        // TODO
     }
 
     // MODIFIES: this
