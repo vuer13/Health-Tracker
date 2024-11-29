@@ -717,6 +717,81 @@ public class TrackerUI extends JFrame implements ListSelectionListener {
         });
     }
 
+    // EFFECTS: adds functionality to calGoalStart button
+    private void calGoalStartAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to foodGroupsBox button
+    private void foodGroupsBoxAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to removeExerciseButton button
+    private void removeExerciseButtonAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to removeFoodButton button
+    private void removeFoodButtonAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to addExerciseButton button
+    private void addExerciseButtonAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to addExButton button
+    private void addExButtonAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to clearFood button
+    private void clearFoodAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to backButtonEx button
+    private void backButtonExAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to backButtonFood button
+    private void backButtonFoodAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to setGoalButtone button
+    private void setGoalButtoneAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to exStatsButton button
+    private void exStatsButtonAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to foodStatsButton button
+    private void foodStatsButtonAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to calStatsButton button
+    private void calStatsButtonAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to addFood button
+    private void addFoodAction() {
+        // TODO
+    }
+
+    // EFFECTS: adds functionality to addFoodButton button
+    private void addFoodButtonAction() {
+        // TODO
+    }
+
     // MODIFIES: this
     // EFFECTS: shows only fruits
     private void updateUIfoodItemsFruit() {
