@@ -3,6 +3,9 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import log.Event;
+import log.EventLog;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

@@ -6,9 +6,9 @@ package persistance;
 import java.io.*;
 import org.json.JSONObject;
 
+import log.Event;
+import log.EventLog;
 import model.Calories;
-import model.Event;
-import model.EventLog;
 import model.ListExercise;
 import model.ListOfFoodItems;
 

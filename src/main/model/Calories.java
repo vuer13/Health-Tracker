@@ -7,6 +7,8 @@ import java.time.LocalDate;
 
 import org.json.JSONObject;
 
+import log.Event;
+import log.EventLog;
 import persistance.Writeable;
 
 import java.lang.Math;

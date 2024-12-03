@@ -34,9 +34,9 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import exceptions.AllFoodsSelected;
+import log.Event;
+import log.EventLog;
 import model.Calories;
-import model.Event;
-import model.EventLog;
 import model.Exercise;
 import model.FoodGroup;
 import model.FoodItems;

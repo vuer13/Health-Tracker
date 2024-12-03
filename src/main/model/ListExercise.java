@@ -9,6 +9,8 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import log.Event;
+import log.EventLog;
 import persistance.Writeable;
 
 import java.time.LocalDate;

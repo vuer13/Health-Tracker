@@ -3,6 +3,8 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import log.Event;
+
 import java.util.Calendar;
 import java.util.Date;
 
