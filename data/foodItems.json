@@ -1,5 +1,12 @@
-{"Food Items": [{
-    "Food Group": "FRUIT",
-    "Calories": 10,
-    "Food": "Banana"
-}]}
+{"Food Items": [
+    {
+        "Food Group": "FRUIT",
+        "Calories": 10,
+        "Food": "Banana"
+    },
+    {
+        "Food Group": "PROTEIN",
+        "Calories": 50,
+        "Food": "Chicken"
+    }
+]}
